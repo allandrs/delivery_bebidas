@@ -145,10 +145,10 @@ let itensJson = [
 const obj = {
   data: {
     bebidas: [
-      
+
     ],
     longNeck: [
-
+      
     ]
   }
 }
