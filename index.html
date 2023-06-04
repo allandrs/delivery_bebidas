@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/beer-regular.png" />
+    <title>Vila Beer</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/Vila-Beer.png" alt="">
+        </div>
+        <div id="social">
+            <img src="images/insta.png" alt="">
+        </div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Como fazer meu pedido?</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <div class="main">
+        <!-- ---- âncoras e pesquisa ---- -->
+        <div id="shortcut-container">
+            <div id="anchor">
+                <div class="icon-anchor" id="bebidas-anchor">
+                    <div class="background">
+                        <img src="/images/caixa-de-cerveja.png" alt="" class="icon">
+                    </div>
+                    <a href="#">Bebidas</a>
+                </div>
+                <div class="icon-anchor" id="long-neck-anchor">
+                    <div class="background">
+                        <img src="/images/long-neck.png" alt="" class="icon">
+                    </div>
+                    <a href="#">Long Neck</a>
+                </div>
+                <div class="icon-anchor" id="vinhos-anchor">
+                    <div class="background">
+                        <img src="/images/vinho.png" alt="" class="icon">
+                    </div>
+                    <a href="#">Vinhos e Espumantes</a>
+                </div>
+                <div class="icon-anchor" id="refrigerantes-anchor">
+                    <div class="background">
+                        <img src="/images/refrigerantes.png" alt="" class="icon">
+                    </div>
+                    <a href="#">Refrigerantes e Cia</a>
+                </div>
+                <div class="icon-anchor" id="gelo-anchor">
+                    <div class="background">
+                        <img src="/images/carvao.png" alt="" class="icon">
+                    </div>
+                    <a href="#">Gelo e Carvão</a>
+                </div>
+            </div>
+            <div id="search">
+                <label for=""></label>
+                <input type="text">
+            </div>
+        </div>
+
+
+
+        <!-- modelos de pizza na lista e no carrinho -->
+        <div class="models">
+
+            <!-- pizza na lista -->
+            <div class="pizza-item">
+                <a href="">
+                    <div class="pizza-item--img"><img src="" /></div>
+                    <div class="pizza-item--add" data-price="1">+</div>
+                </a>
+                <div class="pizza-item--price" data-price="1">R$ --</div>
+                <div class="pizza-item--name">--</div>
+                <div class="pizza-item--desc"></div>
+            </div>
+
+            <!-- pizza no carrinho -->
+            <div class="cart--item">
+                <img src="" />
+                <div class="cart--item-nome">--</div>
+                <div class="cart--item--qtarea">
+                    <button class="cart--item-qtmenos">-</button>
+                    <div class="cart--item--qt">1</div>
+                    <button class="cart--item-qtmais">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- /models -->
+
+        <!-- .menu-openner aparecera no modo mobile -->
+        <div class="cabecalho">
+            <h1>Vila Beer</h1>
+            <div class="menu-openner"><span>0</span>🛒</div>
+        </div>
+        <!-- /menu-openner -->
+
+        <!-- conteudo principal -->
+        <main>
+            <h2>Bebidas</h2>
+
+            <div class="produto-area"></div>
+
+            <h2>Long Neck</h2>
+
+            <div class="produto-area"></div>
+
+
+        </main>
+        <!-- /conteudo principal -->
+
+        <!-- aside do carrinho -->
+        <aside>
+            <div class="cart--area">
+                <div class="menu-closer">❌</div>
+                <h1>Suas Pizzas</h1>
+                <div class="cart"></div>
+                <div class="cart--details">
+                    <div class="cart--totalitem subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem desconto">
+                        <span>Desconto</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem total big">
+                        <span>Total</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--finalizar">Finalizar a compra</div>
+                </div>
+            </div>
+        </aside>
+        <!-- /aside do carrinho -->
+
+        <!-- janela modal .pizzaWindowArea -->
+        <div class="pizzaWindowArea">
+            <div class="pizzaWindowBody">
+                <div class="pizzaInfo--cancelMobileButton">Voltar</div>
+                <div class="pizzaBig">
+                    <img src="" />
+                </div>
+                <div class="pizzaInfo">
+                    <h1>--</h1>
+                    <div class="pizzaInfo--desc"></div>
+                    <div class="pizzaInfo--sizearea">
+                        <div class="pizzaInfo--sector">Quantidade</div>
+                        <div class="pizzaInfo--sizes">
+                            <div data-key="P" class="pizzaInfo--size ">UNIDADE
+                            </div>
+                            <div data-key="M" class="pizzaInfo--size selected">CAIXA 
+                            </div>
+                            <!-- <div data-key="G" class="pizzaInfo--size">GRANDE
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="pizzaInfo--pricearea">
+                        <div class="pizzaInfo--sector">Preço</div>
+                        <div class="pizzaInfo--price">
+                            <div class="pizzaInfo--actualPrice">R$ --</div>
+                            <div class="pizzaInfo--qtarea">
+                                <button class="pizzaInfo--qtmenos">-</button>
+                                <div class="pizzaInfo--qt">1</div>
+                                <button class="pizzaInfo--qtmais">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
+                    <div class="pizzaInfo--cancelButton">Cancelar</div>
+                </div>
+            </div>
+        </div>
+
+            <!-- /janela modal .pizzaWindowArea -->
+    <footer>
+        <div class="last-container">
+            <div class="logo-footer">
+                <img src="/images/Vila-Beer.png" alt="">
+            </div>
+            <div class="horario">
+                <h3>REDES SOCIAIS</h3>
+                <a href="">Facebook</a>
+                <a href="">Instagram</a>
+            </div>
+            <div class="formas-de-pagamento">
+                <H3>Formas de pagamento</H3>
+                <a href="">Cartão de credito</a>
+            </div>
+            <div class="social-media">
+                <img src="#" alt="">
+                <img src="#" alt="">
+            </div>
+            <div class="direitos">
+                <p>©2022 Designed By Allan Douglas Code. | All Rights Reserved.</p>
+            </div>
+        </div>
+
+    </footer>
+        <script src="pizzas.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
