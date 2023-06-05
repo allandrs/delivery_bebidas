@@ -59,7 +59,7 @@ const pegarKey = (e) => {
     // do .pizza-item ele vai pegar o valor do atributo data-key
     let key = e.target.closest('.pizza-item').getAttribute('data-key')
     console.log('Pizza clicada ' + key)
-    console.log(itensJson[key])
+    console.log(listItens[key])
 
     // garantir que a quantidade inicial de pizzas é 1
     quantPizzas = 1
@@ -78,7 +78,7 @@ const preencherTamanhos = (key) => {
     selecionaTodos('.pizzaInfo--size').forEach((size, sizeIndex) => {
         // selecionar a unidade
         (sizeIndex == 0) ? size.classList.add('selected') : ''
-        // size.querySelector('span').innerHTML = itensJson[key].sizes[sizeIndex]
+        // size.querySelector('span').innerHTML = listItens[key].sizes[sizeIndex]
     })
 }
 
@@ -94,7 +94,7 @@ const escolherTamanhoPreco = (key) => {
             size.classList.add('selected')
 
             // mudar o preço de acordo com o tamanho
-            seleciona('.pizzaInfo--actualPrice').innerHTML = formatoReal(itensJson[key].price[sizeIndex])
+            seleciona('.pizzaInfo--actualPrice').innerHTML = formatoReal(listItens[key].price[sizeIndex])
         })
     })
 }
@@ -121,7 +121,7 @@ const adicionarNoCarrinho = () => {
         console.log('Adicionar no carrinho')
 
         // pegar dados da janela modal atual
-    	// qual pizza? pegue o modalKey para usar itensJson[modalKey]
+    	// qual pizza? pegue o modalKey para usar listItens[modalKey]
     	console.log("Pizza " + modalKey)
     	// tamanho
 	    let size = seleciona('.pizzaInfo--size.selected').getAttribute('data-key')
@@ -133,7 +133,7 @@ const adicionarNoCarrinho = () => {
     
         // crie um identificador que junte id e tamanho
 	    // concatene as duas informacoes separadas por um símbolo, vc escolhe
-	    let identificador = itensJson[modalKey].id+'t'+ size
+	    let identificador = listItens[modalKey].id+'t'+ size
 
         // antes de adicionar verifique se ja tem aquele codigo e tamanho
         // para adicionarmos a quantidade
@@ -147,7 +147,7 @@ const adicionarNoCarrinho = () => {
             // adicionar objeto pizza no carrinho
             let pizza = {
                 identificador,
-                id: itensJson[modalKey].id,
+                id: listItens[modalKey].id,
                 size, // size: size
                 qt: quantPizzas,
                 price: parseFloat(price) // price: price
@@ -209,7 +209,7 @@ const atualizarCarrinho = () => {
         // para preencher os itens do carrinho, calcular subtotal
 		for(let i in cart) {
 			// use o find para pegar o item por id
-			let pizzaItem = itensJson.find( (item) => item.id == cart[i].id )
+			let pizzaItem = listItens.find( (item) => item.id == cart[i].id )
 			console.log(pizzaItem)
 
             // em cada item pegar o subtotal
@@ -287,13 +287,10 @@ const finalizarCompra = () => {
 }
 
 // /aula 06
-
-// MAPEAR itensJson para gerar lista de itens
-itensJson.map((item, index) => {
-    //console.log(item)
+function redenrizaItem (item, index, clas) {
     let pizzaItem = document.querySelector('.models .pizza-item').cloneNode(true)
     //console.log(pizzaItem)
-        seleciona('.produto-area').append(pizzaItem)
+        seleciona(clas).append(pizzaItem)
 
     // preencher os dados de cada pizza
     preencheDadosDasPizzas(pizzaItem, item, index)
@@ -327,8 +324,27 @@ itensJson.map((item, index) => {
     })
 
     botoesFechar()
+}
 
-}) // fim do MAPEAR itensJson para gerar lista de pizzas
+// MAPEAR listItens para gerar lista de itens
+listItens.data.bebidas.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#bebidas')
+
+}) 
+
+listItens.data.longNeck.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#longneck')
+
+}) 
+
+listItens.data.vinhoEspumantes.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#vinhosespumantes')
+
+})
+// fim do MAPEAR listItens para gerar lista de pizzas
 
 // aula 05
 // mudar quantidade com os botoes + e -
