@@ -107,9 +107,9 @@ const listItens = {
     longNeck: [
       {
         id: 14,
-        name: 'Long Neck',
-        img: 'images/petra-lata.png',
-        price: [27.00, 30.00, 32.00],
+        name: 'Stella Artois',
+        img: 'images/stella-longneck.png',
+        price: [5.00, 32.00],
         sizes: [
           'unidade',
           'caixa',
@@ -120,8 +120,8 @@ const listItens = {
       },
       {
         id: 15,
-        name: 'Long Neck',
-        img: 'images/petra-lata.png',
+        name: 'Heineken',
+        img: 'images/heineken-longneck.png',
         price: [27.00, 30.00, 32.00],
         sizes: [
           'unidade',
@@ -132,8 +132,44 @@ const listItens = {
       },
       {
         id: 16,
-        name: 'Stella Artois',
-        img: 'images/stella-longneck.png',
+        name: 'Heineken promoção',
+        img: 'images/heineken-longneck-promocao.png',
+        price: [27.00, 30.00, 32.00],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+  
+      },
+      {
+        id: 17,
+        name: 'Budweiser',
+        img: 'images/budweiser-longneck.png',
+        price: [27.00, 30.00, 32.00],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+  
+      },
+      {
+        id: 18,
+        name: 'Spaten',
+        img: 'images/spaten-longneck.png',
+        price: [27.00, 30.00, 32.00],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+  
+      },
+      {
+        id: 19,
+        name: 'Corona',
+        img: 'images/corona-longneck.png',
         price: [27.00, 30.00, 32.00],
         sizes: [
           'unidade',
@@ -145,9 +181,9 @@ const listItens = {
     ],
     vinhoEspumantes: [
       {
-        id: 17,
-        name: 'Long Neck',
-        img: 'images/petra-lata.png',
+        id: 20,
+        name: 'Quinta do Morgado',
+        img: 'images/vinho-quinta.png',
         price: [27.00, 30.00, 32.00],
         sizes: [
           'unidade',
@@ -158,9 +194,9 @@ const listItens = {
   
       },
       {
-        id: 18,
-        name: 'Long Neck',
-        img: 'images/petra-lata.png',
+        id: 21,
+        name: 'Pérgola',
+        img: 'images/vinho-pergola.png',
         price: [27.00, 30.00, 32.00],
         sizes: [
           'unidade',
@@ -168,12 +204,157 @@ const listItens = {
           'tamanho'
         ],
   
+      }
+    ],
+    refrigerantesCia: [
+      {
+        id: 22,
+        name: 'Coca-cola lata',
+        img: 'images/coca-lata.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
       },
       {
-        id: 19,
-        name: 'Long Neck',
-        img: 'images/petra-lata.png',
-        price: [27.00, 30.00, 32.00],
+        id: 23,
+        name: 'Coca vidro 1 litro',
+        img: 'images/coca-vidro-1litro.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 24,
+        name: 'Coca-cola Pet 1 litro',
+        img: 'images/coca-pet-1litro.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 25,
+        name: 'Coca-cola 2 litros',
+        img: 'images/coca-2litros.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 26,
+        name: 'Coca-cola zero 1 litro',
+        img: 'images/coca-zero-1litro.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 27,
+        name: 'Fanta 1 litro',
+        img: 'images/fanta-1litro.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 28,
+        name: 'Fanta 2 litros',
+        img: 'images/fanta-2litros.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 29,
+        name: 'Guaraná 1 litro',
+        img: 'images/skinka-500ml.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 30,
+        name: 'Monster',
+        img: 'images/energetico-monster.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 31,
+        name: 'Monster 2 litros',
+        img: 'images/energetico-bivolt.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 32,
+        name: 'Skinka 500ml',
+        img: 'images/skinka-500ml.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 33,
+        name: 'Coca-cola lata',
+        img: 'images/coca-lata.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 34,
+        name: 'Coca-cola lata',
+        img: 'images/coca-lata.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 35,
+        name: 'Coca-cola lata',
+        img: 'images/coca-lata.png',
+        price: [3.50],
         sizes: [
           'unidade',
           'caixa',

@@ -344,6 +344,13 @@ listItens.data.vinhoEspumantes.map((item, index) => {
     redenrizaItem(item, index, '#vinhosespumantes')
 
 })
+
+listItens.data.refrigerantesCia.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#refrigerantescia')
+
+})
+
 // fim do MAPEAR listItens para gerar lista de pizzas
 
 // aula 05
