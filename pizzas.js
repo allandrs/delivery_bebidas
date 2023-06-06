@@ -27,7 +27,7 @@ const listItens = {
         name: 'Skol lata',
         img: 'images/skol-lata.jpg',
         price: [3.25, 35.00],
-  
+
       },
       {
         id: 5,
@@ -287,7 +287,7 @@ const listItens = {
       {
         id: 29,
         name: 'Guaraná 1 litro',
-        img: 'images/skinka-500ml.png',
+        img: 'images/guarana-1litro.png',
         price: [3.50],
         sizes: [
           'unidade',
@@ -297,8 +297,8 @@ const listItens = {
       },
       {
         id: 30,
-        name: 'Monster',
-        img: 'images/energetico-monster.png',
+        name: 'Guaraná 2 litros',
+        img: 'images/guarana-2litros.png',
         price: [3.50],
         sizes: [
           'unidade',
@@ -308,8 +308,9 @@ const listItens = {
       },
       {
         id: 31,
-        name: 'Monster 2 litros',
-        img: 'images/energetico-bivolt.png',
+        name: 'Monster',
+        img: 'images/energetico-monster.png',
+
         price: [3.50],
         sizes: [
           'unidade',
@@ -319,6 +320,18 @@ const listItens = {
       },
       {
         id: 32,
+        name: 'Bivolt 2 litros',
+        img: 'images/energetico-bivolt.png',
+
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 33,
         name: 'Skinka 500ml',
         img: 'images/skinka-500ml.png',
         price: [3.50],
@@ -329,20 +342,9 @@ const listItens = {
         ],
       },
       {
-        id: 33,
-        name: 'Coca-cola lata',
-        img: 'images/coca-lata.png',
-        price: [3.50],
-        sizes: [
-          'unidade',
-          'caixa',
-          'tamanho'
-        ],
-      },
-      {
         id: 34,
-        name: 'Coca-cola lata',
-        img: 'images/coca-lata.png',
+        name: 'Hiran 2 litros',
+        img: 'images/hiran-2litros.png',
         price: [3.50],
         sizes: [
           'unidade',
@@ -352,8 +354,63 @@ const listItens = {
       },
       {
         id: 35,
-        name: 'Coca-cola lata',
-        img: 'images/coca-lata.png',
+        name: 'Soda 1 litro',
+        img: 'images/soda-1litro.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 36,
+        name: 'Soda 2 litros',
+        img: 'images/soda-2litros.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 37,
+        name: 'Sprite 2 litros',
+        img: 'images/sprite-2litros.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 38,
+        name: 'Água mineral 500ml sem gás',
+        img: 'images/agua-500-semgas.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 39,
+        name: 'Água mineral 500ml com gás',
+        img: 'images/agua-500-comgas.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 40,
+        name: 'Água mineral 1 litro sem gás',
+        img: 'images/agua-1litro.png',
         price: [3.50],
         sizes: [
           'unidade',
@@ -361,6 +418,111 @@ const listItens = {
           'tamanho'
         ],
       }
+    ],
+    bebidasQuentes: [
+      {
+        id: 41,
+        name: 'Pitú lata',
+        img: 'images/pitu-lata.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 42,
+        name: 'Pitú latão',
+        img: 'images/pitu-latao.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 43,
+        name: 'Vodka Slova',
+        img: 'images/vodka-slova.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      }
+    ],
+    geloCarvao: [
+      {
+        id: 44,
+        name: 'Carvão',
+        img: 'images/carvao.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 45,
+        name: 'Gelo triturado / cubo',
+        img: 'images/gelo.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+    ],
+    consumiveis: [
+      {
+        id: 46,
+        name: 'Halls',
+        img: 'images/halls.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 47,
+        name: 'Trident',
+        img: 'images/trident.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 48,
+        name: 'Salgadinho Torcida',
+        img: 'images/salgadinho-torcida.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
+      {
+        id: 49,
+        name: 'Amendoim',
+        img: 'images/amendoim.png',
+        price: [3.50],
+        sizes: [
+          'unidade',
+          'caixa',
+          'tamanho'
+        ],
+      },
     ]
   }
 }

@@ -351,6 +351,24 @@ listItens.data.refrigerantesCia.map((item, index) => {
 
 })
 
+listItens.data.bebidasQuentes.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#bebidasquentes')
+
+})
+
+listItens.data.geloCarvao.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#gelocarvao')
+
+})
+
+listItens.data.consumiveis.map((item, index) => {
+    //console.log(item)
+    redenrizaItem(item, index, '#consumiveis')
+
+})
+
 // fim do MAPEAR listItens para gerar lista de pizzas
 
 // aula 05
