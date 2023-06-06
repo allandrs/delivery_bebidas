@@ -109,7 +109,7 @@ const listItens = {
         id: 14,
         name: 'Stella Artois',
         img: 'images/stella-longneck.png',
-        price: [5.00, 32.00],
+        price: [5.50, 32.00],
         sizes: [
           'unidade',
           'caixa',
@@ -122,7 +122,7 @@ const listItens = {
         id: 15,
         name: 'Heineken',
         img: 'images/heineken-longneck.png',
-        price: [27.00, 30.00, 32.00],
+        price: [7.00, 41.00],
         sizes: [
           'unidade',
           'caixa',
@@ -134,7 +134,7 @@ const listItens = {
         id: 16,
         name: 'Heineken promoção',
         img: 'images/heineken-longneck-promocao.png',
-        price: [27.00, 30.00, 32.00],
+        price: [6.50, 40.00],
         sizes: [
           'unidade',
           'caixa',
@@ -146,7 +146,7 @@ const listItens = {
         id: 17,
         name: 'Budweiser',
         img: 'images/budweiser-longneck.png',
-        price: [27.00, 30.00, 32.00],
+        price: [6.00, 30.00],
         sizes: [
           'unidade',
           'caixa',
@@ -158,7 +158,7 @@ const listItens = {
         id: 18,
         name: 'Spaten',
         img: 'images/spaten-longneck.png',
-        price: [27.00, 30.00, 32.00],
+        price: [5.00, 30.00],
         sizes: [
           'unidade',
           'caixa',
@@ -170,7 +170,7 @@ const listItens = {
         id: 19,
         name: 'Corona',
         img: 'images/corona-longneck.png',
-        price: [27.00, 30.00, 32.00],
+        price: [6.00, 36.00],
         sizes: [
           'unidade',
           'caixa',
@@ -184,7 +184,7 @@ const listItens = {
         id: 20,
         name: 'Quinta do Morgado',
         img: 'images/vinho-quinta.png',
-        price: [27.00, 30.00, 32.00],
+        price: [15.00],
         sizes: [
           'unidade',
           'caixa',
@@ -197,7 +197,7 @@ const listItens = {
         id: 21,
         name: 'Pérgola',
         img: 'images/vinho-pergola.png',
-        price: [27.00, 30.00, 32.00],
+        price: [22.00],
         sizes: [
           'unidade',
           'caixa',
@@ -222,7 +222,7 @@ const listItens = {
         id: 23,
         name: 'Coca vidro 1 litro',
         img: 'images/coca-vidro-1litro.png',
-        price: [3.50],
+        price: [5.00],
         sizes: [
           'unidade',
           'caixa',
@@ -233,7 +233,7 @@ const listItens = {
         id: 24,
         name: 'Coca-cola Pet 1 litro',
         img: 'images/coca-pet-1litro.png',
-        price: [3.50],
+        price: [5.50],
         sizes: [
           'unidade',
           'caixa',
@@ -244,7 +244,7 @@ const listItens = {
         id: 25,
         name: 'Coca-cola 2 litros',
         img: 'images/coca-2litros.png',
-        price: [3.50],
+        price: [9.00],
         sizes: [
           'unidade',
           'caixa',
@@ -255,7 +255,7 @@ const listItens = {
         id: 26,
         name: 'Coca-cola zero 1 litro',
         img: 'images/coca-zero-1litro.png',
-        price: [3.50],
+        price: [5.00],
         sizes: [
           'unidade',
           'caixa',
@@ -266,7 +266,7 @@ const listItens = {
         id: 27,
         name: 'Fanta 1 litro',
         img: 'images/fanta-1litro.png',
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -277,7 +277,7 @@ const listItens = {
         id: 28,
         name: 'Fanta 2 litros',
         img: 'images/fanta-2litros.png',
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -288,7 +288,7 @@ const listItens = {
         id: 29,
         name: 'Guaraná 1 litro',
         img: 'images/guarana-1litro.png',
-        price: [3.50],
+        price: [4.50],
         sizes: [
           'unidade',
           'caixa',
@@ -299,7 +299,7 @@ const listItens = {
         id: 30,
         name: 'Guaraná 2 litros',
         img: 'images/guarana-2litros.png',
-        price: [3.50],
+        price: [8.00],
         sizes: [
           'unidade',
           'caixa',
@@ -311,7 +311,7 @@ const listItens = {
         name: 'Monster',
         img: 'images/energetico-monster.png',
 
-        price: [3.50],
+        price: [9.00],
         sizes: [
           'unidade',
           'caixa',
@@ -323,7 +323,7 @@ const listItens = {
         name: 'Bivolt 2 litros',
         img: 'images/energetico-bivolt.png',
 
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -345,7 +345,7 @@ const listItens = {
         id: 34,
         name: 'Hiran 2 litros',
         img: 'images/hiran-2litros.png',
-        price: [3.50],
+        price: [6.00],
         sizes: [
           'unidade',
           'caixa',
@@ -356,7 +356,7 @@ const listItens = {
         id: 35,
         name: 'Soda 1 litro',
         img: 'images/soda-1litro.png',
-        price: [3.50],
+        price: [4.00],
         sizes: [
           'unidade',
           'caixa',
@@ -367,7 +367,7 @@ const listItens = {
         id: 36,
         name: 'Soda 2 litros',
         img: 'images/soda-2litros.png',
-        price: [3.50],
+        price: [8.00],
         sizes: [
           'unidade',
           'caixa',
@@ -378,7 +378,7 @@ const listItens = {
         id: 37,
         name: 'Sprite 2 litros',
         img: 'images/sprite-2litros.png',
-        price: [3.50],
+        price: [8.00],
         sizes: [
           'unidade',
           'caixa',
@@ -389,7 +389,7 @@ const listItens = {
         id: 38,
         name: 'Água mineral 500ml sem gás',
         img: 'images/agua-500-semgas.png',
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -400,7 +400,7 @@ const listItens = {
         id: 39,
         name: 'Água mineral 500ml com gás',
         img: 'images/agua-500-comgas.png',
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -411,7 +411,7 @@ const listItens = {
         id: 40,
         name: 'Água mineral 1 litro sem gás',
         img: 'images/agua-1litro.png',
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -424,7 +424,7 @@ const listItens = {
         id: 41,
         name: 'Pitú lata',
         img: 'images/pitu-lata.png',
-        price: [3.50],
+        price: [5.50],
         sizes: [
           'unidade',
           'caixa',
@@ -435,7 +435,7 @@ const listItens = {
         id: 42,
         name: 'Pitú latão',
         img: 'images/pitu-latao.png',
-        price: [3.50],
+        price: [6.50],
         sizes: [
           'unidade',
           'caixa',
@@ -446,7 +446,7 @@ const listItens = {
         id: 43,
         name: 'Vodka Slova',
         img: 'images/vodka-slova.png',
-        price: [3.50],
+        price: [0.00],
         sizes: [
           'unidade',
           'caixa',
@@ -459,7 +459,7 @@ const listItens = {
         id: 44,
         name: 'Carvão',
         img: 'images/carvao.png',
-        price: [3.50],
+        price: [9.50],
         sizes: [
           'unidade',
           'caixa',
@@ -470,7 +470,7 @@ const listItens = {
         id: 45,
         name: 'Gelo triturado / cubo',
         img: 'images/gelo.png',
-        price: [3.50],
+        price: [6.00],
         sizes: [
           'unidade',
           'caixa',
@@ -483,7 +483,7 @@ const listItens = {
         id: 46,
         name: 'Halls',
         img: 'images/halls.png',
-        price: [3.50],
+        price: [2.00],
         sizes: [
           'unidade',
           'caixa',
@@ -494,7 +494,7 @@ const listItens = {
         id: 47,
         name: 'Trident',
         img: 'images/trident.png',
-        price: [3.50],
+        price: [2.50],
         sizes: [
           'unidade',
           'caixa',
@@ -505,7 +505,7 @@ const listItens = {
         id: 48,
         name: 'Salgadinho Torcida',
         img: 'images/salgadinho-torcida.png',
-        price: [3.50],
+        price: [2.00],
         sizes: [
           'unidade',
           'caixa',
@@ -516,7 +516,7 @@ const listItens = {
         id: 49,
         name: 'Amendoim',
         img: 'images/amendoim.png',
-        price: [3.50],
+        price: [1.50],
         sizes: [
           'unidade',
           'caixa',
