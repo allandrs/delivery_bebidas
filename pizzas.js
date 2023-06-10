@@ -5,9 +5,9 @@ const listItens = {
         id: 1,
         name: 'Brahma litrinho',
         img: 'images/brahma-litrinho.png',
-        price: [2.40, 23.00, 25.00],
+        price: [2.40, 23.00],
   
-      },
+      },  
       {
         id: 2,
         name: 'Brahma lata',
@@ -101,7 +101,6 @@ const listItens = {
           'tamanho'
         ],
 
-  
       }
     ],
     longNeck: [
@@ -505,23 +504,13 @@ const listItens = {
         id: 48,
         name: 'Salgadinho Torcida',
         img: 'images/salgadinho-torcida.png',
-        price: [2.00],
-        sizes: [
-          'unidade',
-          'caixa',
-          'tamanho'
-        ],
+        price: [2.00]
       },
       {
         id: 49,
         name: 'Amendoim',
         img: 'images/amendoim.png',
-        price: [1.50],
-        sizes: [
-          'unidade',
-          'caixa',
-          'tamanho'
-        ],
+        price: [1.50]
       },
     ]
   }
