@@ -26,6 +26,7 @@ const abrirModal = () => {
     seleciona('.windowArea').style.opacity = 0 // transparente
     seleciona('.windowArea').style.display = 'flex'
     setTimeout(() => seleciona('.windowArea').style.opacity = 1, 150)
+    
 }
 
 const fecharModal = () => {
@@ -86,10 +87,12 @@ const preencherTamanhos = (key) => {
 const escolherTamanhoPreco = (key, type) => {
     // Ações nos botões de tamanho
     // selecionar todos os tamanhos
+    
     selecionaTodos('.itemInfo-size').forEach((size, sizeIndex) => {
         size.addEventListener('click', (e) => {
             // clicou em um item, tirar a selecao dos outros e marca o q vc clicou
             // ** tirar a selecao de tamanho atual e selecionar a caixa
+
             seleciona('.itemInfo-size.selected').classList.remove('selected')
             // marcar o que vc clicou, ao inves de usar e.target use size, pois ele é nosso item dentro do loop
             size.classList.add('selected')
@@ -117,7 +120,7 @@ const mudarQuantidade = () => {
 // /aula 05
 
 // aula 06
-const adicionarNoCarrinho = () => {
+const adicionarNoCarrinho = (key2, type) => {
     seleciona('.itemInfo--addButton').addEventListener('click', () => {
         console.log('Adicionar no carrinho')
 
@@ -129,20 +132,28 @@ const adicionarNoCarrinho = () => {
 	    console.log("Tamanho " + size)
 	    // quantidade
     	console.log("Quant. " + quantProduto)
+
+
+        console.log(type)
+        console.log(listItens.data[type][key2])
+
+        const newKey = listItens.data[type][key2]
+        console.log(newKey)
+        // const repo = newKey
+
         // preco
-        let price = seleciona('.itemInfo--actualPrice').innerHTML.replace('R$&nbsp;', '')
-        
-        const newKey = listItens.data[type][key]
-        const repo = listItens.data[type][newKey]
-        const ids = repo.reduce((ids, item) => item.id, [])
+        let price = size === "unidade" ? newKey.price[0] : newKey.price[1]; 
+        console.log(price)
+
+        // const ids = repo.reduce((ids, item) => item.id, [])
+
 
         // crie um identificador que junte id e tamanho
 	    // concatene as duas informacoes separadas por um símbolo, vc escolhe
-	    let identificador = ids+'t'+size
-
+	    let identificador = newKey.id
         // antes de adicionar verifique se ja tem aquele codigo e tamanho
         // para adicionarmos a quantidade
-        let key = cart.findIndex( (item) => item.identificador == identificador )
+        let key = cart.findIndex( (item) => item.id == identificador )
         console.log(key)
 
         if(key > -1) {
@@ -151,13 +162,15 @@ const adicionarNoCarrinho = () => {
         } else {
             // adicionar objeto produto no carrinho
             let produto = {
-                identificador,
-                id: listItens[modalKey].id,
+                id: identificador,
+                name: newKey.name,
+                img: newKey.img,
                 size, // size: size
                 qt: quantProduto,
-                price: parseFloat(price) // price: price
+                price, // price: price
             }
-            cart.push(produto)
+            console.log(cart)
+            cart = [...cart,produto]
             console.log(produto)
             console.log('Sub total R$ ' + (produto.qt * produto.price).toFixed(2))
         }
@@ -214,8 +227,7 @@ const atualizarCarrinho = () => {
         // para preencher os itens do carrinho, calcular subtotal
 		for(let i in cart) {
 			// use o find para pegar o item por id
-			let produtoItem = listItens.find( (item) => item.id == cart[i].id )
-			console.log(produtoItem)
+			let produtoItem = cart[i];			console.log(produtoItem)
 
             // em cada item pegar o subtotal
         	subtotal += cart[i].price * cart[i].qt
@@ -246,7 +258,7 @@ const atualizarCarrinho = () => {
 			cartItem.querySelector('.cart--item-qtmenos').addEventListener('click', () => {
 				console.log('Clicou no botão menos')
 				if(cart[i].qt > 1) {
-					// subtrair apenas a quantidade que esta neste contexto
+                    // subtrair apenas a quantidade que esta neste contexto
 					cart[i].qt--
 				} else {
 					// remover se for zero
@@ -295,15 +307,16 @@ const finalizarCompra = () => {
 function redenrizaItem (item, index, clas) {
     let produtoItem = document.querySelector('.models .produto-item').cloneNode(true)
     //console.log(produtoItem)
-        seleciona(clas).append(produtoItem)
+    seleciona(clas).append(produtoItem)
 
     // preencher os dados de cada produto
     preencheDadosDosProdutos(produtoItem, item, index, clas)
     
-    // produto clicada
+    console.log('adicionou evento')
+    // produto clicado
     produtoItem.querySelector('.produto-item a').addEventListener('click', (e) => {
         e.preventDefault()
-        console.log('Clicou na produto')
+        console.log('Clicou no produto')
 
         // aula 05
         let chave = pegarKey(e, 'data-key')
@@ -326,6 +339,7 @@ function redenrizaItem (item, index, clas) {
         // selecionar o tamanho e preco com o clique no botao
         escolherTamanhoPreco(chave, type)
         // /aula 05
+        adicionarNoCarrinho(chave,type)
 
     })
 
@@ -383,7 +397,7 @@ mudarQuantidade()
 // /aula 05
 
 // aula 06
-adicionarNoCarrinho()
+
 atualizarCarrinho()
 fecharCarrinho()
 finalizarCompra()

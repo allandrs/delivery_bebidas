@@ -183,12 +183,7 @@ const listItens = {
         id: 20,
         name: 'Quinta do Morgado',
         img: 'images/vinho-quinta.png',
-        price: [15.00],
-        sizes: [
-          'unidade',
-          'caixa',
-          'tamanho'
-        ],
+        price: [15.00]
  
   
       },
