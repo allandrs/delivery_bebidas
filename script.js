@@ -2,8 +2,15 @@
 // criar a variável modalKey sera global
 let modalKey = 0
 
+let keyAtual;
+
+let typeAtual;
+
+
 // variavel para controlar a quantidade inicial de produtos na modal
-let quantProduto = 1
+let quantProduto = 0
+
+
 
 let cart = [] // carrinho
 // /aula 05
@@ -120,8 +127,8 @@ const mudarQuantidade = () => {
 // /aula 05
 
 // aula 06
-const adicionarNoCarrinho = (keyNaCategoria, type) => {
-    seleciona('.itemInfo--addButton').addEventListener('click', () => {
+const adicionarNoCarrinho = () => {
+    
         console.log('Adicionar no carrinho')
 
         // pegar dados da janela modal atual
@@ -135,35 +142,39 @@ const adicionarNoCarrinho = (keyNaCategoria, type) => {
     	console.log("Quant. " + quantProduto)
 
 
-        console.log(type)
-        console.log(listItens.data[type][keyNaCategoria])
+        const product = listItens.data[typeAtual][keyAtual]
 
-        const newKey = listItens.data[type][keyNaCategoria]
-        // console.log(newKey)
-        // const repo = newKey
+
+        console.log(product)
+
+        // console.log(product)
+        // const repo = product
 
         // preco
-        let price = size === "unidade" ? newKey.price[0] : newKey.price[1];
+        let price = size === "unidade" ? product.price[0] : product.price[1];
 
         console.log(price)
 
         // const ids = repo.reduce((ids, item) => item.id, [])
 
-        console.log(keyNaCategoria)
 
         // crie um identificador que junte id e tamanho
 	    // concatene as duas informacoes separadas por um símbolo, vc escolhe
-	    let identificador = newKey.id+'t'+size
+	    let identificador = product.id+'t'+size
+
+        console.log(`IDENTIFICADOR ${identificador}`)
+
         // antes de adicionar verifique se ja tem aquele codigo e tamanho
         // para adicionarmos a quantidade
-        let key2 = cart.findIndex( (item) => item.id == identificador)
-        console.log(key2)
-        console.log(`CART: ${cart}`)
-        
-        if(key2 > -1) {
-        console.log(`quantidade de produto ${quantProduto}`)
+        let indexNoCart = cart.findIndex( (item) => item.identificador == identificador)
+
+        console.log(indexNoCart)
+
+
+        if(indexNoCart > -1) {
+
         if(quantProduto >= 1) {
-            cart[key2].qt += quantProduto
+            cart[indexNoCart].qt += quantProduto
 
         }
 
@@ -173,9 +184,9 @@ const adicionarNoCarrinho = (keyNaCategoria, type) => {
             // adicionar objeto produto no carrinho
             let produto = {
                 identificador,
-                id: newKey.id,
-                name: newKey.name,
-                img: newKey.img,
+                id: product.id,
+                name: product.name,
+                img: product.img,
                 size, // size: size
                 qt: quantProduto,
                 price, // price: price
@@ -189,7 +200,6 @@ const adicionarNoCarrinho = (keyNaCategoria, type) => {
         fecharModal()
         abrirCarrinho()
         atualizarCarrinho()
-    })
 }
 
 const abrirCarrinho = () => {
@@ -353,7 +363,8 @@ function redenrizaItem (item, index, clas) {
         // selecionar o tamanho e preco com o clique no botao
         escolherTamanhoPreco(chave, type)
         // /aula 05
-        adicionarNoCarrinho(chave,type)
+        keyAtual = chave;
+        typeAtual = type;
 
     })
 
