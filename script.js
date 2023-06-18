@@ -61,7 +61,7 @@ const pegarKey = (e, dataSet) => {
     // do .produto-item ele vai pegar o valor do atributo data-key
     let key = e.target.closest('.produto-item').getAttribute(dataSet)
     console.log('Produto clicado ' + key)
-    console.log(listItens[key])
+
 
     // garantir que a quantidade inicial de produto é 1
     quantProduto = 1
@@ -72,7 +72,7 @@ const pegarKey = (e, dataSet) => {
     return key
 }
 
-const preencherTamanhos = (key) => {
+const preencherTamanhos = () => {
     // tirar a selecao de tamanho atual e selecionar a unidade
     seleciona('.itemInfo-size.selected').classList.remove('selected')
 
@@ -120,13 +120,14 @@ const mudarQuantidade = () => {
 // /aula 05
 
 // aula 06
-const adicionarNoCarrinho = (key2, type) => {
+const adicionarNoCarrinho = (keyNaCategoria, type) => {
     seleciona('.itemInfo--addButton').addEventListener('click', () => {
         console.log('Adicionar no carrinho')
 
         // pegar dados da janela modal atual
     	// qual produto? pegue o modalKey para usar listItens[modalKey]
     	console.log("produto " + modalKey)
+
     	// tamanho
 	    let size = seleciona('.itemInfo-size.selected').getAttribute('data-key')
 	    console.log("Tamanho " + size)
@@ -135,34 +136,44 @@ const adicionarNoCarrinho = (key2, type) => {
 
 
         console.log(type)
-        console.log(listItens.data[type][key2])
+        console.log(listItens.data[type][keyNaCategoria])
 
-        const newKey = listItens.data[type][key2]
-        console.log(newKey)
+        const newKey = listItens.data[type][keyNaCategoria]
+        // console.log(newKey)
         // const repo = newKey
 
         // preco
-        let price = size === "unidade" ? newKey.price[0] : newKey.price[1]; 
+        let price = size === "unidade" ? newKey.price[0] : newKey.price[1];
+
         console.log(price)
 
         // const ids = repo.reduce((ids, item) => item.id, [])
 
+        console.log(keyNaCategoria)
 
         // crie um identificador que junte id e tamanho
 	    // concatene as duas informacoes separadas por um símbolo, vc escolhe
-	    let identificador = newKey.id
+	    let identificador = newKey.id+'t'+size
         // antes de adicionar verifique se ja tem aquele codigo e tamanho
         // para adicionarmos a quantidade
-        let key = cart.findIndex( (item) => item.id == identificador )
-        console.log(key)
+        let key2 = cart.findIndex( (item) => item.id == identificador)
+        console.log(key2)
+        console.log(`CART: ${cart}`)
+        
+        if(key2 > -1) {
+        console.log(`quantidade de produto ${quantProduto}`)
+        if(quantProduto >= 1) {
+            cart[key2].qt += quantProduto
 
-        if(key > -1) {
+        }
+
             // se encontrar aumente a quantidade
-            cart[key].qt += quantProduto
+            
         } else {
             // adicionar objeto produto no carrinho
             let produto = {
-                id: identificador,
+                identificador,
+                id: newKey.id,
                 name: newKey.name,
                 img: newKey.img,
                 size, // size: size
@@ -225,9 +236,12 @@ const atualizarCarrinho = () => {
 		let total    = 0
 
         // para preencher os itens do carrinho, calcular subtotal
+
 		for(let i in cart) {
 			// use o find para pegar o item por id
-			let produtoItem = cart[i];			console.log(produtoItem)
+			let produtoItem = cart[i];
+            // let produtoItem = produtoItem.find( (item) => item.id == cart[i].id)		
+            console.log(produtoItem);
 
             // em cada item pegar o subtotal
         	subtotal += cart[i].price * cart[i].qt
