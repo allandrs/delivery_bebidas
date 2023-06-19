@@ -138,7 +138,7 @@
         <aside>
             <div class="cart--area">
                 <div class="menu-closer">❌</div>
-                <h1>Suas Pizzas</h1>
+                <h1>Carrinho</h1>
                 <div class="cart"></div>
                 <div class="cart--details">
                     <div class="cart--totalitem subtotal">
@@ -153,11 +153,30 @@
                         <span>Total</span>
                         <span>R$ --</span>
                     </div>
-                    <div class="cart--finalizar">Finalizar a compra</div>
+                    <button class="cart--finalizar" onclick="finalizarCompra();openForm()">Finalizar a compra</button>
                 </div>
             </div>
         </aside>
-        <!-- /aside do carrinho -->
+
+
+        <!-- aside de finalização -->
+        <aside id="formEndereco">
+            <div class="cart--area">
+                <div class="menu-closer">❌</div>
+                <h1>Checkout</h1>
+                <form action="" autocomplete="off">
+                    <fieldset>
+                        <legend>Formulário</legend>
+                        <label for="">Nome</label><input class="campo_nome" type="text">
+                        <label for="">Telefone</label><input class="campo_telefone" type="number">
+                        <label for="">Nome</label><input class="campo_nome" type="text">
+                    </fieldset>
+                </form>
+                
+            </div>
+        </aside>
+        <!-- aside do carrinho -->
+
 
         <!-- janela modal .windowArea -->
         <div class="windowArea">

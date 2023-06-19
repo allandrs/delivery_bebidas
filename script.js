@@ -173,10 +173,7 @@ const adicionarNoCarrinho = () => {
 
         if(indexNoCart > -1) {
 
-        if(quantProduto >= 1) {
             cart[indexNoCart].qt += quantProduto
-
-        }
 
             // se encontrar aumente a quantidade
             
@@ -319,13 +316,18 @@ const atualizarCarrinho = () => {
 }
 
 const finalizarCompra = () => {
-    seleciona('.cart--finalizar').addEventListener('click', () => {
+    
         console.log('Finalizar compra')
         seleciona('aside').classList.remove('show')
         seleciona('aside').style.left = '100vw'
         seleciona('.cabecalho').style.display = 'flex'
-    })
 }
+const openForm = () => {
+    const form = document.getElementById('formEndereco')
+    console.log('disparei', form)
+    form.classList.add('show')
+}
+
 
 // /aula 06
 function redenrizaItem (item, index, clas) {
