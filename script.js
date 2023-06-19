@@ -316,16 +316,40 @@ const atualizarCarrinho = () => {
 }
 
 const finalizarCompra = () => {
-    
-        console.log('Finalizar compra')
-        seleciona('aside').classList.remove('show')
-        seleciona('aside').style.left = '100vw'
-        seleciona('.cabecalho').style.display = 'flex'
+    console.log('Finalizar compra')
+    seleciona('aside').classList.remove('show')
+    seleciona('aside').style.left = '100vw'
+    seleciona('.cabecalho').style.display = 'flex'
 }
+
+// FORMULARIO
 const openForm = () => {
     const form = document.getElementById('formEndereco')
     console.log('disparei', form)
     form.classList.add('show')
+}
+
+
+// WHATSAPP
+function whatsapp() {
+    let nameWpp = seleciona('.campo_nome').value;
+    let telefoneWpp = seleciona('.campo_telefone').value;
+    let ruaWpp = seleciona('.campo_rua').value;
+    let numeroWpp = seleciona('.campo_numero_endereco').value;
+    let referenciaWpp = seleciona('.campo_referencia').value;
+    let bairroWpp = seleciona('.campo_bairro').value;
+    let pagamentoWpp = seleciona('#pagamento').value;
+
+    let url = "https://wa.me/75991281921?text="
+    +"*Nome :* "+nameWpp+"%0a"
+    +"*Telefone :* "+telefoneWpp+"%0a"
+    +"*Rua :* "+ruaWpp+"%0a"
+    +"*Numero :* "+numeroWpp+"%0a"
+    +"*Referência :* "+referenciaWpp+"%0a"
+    +"*Bairro :* "+bairroWpp+"%0a"
+    +"*Pagamento :* "+pagamentoWpp+"%0a";
+
+    window.open(url, '_blank').focus();
 }
 
 

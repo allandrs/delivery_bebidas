@@ -11,6 +11,43 @@
 </head>
 
 <body>
+
+
+    <!-- modelos de produto na lista e no carrinho -->
+    <div class="models">
+        <!-- produto na lista -->
+        <div class="produto-item">
+            <a href="">
+                <div class="produto-item--img"><img src="" /></div>
+                <div class="produto-item--add" data-price="1">+</div>
+            </a>
+            <div class="produto-item--name">--</div>
+            <div class="produto-item--price" data-price="1">R$ --</div>
+            <div class="produto-item--desc"></div>
+        </div>
+    
+        <!-- produto no carrinho -->
+        <div class="cart--item">
+            <img src="" />
+            <div class="cart--item-nome">--</div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item--qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+    </div>
+    <!-- fim modelos de produto na lista e no carrinho -->
+
+    
+    <!-- .menu-openner aparecera no modo mobile -->
+    <div class="cabecalho">
+        <h1>Vila Beer</h1>
+        <div class="menu-openner"><span>0</span>🛒</div>
+    </div>
+    <!-- /menu-openner -->
+
+
     <header>
         <div id="logo">
             <img src="images/Vila-Beer.png" alt="">
@@ -24,199 +61,180 @@
             <a href="#">Contato</a>
         </nav>
     </header>
-
-    <div class="main">
-        <!-- ---- âncoras e pesquisa ---- -->
-        <div id="shortcut-container">
-            <div id="anchor">
-                <div class="icon-anchor" id="bebidas-anchor">
-                    <div class="background">
-                        <img src="/images/caixa-de-cerveja.png" alt="" class="icon">
-                    </div>
-                    <a href="#">Bebidas</a>
+        
+    <!-- ---- âncoras e pesquisa ---- -->
+    <div id="shortcut-container">
+        <div id="anchor">
+            <div class="icon-anchor" id="bebidas-anchor">
+                <div class="background">
+                    <img src="/images/caixa-de-cerveja.png" alt="" class="icon">
                 </div>
-                <div class="icon-anchor" id="long-neck-anchor">
-                    <div class="background">
-                        <img src="/images/long-neck.png" alt="" class="icon">
-                    </div>
-                    <a href="#">Long Neck</a>
-                </div>
-                <div class="icon-anchor" id="vinhos-anchor">
-                    <div class="background">
-                        <img src="/images/vinho.png" alt="" class="icon">
-                    </div>
-                    <a href="#">Vinhos e Espumantes</a>
-                </div>
-                <div class="icon-anchor" id="refrigerantes-anchor">
-                    <div class="background">
-                        <img src="/images/refrigerantes.png" alt="" class="icon">
-                    </div>
-                    <a href="#">Refrigerantes e Cia</a>
-                </div>
-                <div class="icon-anchor" id="gelo-anchor">
-                    <div class="background">
-                        <img src="/images/carvao.png" alt="" class="icon">
-                    </div>
-                    <a href="#">Gelo e Carvão</a>
-                </div>
+                <a href="#">Bebidas</a>
             </div>
-            <div id="search">
-                <label for=""></label>
-                <input type="text">
+            <div class="icon-anchor" id="long-neck-anchor">
+                <div class="background">
+                    <img src="/images/long-neck.png" alt="" class="icon">
+                </div>
+                <a href="#">Long Neck</a>
+            </div>
+            <div class="icon-anchor" id="vinhos-anchor">
+                <div class="background">
+                    <img src="/images/vinho.png" alt="" class="icon">
+                </div>
+                <a href="#">Vinhos e Espumantes</a>
+            </div>
+            <div class="icon-anchor" id="refrigerantes-anchor">
+                <div class="background">
+                    <img src="/images/refrigerantes.png" alt="" class="icon">
+                </div>
+                <a href="#">Refrigerantes e Cia</a>
+            </div>
+            <div class="icon-anchor" id="gelo-anchor">
+                <div class="background">
+                    <img src="/images/carvao.png" alt="" class="icon">
+                </div>
+                <a href="#">Gelo e Carvão</a>
             </div>
         </div>
+        <div id="search">
+            <label for=""></label>
+            <input type="text">
+        </div>
+    </div>
+    <!-- ---- fim âncoras e pesquisa ---- -->
 
 
-        <!-- modelos de produto na lista e no carrinho -->
-        <div class="models">
+    <!-- conteudo principal -->
+    <main>
+        <h2>Bebidas</h2>
+    
+        <div class="produto-area" id="bebidas"></div>
+    
+        <h2>Long Neck</h2>
+    
+        <div class="produto-area" id="longNeck"></div>
+    
+        <h2>Vinhos e Espumantes</h2>
+    
+        <div class="produto-area" id="vinhosEspumantes"></div>
+    
+        <h2>Refrigerantes e Cia</h2>
+    
+        <div class="produto-area" id="refrigerantesCia"></div>
+    
+        <h2>Bebidas quentes e destilados</h2>
+    
+        <div class="produto-area" id="bebidasQuentes"></div>
+    
+        <h2>Gelo e Carvão</h2>
+    
+        <div class="produto-area" id="geloCarvao"></div>
+    
+        <h2>Consumíveis</h2>
+    
+        <div class="produto-area" id="consumiveis"></div>
+    
+    </main>
+    <!-- /conteudo principal -->
 
-            <!-- produto na lista -->
-            <div class="produto-item">
-                <a href="">
-                    <div class="produto-item--img"><img src="" /></div>
-                    <div class="produto-item--add" data-price="1">+</div>
-                </a>
-                <div class="produto-item--name">--</div>
-                <div class="produto-item--price" data-price="1">R$ --</div>
-                <div class="produto-item--desc"></div>
+    <!-- aside do carrinho -->
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Carrinho</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem desconto">
+                    <span>Desconto</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem total big">
+                    <span>Total</span>
+                    <span>R$ --</span>
+                </div>
+                <button class="cart--finalizar" onclick="finalizarCompra();openForm()">Finalizar a compra</button>
             </div>
+        </div>
+    </aside>
+    <!-- fim aside do carrinho -->
+            
+    <!-- aside de finalização -->
+    <aside id="formEndereco">
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Checkout</h1>
+            <form action="" autocomplete="off">
+                <fieldset>
+                    <legend>Dados do cliente</legend>
+                    <label for="">Nome</label><input class="campo_nome" type="text">
+                    <label for="">Telefone</label><input class="campo_telefone" type="number">
+                </fieldset>
+                <fieldset>
+                    <legend>Informações de entrega</legend>
+                    <label for="">Nome da rua</label><input class="campo_rua" type="text">
+                    <label for="">Número do endereço</label><input class="campo_numero_endereco" type="text">
+                    <label for="">Ponto de referência</label><input class="campo_referencia" type="text">
+                    <label for="">Bairro</label><input class="campo_bairro" type="text">
+                </fieldset>
+                <fieldset>
+                    <legend>Pagamento</legend>
+                    <label for="pagamento" id="campo_pagamento">Método de pagamento</label>
+                    <select name="pagamento" id="pagamento">
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="credito">Cartão de Crédito</option>
+                        <option value="debitos">Cartão de Débito</option>
+                        <option value="pix">Pix</option>
+                    </select>
+                </fieldset>
+    
+            </form>
+            <button id="whatsapp" onclick="whatsapp()">Enviar para o Whatsapp</button>
+        </div>
+    </aside>
+    <!-- fim aside de finalização -->
 
-            <!-- produto no carrinho -->
-            <div class="cart--item">
+
+    <!-- janela modal .windowArea -->
+    <div class="windowArea">
+        <div class="windowBody">
+            <div class="itemInfo--cancelMobileButton">Voltar</div>
+            <div class="produtoBig">
                 <img src="" />
-                <div class="cart--item-nome">--</div>
-                <div class="cart--item--qtarea">
-                    <button class="cart--item-qtmenos">-</button>
-                    <div class="cart--item--qt">1</div>
-                    <button class="cart--item-qtmais">+</button>
-                </div>
             </div>
-        </div>
-        <!-- /models -->
-
-        <!-- .menu-openner aparecera no modo mobile -->
-        <div class="cabecalho">
-            <h1>Vila Beer</h1>
-            <div class="menu-openner"><span>0</span>🛒</div>
-        </div>
-        <!-- /menu-openner -->
-
-        <!-- conteudo principal -->
-        <main>
-            <h2>Bebidas</h2>
-
-            <div class="produto-area" id="bebidas"></div>
-
-            <h2>Long Neck</h2>
-
-            <div class="produto-area" id="longNeck"></div>
-
-            <h2>Vinhos e Espumantes</h2>
-
-            <div class="produto-area" id="vinhosEspumantes"></div>
-
-            <h2>Refrigerantes e Cia</h2>
-
-            <div class="produto-area" id="refrigerantesCia"></div>
-
-            <h2>Bebidas quentes e destilados</h2>
-
-            <div class="produto-area" id="bebidasQuentes"></div>
-
-            <h2>Gelo e Carvão</h2>
-
-            <div class="produto-area" id="geloCarvao"></div>
-
-            <h2>Consumíveis</h2>
-
-            <div class="produto-area" id="consumiveis"></div>
-
-        </main>
-        <!-- /conteudo principal -->
-
-        <!-- aside do carrinho -->
-        <aside>
-            <div class="cart--area">
-                <div class="menu-closer">❌</div>
-                <h1>Carrinho</h1>
-                <div class="cart"></div>
-                <div class="cart--details">
-                    <div class="cart--totalitem subtotal">
-                        <span>Subtotal</span>
-                        <span>R$ --</span>
-                    </div>
-                    <div class="cart--totalitem desconto">
-                        <span>Desconto</span>
-                        <span>R$ --</span>
-                    </div>
-                    <div class="cart--totalitem total big">
-                        <span>Total</span>
-                        <span>R$ --</span>
-                    </div>
-                    <button class="cart--finalizar" onclick="finalizarCompra();openForm()">Finalizar a compra</button>
-                </div>
-            </div>
-        </aside>
-
-
-        <!-- aside de finalização -->
-        <aside id="formEndereco">
-            <div class="cart--area">
-                <div class="menu-closer">❌</div>
-                <h1>Checkout</h1>
-                <form action="" autocomplete="off">
-                    <fieldset>
-                        <legend>Formulário</legend>
-                        <label for="">Nome</label><input class="campo_nome" type="text">
-                        <label for="">Telefone</label><input class="campo_telefone" type="number">
-                        <label for="">Nome</label><input class="campo_nome" type="text">
-                    </fieldset>
-                </form>
-                
-            </div>
-        </aside>
-        <!-- aside do carrinho -->
-
-
-        <!-- janela modal .windowArea -->
-        <div class="windowArea">
-            <div class="windowBody">
-                <div class="itemInfo--cancelMobileButton">Voltar</div>
-                <div class="produtoBig">
-                    <img src="" />
-                </div>
-                <div class="itemInfo">
-                    <h1>--</h1>
-                    <div class="itemInfo--desc"></div>
-                    <div class="itemInfo--sizearea">
-                        <div class="itemInfo--sector">Quantidade</div>
-                        <div class="itemInfo--sizes">
-                            <div data-key="unidade" class="itemInfo-size ">UNIDADE
-                            </div>
-                            <div data-key="caixa" class="itemInfo-size selected">CAIXA 
-                            </div>
-                            <!-- <div data-key="G" class="itemInfo-size">GRANDE
-                            </div> -->
+            <div class="itemInfo">
+                <h1>--</h1>
+                <div class="itemInfo--desc"></div>
+                <div class="itemInfo--sizearea">
+                    <div class="itemInfo--sector">Quantidade</div>
+                    <div class="itemInfo--sizes">
+                        <div data-key="unidade" class="itemInfo-size ">UNIDADE
+                        </div>
+                        <div data-key="caixa" class="itemInfo-size selected">CAIXA
                         </div>
                     </div>
-                    <div class="itemInfo--pricearea">
-                        <div class="itemInfo--sector">Preço</div>
-                        <div class="itemInfo--price">
-                            <div class="itemInfo--actualPrice">R$ --</div>
-                            <div class="itemInfo--qtarea">
-                                <button class="itemInfo--qtmenos">-</button>
-                                <div class="itemInfo--qt">1</div>
-                                <button class="itemInfo--qtmais">+</button>
-                            </div>
+                </div>
+                <div class="itemInfo--pricearea">
+                    <div class="itemInfo--sector">Preço</div>
+                    <div class="itemInfo--price">
+                        <div class="itemInfo--actualPrice">R$ --</div>
+                        <div class="itemInfo--qtarea">
+                            <button class="itemInfo--qtmenos">-</button>
+                            <div class="itemInfo--qt">1</div>
+                            <button class="itemInfo--qtmais">+</button>
                         </div>
                     </div>
-                    <button class="itemInfo--addButton" onclick="adicionarNoCarrinho()">Adicionar ao carrinho</button>
-                    <div class="itemInfo--cancelButton">Cancelar</div>
                 </div>
+                <button class="itemInfo--addButton" onclick="adicionarNoCarrinho()">Adicionar ao carrinho</button>
+                <div class="itemInfo--cancelButton">Cancelar</div>
             </div>
         </div>
-
-        <!-- /janela modal .windowArea -->
+    </div>
+    
+    <!-- /janela modal .windowArea -->
 
 
         <!-- INSTAGRAM -->
@@ -234,8 +252,7 @@
     </div>
 
 
-        <!-- RODAPE -->
-
+    <!-- RODAPE -->
     <footer>
         <div class="last-container">
             <div class="logo-footer">
@@ -254,19 +271,13 @@
                 <img src="#" alt="">
                 <img src="#" alt="">
             </div>
-    <div>
-
-
-
-        <div class="direitos">
-            <p>©2022 Designed By Allan Douglas Code. | All Rights Reserved.</p>
-        </div>
-    </div>
-            
-
-        </div>
-
+        <div>
+            <div class="direitos">
+                <p>©2022 Designed By Allan Douglas Code. | All Rights Reserved.</p>
+            </div>
+        </div>   
     </footer>
+
         <script src="itens.js"></script>
         <script src="script.js"></script>
 </body>

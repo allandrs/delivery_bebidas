@@ -1,111 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap');
 
-/* .container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-} */
-
-/* cabeçalho */
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-#logo img {
-    width: 250px;
-    height: 250px;
-    margin-top: 80px;
-}
-
-#social img{
-    width: 25px;
-    height: 25px;
-    margin-bottom: 5px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 84px;
-    background-color: #eba324;
-    padding: 15px 0;
-}
-
-nav a {
-    color:#000000;
-    font-weight: 600;
-    font-size: 16px;
-    white-space: nowrap;
-} */
-
-/* âncora e pesquisa */
-.main {
-    width: 100vw;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-}
-
-#shortcut-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 100px;
-    width: 100%;
-}
-
-#anchor {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.icon-anchor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.icon {
-    width: 25px;
-}
-
-.background {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    background-color: rgb(172, 172, 172);
-    margin: 10px;
-    border-radius: 50%;
-}
-
-
-.icon-anchor a {
-    font-size: 12px;
-    font-weight: 600;
-    color: rgb(172, 172, 172);
-    white-space: nowrap;
-} 
-
-
-
-
-
-
-
-
 * {
     box-sizing: border-box;
     text-decoration: none;
@@ -115,6 +9,8 @@ body {
     background-color:#EEE;
     font-family:'Lato', Helvetica, Arial;
     font-size:15px;
+    display: flex;
+    flex-direction: column;
     margin:0;
     min-height:100vh;
 }
@@ -177,53 +73,131 @@ aside.show {
 .cart--area {
     margin-top: 30px; /* ajuste */
     padding:20px;
+
 }
 
 .cart--area h1 {
     display: relative;
 }
 
+
+/* cabeçalho */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#logo img {
+    width: 250px;
+    height: 250px;
+    margin-top: 80px;
+}
+
+#social img{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 84px;
+    background-color: #eba324;
+    padding: 15px 0;
+}
+
+nav a {
+    color:#000000;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+} */
+
+/* âncora e pesquisa */
+.main {
+    flex: 1;
+    width: 100vw;
+    padding: 20px 0;
+
+}
+
+#shortcut-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 100px;
+    width: 100%;
+}
+
+#anchor {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-anchor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width: 25px;
+}
+
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(172, 172, 172);
+    margin: 10px;
+    border-radius: 50%;
+}
+
+
+.icon-anchor a {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(172, 172, 172);
+    white-space: nowrap;
+} 
+
+
+
+
+
+
+/* FORMULARIO INICIO */
 input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
 }
 
-fieldset
-{
-  width:300px;
-  height:250px;
+fieldset {
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-legend
-{
-  font-style:bold;
-  font-family: "Segoe UI";
-}
-#formulario label
-{
-  position:absolute;
-  left:19px;
-  margin-right:5px;
+#whatsapp {
+    width: 100px;
+    border-radius: 5px;
+    background-color:#32a345;
+    color: white;
+    margin-left: 100px;
 }
 
+/* FORMULARIO FIM */
 
-#formulario input.campo_nome
-{
-  position:absolute;
-  left:95px;
-  top:23px;
-  width:225px;
-}
-#formulario input.campo_email
-{
-  position:absolute;
-  left:95px;
-  margin-top:2px;
-  width:225px;
-}
 
 main {
     flex:1;
@@ -344,7 +318,7 @@ h2 {
     border-radius:10px;
     box-shadow:0px 0px 15px #999;
     display:flex;
-    margin:20px 0px;
+    margin: 20px 0px;
 }
 
 .produtoBig {
@@ -717,9 +691,11 @@ footer {
         top:0;
         bottom:0;
         transition: all ease .2s;
+        display: none;
     }
     aside.show {
         width:auto;
+        display: block;
     }
     .cart--area {
         width:100vw;
@@ -809,7 +785,7 @@ footer {
 
 
 
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
 #shortcut-container {
     display: flex;
     flex-direction: column;
@@ -849,4 +825,4 @@ nav:hover .dropdown-content {
     display: block;
 }
 
-}
+} */
