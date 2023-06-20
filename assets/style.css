@@ -58,21 +58,35 @@ body {
 
 aside {
     background-color:#ffcdd2;
-    width:0vw;
+    width:30vw;
     font-family:'Hepta Slab', Helvetica, Arial;
-    transition:all ease .2s;
-    overflow-x:hidden;
-    display: none;
+    transition:all ease .1s;
+    overflow-x: hidden;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    z-index: 999;
+    margin-top: 60px;
 }
 
 aside.show {
-    width:30vw;
-    display: block;
+    visibility: visible;
+    background-color:#eba324;
 }
+
+
 
 .cart--area {
     margin-top: 30px; /* ajuste */
     padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -80,6 +94,30 @@ aside.show {
     display: relative;
 }
 
+#cart--area-endereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 250px;
+    font-weight: 500;
+}
+
+legend {
+    font-weight: bolder;
+}
+
+#recolher {
+    margin-right: 328px;
+    height: 30px;
+}
+
+#voltar {
+    margin-right: 328px;
+    height: 30px;
+}
 
 /* cabeçalho */
 header {
@@ -193,7 +231,7 @@ fieldset {
     border-radius: 5px;
     background-color:#32a345;
     color: white;
-    margin-left: 100px;
+    margin: 5px;
 }
 
 /* FORMULARIO FIM */
@@ -469,17 +507,16 @@ margin-top:50px;
 .cart--item {
     display:flex;
     align-items:center;
-    margin:10px 0;
 }
 
 .cart--item img {
-    width:40px;
-    height:40px;
-    margin-right:20px;
+    width:70px;
+    height:70px
 }
 
 .cart--item-nome {
     flex:1;
+    padding-right: 3px;
 }
 
 .cart--item--qtarea {
@@ -526,6 +563,10 @@ margin-top:50px;
     font-weight: bold;
 }
 
+.cart--details {
+    width: 80%;
+}
+
 .cart--finalizar {
     padding:20px 30px;
     border-radius:20px;
@@ -545,11 +586,19 @@ margin-top:50px;
 
 /* Instagram */
 
+#instagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
 
 #insta-div {
     display: flex;
     align-items: center;
     gap: 8px;
+
 }
 
 #insta-div img {
@@ -558,11 +607,14 @@ margin-top:50px;
     margin-bottom: 5px;
 }
 
-#instagram {
+#siganos {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+}
+
+#siganos button {
+    width: 80px;
 }
 
 
@@ -571,7 +623,7 @@ margin-top:50px;
 footer {
     background-color: #eba324;
     width: 100%;
-    height: 110px;
+    height: 150px;
 
 }
 
@@ -579,25 +631,25 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
-}
-
-.last-container * {
     padding: 0px 20px;
+
 }
+
+
 
 .logo-footer img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
 }
 
-.horario {
+#sociais {
     display: flex;
     flex-direction: column;
     color: #fff;
+    margin-bottom: 35px;
 }
 
-.horario a {
+#sociais a {
     color: #fff;
     font-size: 15px;
     font-weight: 300;
@@ -605,11 +657,11 @@ footer {
     transition: 0.3ms;
 }
 
-.horario h3 {
+#sociais h3 {
     font-size: 18px;
 }
 
-.horario a:hover {
+#sociais a:hover {
     opacity: 1;
 }
 
@@ -653,13 +705,14 @@ footer {
     opacity: 1;
 }
 
-.direitos {
+#direitos {
     font-size: 11px;
     color: #fff;
     opacity: 0.7;
+    margin-top: 110px;
 }
 
-@media (max-width:1000px) {
+/* @media (max-width:1000px) {
     .produto-area {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -678,25 +731,8 @@ footer {
     header {
         display:flex;
     }
-    /*
-    main {
-        padding-top:60px;
-    }
-    */
-    aside {
-        width:auto;
-        position:fixed;
-        left:100vw;
-        right:0;
-        top:0;
-        bottom:0;
-        transition: all ease .2s;
-        display: none;
-    }
-    aside.show {
-        width:auto;
-        display: block;
-    }
+
+
     .cart--area {
         width:100vw;
     }
@@ -775,7 +811,7 @@ footer {
     .menu-openner {
         font-size: 1.5rem;
     }
-}
+} */
 
 #img-logo {
     width: 50px;
@@ -826,3 +862,4 @@ nav:hover .dropdown-content {
 }
 
 } */
+

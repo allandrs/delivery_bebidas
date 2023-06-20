@@ -69,31 +69,32 @@
                 <div class="background">
                     <img src="/images/caixa-de-cerveja.png" alt="" class="icon">
                 </div>
-                <a href="#">Bebidas</a>
+                <a href="http://127.0.0.1:50141/index.html/#bebidas_link">Bebidas</a>
             </div>
             <div class="icon-anchor" id="long-neck-anchor">
                 <div class="background">
                     <img src="/images/long-neck.png" alt="" class="icon">
                 </div>
-                <a href="#">Long Neck</a>
+                <a href="http://127.0.0.1:50141/index.html/#longneck_link">Long Neck</a>
             </div>
             <div class="icon-anchor" id="vinhos-anchor">
                 <div class="background">
                     <img src="/images/vinho.png" alt="" class="icon">
                 </div>
-                <a href="#">Vinhos e Espumantes</a>
+                <a href="http://127.0.0.1:50141/index.html/#vinhos_link">Vinhos e Espumantes</a>
             </div>
             <div class="icon-anchor" id="refrigerantes-anchor">
                 <div class="background">
                     <img src="/images/refrigerantes.png" alt="" class="icon">
                 </div>
-                <a href="#">Refrigerantes e Cia</a>
+                <a href="http://127.0.0.1:50141/index.html/#refrigerantes_link">Refrigerantes e Cia</a>
             </div>
             <div class="icon-anchor" id="gelo-anchor">
                 <div class="background">
                     <img src="/images/carvao.png" alt="" class="icon">
                 </div>
-                <a href="#">Gelo e Carvão</a>
+                <a href="http://127.0.0.1:50141/index.html/#gelo_link">Gelo e Carvão</a>
+
             </div>
         </div>
         <div id="search">
@@ -107,28 +108,29 @@
     <!-- conteudo principal -->
     <main>
         <h2>Bebidas</h2>
-    
+        <p id="bebidas_link"></p>
         <div class="produto-area" id="bebidas"></div>
     
         <h2>Long Neck</h2>
-    
+        <p id="longneck_link"></p>
         <div class="produto-area" id="longNeck"></div>
     
         <h2>Vinhos e Espumantes</h2>
-    
-        <div class="produto-area" id="vinhosEspumantes"></div>
+        <p id="vinhos_link"></p>
+        <div class="produto-area" id="vinhoEspumantes"></div>
     
         <h2>Refrigerantes e Cia</h2>
-    
+        <p id="refrigerantes_link"></p>
         <div class="produto-area" id="refrigerantesCia"></div>
     
         <h2>Bebidas quentes e destilados</h2>
-    
+        <p id="bebidasquentes_link"></p>
         <div class="produto-area" id="bebidasQuentes"></div>
     
         <h2>Gelo e Carvão</h2>
-    
+        <p id="gelo_link"></p>
         <div class="produto-area" id="geloCarvao"></div>
+
     
         <h2>Consumíveis</h2>
     
@@ -138,7 +140,7 @@
     <!-- /conteudo principal -->
 
     <!-- aside do carrinho -->
-    <aside>
+    <aside id="aside_carrinho">
         <div class="cart--area">
             <div class="menu-closer">❌</div>
             <h1>Carrinho</h1>
@@ -156,17 +158,20 @@
                     <span>Total</span>
                     <span>R$ --</span>
                 </div>
-                <button class="cart--finalizar" onclick="finalizarCompra();openForm()">Finalizar a compra</button>
             </div>
+            <button class="cart--finalizar" onclick="finalizarCompra();openForm()">Finalizar a compra</button>
+            <button id="recolher" onclick="recolherAside()">>></button>
         </div>
     </aside>
     <!-- fim aside do carrinho -->
             
     <!-- aside de finalização -->
-    <aside id="formEndereco">
-        <div class="cart--area">
+    <aside id="aside_endereco">
+        <div id="cart--area-endereco">
             <div class="menu-closer">❌</div>
+            <button id="voltar" onclick="voltarCarrinho()"><<</button>
             <h1>Checkout</h1>
+
             <form action="" autocomplete="off">
                 <fieldset>
                     <legend>Dados do cliente</legend>
@@ -190,7 +195,7 @@
                         <option value="pix">Pix</option>
                     </select>
                 </fieldset>
-    
+                
             </form>
             <button id="whatsapp" onclick="whatsapp()">Enviar para o Whatsapp</button>
         </div>
@@ -244,8 +249,7 @@
             <h1>vilabeer</h1>
         </div>
 
-        <div>
-
+        <div id="siganos">
             <p>Estamos no instagram</p>
             <button>SIGA-NOS</button>
         </div>
@@ -258,26 +262,28 @@
             <div class="logo-footer">
                 <img src="/images/Vila-Beer.png" alt="">
             </div>
-            <div class="horario">
+            <div id="sociais">
                 <h3>REDES SOCIAIS</h3>
                 <a href="">Facebook</a>
                 <a href="">Instagram</a>
             </div>
             <div class="formas-de-pagamento">
-                <H3>Formas de pagamento</H3>
+                <H3>FORMAS DE PAGAMENTO</H3>
                 <a href="">Cartão de credito</a>
+                <a href="">Cartão de débito</a>
+                <a href="">Dinheiro</a>
+                <a href="">Pix</a>
             </div>
             <div class="social-media">
                 <img src="#" alt="">
                 <img src="#" alt="">
             </div>
         <div>
-            <div class="direitos">
+            <div id="direitos">
                 <p>©2022 Designed By Allan Douglas Code. | All Rights Reserved.</p>
             </div>
         </div>   
     </footer>
-
         <script src="itens.js"></script>
         <script src="script.js"></script>
 </body>

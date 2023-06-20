@@ -322,9 +322,26 @@ const finalizarCompra = () => {
     seleciona('.cabecalho').style.display = 'flex'
 }
 
+// RECOLHER ASIDE
+const recolherAside = () => {
+    console.log('teste botao recolher')
+    seleciona('aside').classList.remove('show')
+}
+
+// VOLTAR AO CARRINHO
+// const voltarCarrinho = () => {
+//     console.log('teste voltar ao carrinho');
+//     seleciona('#aside_carrinho').classList.remove('show')
+//     seleciona('#aside_carrinho').style.left = '0'
+//     seleciona('#aside_endereco').classList.remove('show')
+
+// }
+
+
+
 // FORMULARIO
 const openForm = () => {
-    const form = document.getElementById('formEndereco')
+    const form = seleciona('#aside_endereco')
     console.log('disparei', form)
     form.classList.add('show')
 }
@@ -339,15 +356,20 @@ function whatsapp() {
     let referenciaWpp = seleciona('.campo_referencia').value;
     let bairroWpp = seleciona('.campo_bairro').value;
     let pagamentoWpp = seleciona('#pagamento').value;
+    let itensCart = cart.map(nome => cart.name(nome))
+    console.log(itensCart)
 
-    let url = "https://wa.me/75991281921?text="
+    // let url = "https://wa.me/75991281921?text="
+    let url = "https://wa.me/55997323505?text="
     +"*Nome :* "+nameWpp+"%0a"
     +"*Telefone :* "+telefoneWpp+"%0a"
     +"*Rua :* "+ruaWpp+"%0a"
     +"*Numero :* "+numeroWpp+"%0a"
     +"*Referência :* "+referenciaWpp+"%0a"
     +"*Bairro :* "+bairroWpp+"%0a"
-    +"*Pagamento :* "+pagamentoWpp+"%0a";
+    +"*Pagamento :* "+pagamentoWpp+"%0a"
+    // +"*Produto :*
+    ;
 
     window.open(url, '_blank').focus();
 }
@@ -412,7 +434,7 @@ listItens.data.longNeck.map((item, index) => {
 
 listItens.data.vinhoEspumantes.map((item, index) => {
     //console.log(item)
-    redenrizaItem(item, index, '#vinhosEspumantes')
+    redenrizaItem(item, index, '#vinhoEspumantes')
 
 })
 
@@ -444,12 +466,12 @@ listItens.data.consumiveis.map((item, index) => {
 
 // aula 05
 // mudar quantidade com os botoes + e -
-mudarQuantidade()
+/* mudarQuantidade()
 // /aula 05
 
 // aula 06
 
 atualizarCarrinho()
 fecharCarrinho()
-finalizarCompra()
+finalizarCompra() */
 // /aula 06
