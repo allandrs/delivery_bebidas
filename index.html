@@ -73,7 +73,7 @@
             </div>
             <div class="icon-anchor" id="long-neck-anchor">
                 <div class="background">
-                    <img src="/images/long-neck.png" alt="" class="icon">
+                    <img src="/images/long-neck.png" alt="" class="icon" href="http://127.0.0.1:50141/index.html/#longneck_link">
                 </div>
                 <a href="http://127.0.0.1:50141/index.html/#longneck_link">Long Neck</a>
             </div>
@@ -162,14 +162,17 @@
             <button class="cart--finalizar" onclick="finalizarCompra();openForm()">Finalizar a compra</button>
             <button id="recolher" onclick="recolherAside()">>></button>
         </div>
+        <div class="button_cart">
+
+        </div>
     </aside>
     <!-- fim aside do carrinho -->
             
     <!-- aside de finalização -->
     <aside id="aside_endereco">
         <div id="cart--area-endereco">
-            <div class="menu-closer">❌</div>
-            <button id="voltar" onclick="voltarCarrinho()"><<</button>
+            <div class="menu-closer" onclick="recolherAside()">❌</div>
+            <button id="voltar" onclick="recolherAside()"><<</button>
             <h1>Checkout</h1>
 
             <form action="" autocomplete="off">
@@ -227,9 +230,9 @@
                     <div class="itemInfo--price">
                         <div class="itemInfo--actualPrice">R$ --</div>
                         <div class="itemInfo--qtarea">
-                            <button class="itemInfo--qtmenos">-</button>
+                            <button class="itemInfo--qtmenos" onclick="mudarQtdMenos()">-</button>
                             <div class="itemInfo--qt">1</div>
-                            <button class="itemInfo--qtmais">+</button>
+                            <button class="itemInfo--qtmais" onclick="mudarQtdMais()">+</button>
                         </div>
                     </div>
                 </div>
@@ -263,9 +266,8 @@
                 <img src="/images/Vila-Beer.png" alt="">
             </div>
             <div id="sociais">
-                <h3>REDES SOCIAIS</h3>
-                <a href="">Facebook</a>
-                <a href="">Instagram</a>
+                <h3>HORÁRIO DE FUNCIONAMENTO</h3>
+                <p href="">Seg à Sáb: 18:00h às 22:30h</p>
             </div>
             <div class="formas-de-pagamento">
                 <H3>FORMAS DE PAGAMENTO</H3>

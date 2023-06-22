@@ -110,21 +110,39 @@ const escolherTamanhoPreco = (key, type) => {
     })
 }
 
-const mudarQuantidade = () => {
-    // Ações nos botões + e - da janela modal
-    seleciona('.itemInfo--qtmais').addEventListener('click', () => {
-        quantProduto++
-        seleciona('.itemInfo--qt').innerHTML = quantProduto
-    })
 
-    seleciona('.itemInfo--qtmenos').addEventListener('click', () => {
-        if(quantProduto > 1) {
-            quantProduto--
-            seleciona('.itemInfo--qt').innerHTML = quantProduto	
-        }
-    })
+
+//MUDAR A QUANTIDADE BOTÕES + e - da janela modal
+// const mudarQuantidade = () => {
+function mudarQtdMais() {
+    quantProduto++
+    seleciona('.itemInfo--qt').innerHTML = quantProduto
+
 }
+function mudarQtdMenos() {
+    if(quantProduto > 1) {
+        quantProduto--
+        seleciona('.itemInfo--qt').innerHTML = quantProduto	
+    }
+}
+// }
 // /aula 05
+// const mudarQuantidade = () => {
+//     // Ações nos botões + e - da janela modal
+//     seleciona('.pizzaInfo--qtmais').addEventListener('click', () => {
+//         quantPizzas++
+//         seleciona('.pizzaInfo--qt').innerHTML = quantPizzas
+//     })
+
+//     seleciona('.pizzaInfo--qtmenos').addEventListener('click', () => {
+//         if(quantPizzas > 1) {
+//             quantPizzas--
+//             seleciona('.pizzaInfo--qt').innerHTML = quantPizzas	
+//         }
+//     })
+// }
+
+
 
 // aula 06
 const adicionarNoCarrinho = () => {
@@ -204,6 +222,8 @@ const abrirCarrinho = () => {
     if(cart.length > 0) {
         // mostrar o carrinho
 	    seleciona('aside').classList.add('show')
+        // seleciona('aside').style.left = '0vw' // usando 0vw ele ficara na tela
+        seleciona('aside').style.right = '0vw'
         seleciona('.cabecalho').style.display = 'flex' // mostrar barra superior
     }
     
@@ -211,7 +231,7 @@ const abrirCarrinho = () => {
     seleciona('.menu-openner').addEventListener('click', () => {
         if(cart.length > 0) {
             seleciona('aside').classList.add('show')
-            seleciona('aside').style.left = '0'
+            seleciona('aside').style.left = '0vw'
         }
     })
 }
@@ -219,7 +239,7 @@ const abrirCarrinho = () => {
 const fecharCarrinho = () => {
     // fechar o carrinho com o botão X no modo mobile
     seleciona('.menu-closer').addEventListener('click', () => {
-        seleciona('aside').style.left = '100vw' // usando 100vw ele ficara fora da tela
+        seleciona('aside').style.left = '150vw' // usando 100vw ele ficara fora da tela
         seleciona('.cabecalho').style.display = 'flex'
     })
 }
@@ -311,22 +331,18 @@ const atualizarCarrinho = () => {
 	} else {
 		// ocultar o carrinho
 		seleciona('aside').classList.remove('show')
-		seleciona('aside').style.left = '100vw'
+		// seleciona('aside').style.left = '100vw'
 	}
 }
 
 const finalizarCompra = () => {
     console.log('Finalizar compra')
     seleciona('aside').classList.remove('show')
-    seleciona('aside').style.left = '100vw'
+    seleciona('aside').style.left = '150vw'
     seleciona('.cabecalho').style.display = 'flex'
 }
 
-// RECOLHER ASIDE
-const recolherAside = () => {
-    console.log('teste botao recolher')
-    seleciona('aside').classList.remove('show')
-}
+
 
 // VOLTAR AO CARRINHO
 // const voltarCarrinho = () => {
@@ -346,6 +362,12 @@ const openForm = () => {
     form.classList.add('show')
 }
 
+// RECOLHER ASIDE
+const recolherAside = () => {
+    console.log('teste botao recolher')
+    seleciona('aside').classList.remove('show')
+}
+
 
 // WHATSAPP
 function whatsapp() {
@@ -356,8 +378,12 @@ function whatsapp() {
     let referenciaWpp = seleciona('.campo_referencia').value;
     let bairroWpp = seleciona('.campo_bairro').value;
     let pagamentoWpp = seleciona('#pagamento').value;
-    let itensCart = cart.map(nome => cart.name(nome))
-    console.log(itensCart)
+    let itens = cart.map(produto => Object.values({
+        nome: produto.name,
+        qtd: produto.qt
+    }).join(': '));
+
+    console.log(itens)
 
     // let url = "https://wa.me/75991281921?text="
     let url = "https://wa.me/55997323505?text="
@@ -368,8 +394,7 @@ function whatsapp() {
     +"*Referência :* "+referenciaWpp+"%0a"
     +"*Bairro :* "+bairroWpp+"%0a"
     +"*Pagamento :* "+pagamentoWpp+"%0a"
-    // +"*Produto :*
-    ;
+    +"*Produtos :* "+itens+"%0a";
 
     window.open(url, '_blank').focus();
 }
@@ -464,14 +489,11 @@ listItens.data.consumiveis.map((item, index) => {
 
 // fim do MAPEAR listItens para gerar lista de produtos
 
-// aula 05
+
 // mudar quantidade com os botoes + e -
-/* mudarQuantidade()
-// /aula 05
+// mudarQuantidade()
 
-// aula 06
 
-atualizarCarrinho()
+// atualizarCarrinho()
 fecharCarrinho()
-finalizarCompra() */
-// /aula 06
+// finalizarCompra()

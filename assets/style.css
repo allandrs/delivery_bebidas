@@ -78,8 +78,6 @@ aside.show {
     background-color:#eba324;
 }
 
-
-
 .cart--area {
     margin-top: 30px; /* ajuste */
     padding:20px;
@@ -645,35 +643,31 @@ footer {
 #sociais {
     display: flex;
     flex-direction: column;
-    color: #fff;
-    margin-bottom: 35px;
+    color: #000000;
+    margin-bottom: 30px;
 }
 
-#sociais a {
-    color: #fff;
-    font-size: 15px;
+#sociais p {
+    color: #000000;
+    font-size: 14px;
     font-weight: 300;
     opacity: 0.7;
     transition: 0.3ms;
 }
 
-#sociais h3 {
-    font-size: 18px;
-}
-
-#sociais a:hover {
-    opacity: 1;
+ h3 {
+    font-size: 17px;
 }
 
 .formas-de-pagamento {
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #000000;
 
 }
 
 .formas-de-pagamento a {
-    color: #fff;
+    color: #000000;
     font-size: 15px;
 
     opacity: 0.7;
@@ -687,7 +681,7 @@ footer {
 .social-media {
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #000000;
 
 }
 
@@ -712,7 +706,7 @@ footer {
     margin-top: 110px;
 }
 
-/* @media (max-width:1000px) {
+@media (max-width:1000px) {
     .produto-area {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -793,6 +787,24 @@ footer {
         display:block;
     }
 
+    #shortcut-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+        padding: 0 20px;
+    }
+    
+    .bebidas {
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    #search {
+        padding-top: 20px;
+    }
+
 }
 
 @media (max-width:450px) {
@@ -802,64 +814,42 @@ footer {
     .menu-openner {
         font-size: 1.5rem;
     }
-}
 
-@media (max-width:380px) {
+    #recolher {
+        visibility: hidden;
+    }
+
+    nav {
+        position: relative;
+        display: inline-block;
+        padding: 25px 0;
+    }
+    nav a {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    nav:hover .dropdown-content {
+        display: block;
+    }
+
     header h1 {
         font-size: 1rem;
     }
     .menu-openner {
         font-size: 1.5rem;
     }
-} */
 
-#img-logo {
-    width: 50px;
-}
+    aside {
+        width: 360px;
+    }
 
-
-
-
-
-/* @media only screen and (max-width: 800px) {
-#shortcut-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-between;
-    padding: 0 20px;
-}
-
-.bebidas {
-    display: flex;
-    flex-direction: column;
-
-}
-
-#search {
-    padding-top: 20px;
+    #img-logo {
+        width: 50px;
 }
 
 }
-
-
-@media only screen and (max-width: 600px) {
-nav {
-    position: relative;
-    display: inline-block;
-    padding: 25px 0;
-}
-nav a {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-nav:hover .dropdown-content {
-    display: block;
-}
-
-} */
 

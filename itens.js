@@ -279,7 +279,7 @@ const listItens = {
       },
       {
         id: 45,
-        name: 'Gelo triturado / cubo',
+        name: 'Gelo triturado/cubo',
         img: 'images/gelo.png',
         price: [6.00]
       },
