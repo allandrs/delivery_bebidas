@@ -221,9 +221,9 @@ const abrirCarrinho = () => {
     console.log('Qtd de itens no carrinho ' + cart.length)
     if(cart.length > 0) {
         // mostrar o carrinho
-	    seleciona('aside').classList.add('show')
+	    seleciona('#aside_carrinho').classList.add('show')
         // seleciona('aside').style.left = '0vw' // usando 0vw ele ficara na tela
-        seleciona('aside').style.right = '0vw'
+        seleciona('#aside_carrinho').style.right = '0vw'
         seleciona('.cabecalho').style.display = 'flex' // mostrar barra superior
     }
     
@@ -239,7 +239,7 @@ const abrirCarrinho = () => {
 const fecharCarrinho = () => {
     // fechar o carrinho com o botão X no modo mobile
     seleciona('.menu-closer').addEventListener('click', () => {
-        seleciona('aside').style.left = '150vw' // usando 100vw ele ficara fora da tela
+        seleciona('aside').style.right = '150vw' // usando 150vw ele ficara fora da tela
         seleciona('.cabecalho').style.display = 'flex'
     })
 }
@@ -252,7 +252,7 @@ const atualizarCarrinho = () => {
 	if(cart.length > 0) {
 
 		// mostrar o carrinho
-		seleciona('aside').classList.add('show')
+		seleciona('#aside_carrinho').classList.add('show')
 
 		// zerar meu .cart para nao fazer insercoes duplicadas
 		seleciona('.cart').innerHTML = ''
@@ -337,21 +337,21 @@ const atualizarCarrinho = () => {
 
 const finalizarCompra = () => {
     console.log('Finalizar compra')
-    seleciona('aside').classList.remove('show')
-    seleciona('aside').style.left = '150vw'
+    seleciona('#aside_carrinho').classList.remove('show')
     seleciona('.cabecalho').style.display = 'flex'
 }
 
 
 
 // VOLTAR AO CARRINHO
-// const voltarCarrinho = () => {
-//     console.log('teste voltar ao carrinho');
-//     seleciona('#aside_carrinho').classList.remove('show')
-//     seleciona('#aside_carrinho').style.left = '0'
-//     seleciona('#aside_endereco').classList.remove('show')
+const voltarCarrinho = () => {
+    console.log('teste voltar ao carrinho');
+    seleciona('#aside_endereco').classList.remove('show')
+    seleciona('#aside_endereco').style.left = '150vw'
+    seleciona('#aside_carriho').classList.add('show')
+    seleciona('#aside_carriho').style.left = '0vw'
 
-// }
+}
 
 
 
@@ -363,9 +363,10 @@ const openForm = () => {
 }
 
 // RECOLHER ASIDE
-const recolherAside = () => {
-    console.log('teste botao recolher')
-    seleciona('aside').classList.remove('show')
+const fecharAside = () => {
+    console.log('teste botao fechar')
+    seleciona('#aside_carrinho').classList.remove('show')
+    seleciona('#aside_endereco').classList.remove('show')
 }
 
 

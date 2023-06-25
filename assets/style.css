@@ -39,7 +39,7 @@ body {
 .menu-openner {
     margin-right: 15px;
     font-size: 26px;
-    background-color: #f5c064;
+    background-color: #eba324;
     padding: 5px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -58,7 +58,7 @@ body {
 
 aside {
     background-color:#ffcdd2;
-    width:30vw;
+    width:40vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .1s;
     overflow-x: hidden;
@@ -71,16 +71,92 @@ aside {
     height: 100vh;
     z-index: 999;
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
 }
 
 aside.show {
     visibility: visible;
-    background-color:#eba324;
+    background-color: #a3a3a3;
 }
 
 .nav_cart {
     display: flex;
+    flex-basis: 65px;
+    flex-shrink: 0;
+
+}
+
+#nav_back {
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#nav_back_none {
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav_bag {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-grow: 1;
+    flex-basis: 25%;
+    border-bottom: 1px solid #eaeaea;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_checkout {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-grow: 1;
+    flex-basis: 25%;
+    border-bottom: 1px solid #eaeaea;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_confirm {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-grow: 1;
+    flex-basis: 25%;
+    border-bottom: 1px solid #eaeaea;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_close {
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.proximo {
+    position: absolute;
+    bottom: 55px;
     width: 100%;
+}
+
+.proximo button {
+    width: 100%;
+    background-color: #eba324;
+    color: white;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .cart--area {
@@ -101,6 +177,10 @@ aside.show {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#cart--area-endereco h1 {
+    margin: 7px;
 }
 
 form {
@@ -377,7 +457,7 @@ h2 {
 }
 
 .produtoBig img {
-    height:400px;
+    height:350px;
     width:auto;
 }
 
@@ -617,7 +697,8 @@ margin-top:50px;
 }
 
 #siganos button {
-    width: 80px;
+    width: 90px;
+    flex-wrap: nowrap;
 }
 
 
@@ -637,8 +718,6 @@ footer {
     padding: 0px 20px;
 
 }
-
-
 
 .logo-footer img {
     width: 140px;
@@ -706,7 +785,7 @@ footer {
 
 #direitos {
     font-size: 11px;
-    color: #fff;
+    color: #000;
     opacity: 0.7;
     margin-top: 110px;
 }
@@ -718,6 +797,13 @@ footer {
 }
 
 @media (max-width:840px) {
+    
+    aside {
+        width: 40vw;
+        height: 100vh;
+    }
+    
+    
     body {
         flex-direction: column;
     }
@@ -734,6 +820,8 @@ footer {
 
     .cart--area {
         width:100vw;
+        margin: 0px;
+        padding: 0px;
     }
 
     .menu-closer {
@@ -810,6 +898,7 @@ footer {
         padding-top: 20px;
     }
 
+    
 }
 
 @media (max-width:450px) {
@@ -822,6 +911,10 @@ footer {
 
     #recolher {
         visibility: hidden;
+    }
+    
+    .cabecalho {
+        width: 100vw;
     }
 
     nav {
@@ -849,12 +942,83 @@ footer {
     }
 
     aside {
-        width: 360px;
+        width: 100vw;
+        height: 100vh;
     }
+
+    .windowBody {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        padding: 20px;
+    }
+
+    .itemInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .itemInfo--cancelButon {
+        background-color: gray;
+    }
+
+    #long-neck-anchor {
+        display: none;
+    }
+
+    #anchor {
+        gap: 0.5rem;
+    }
+
+    /* .cart--finalizar {
+        padding: 10px 20px;
+    } */
+
+    .proximo {
+        position: absolute;
+        bottom: 55px;
+    }
+
+    .proximo button {
+        width: 100vw;
+    }
+
 
     #img-logo {
         width: 50px;
 }
+
+    
+    .cart--area {
+        padding: 0 20px;
+        margin-top: 5px
+    }
+
+    .cart--area h1 {
+        display: none;
+    }
+
+
+
+    #search {
+        display: none;
+    }
+
+    footer {
+        height: 500px;
+    }
+
+    .last-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #sociais {
+        margin-bottom: 0;
+    }
 
 }
 
