@@ -224,7 +224,7 @@ const abrirCarrinho = () => {
 	    seleciona('#aside_carrinho').classList.add('show')
         // seleciona('aside').style.left = '0vw' // usando 0vw ele ficara na tela
         seleciona('#aside_carrinho').style.right = '0vw'
-        seleciona('.cabecalho').style.display = 'flex' // mostrar barra superior
+        seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
     }
     
     // exibir aside do carrinho no modo mobile
@@ -339,6 +339,8 @@ const finalizarCompra = () => {
     console.log('Finalizar compra')
     seleciona('#aside_carrinho').classList.remove('show')
     seleciona('.cabecalho').style.display = 'flex'
+    seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
+
 }
 
 
@@ -347,9 +349,9 @@ const finalizarCompra = () => {
 const voltarCarrinho = () => {
     console.log('teste voltar ao carrinho');
     seleciona('#aside_endereco').classList.remove('show')
-    seleciona('#aside_endereco').style.left = '150vw'
-    seleciona('#aside_carriho').classList.add('show')
-    seleciona('#aside_carriho').style.left = '0vw'
+    // seleciona('#aside_endereco').style.right = '0vw'
+    seleciona('#aside_carrinho').classList.add('show')
+    // seleciona('#aside_carriho').style.right = '0vw'
 
 }
 
@@ -357,9 +359,10 @@ const voltarCarrinho = () => {
 
 // FORMULARIO
 const openForm = () => {
-    const form = seleciona('#aside_endereco')
+    seleciona('#aside_endereco').classList.add('show')
+    seleciona('#aside_carriho').style.left = '150vw'
     console.log('disparei', form)
-    form.classList.add('show')
+
 }
 
 // RECOLHER ASIDE
@@ -367,8 +370,22 @@ const fecharAside = () => {
     console.log('teste botao fechar')
     seleciona('#aside_carrinho').classList.remove('show')
     seleciona('#aside_endereco').classList.remove('show')
+    seleciona('.cabecalho').style.display = 'flex'
 }
 
+// ATIVAR FORMULARIO RETIRAR NA LOJA
+function retirarNaLoja() {
+    seleciona('#retirar').style.backgroundColor = '#eba324'
+    seleciona('#entregar').style.backgroundColor = '#a3a3a3'
+    seleciona('#info_entrega').style.display = 'none'
+}
+
+// ATIVAR FORMULARIO ENTREGA
+function entregar() {
+    seleciona('#retirar').style.backgroundColor = '#a3a3a3'
+    seleciona('#entregar').style.backgroundColor = '#eba324'
+    seleciona('#info_entrega').style.display = 'flex'
+}
 
 // WHATSAPP
 function whatsapp() {

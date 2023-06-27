@@ -8,6 +8,7 @@
     <link rel="icon" href="images/beer-regular.png" />
     <title>Vila Beer</title>
     <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -142,53 +143,21 @@
     <!-- aside do carrinho -->
     <aside id="aside_carrinho">
         <div class="nav_cart">
-            <button id="nav_back_none"><</button>
-            <div class="nav_bag"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="16pt" width="16pt" x="0px" y="0px" viewBox="0 0 238.792 238.792" style="enable-background:new 0 0 238.792 238.792;" xml:space="preserve"><g><g>
-                <path d="M20.152,60.958L0.05,229.833c-0.242,2.035,0.397,4.07,1.76,5.601c1.363,1.531,3.312,2.408,5.362,2.408h224.449
-                    c2.049,0,4-0.877,5.362-2.408c1.363-1.53,1.998-3.575,1.76-5.601L218.638,60.958c-0.425-3.605-3.486-6.324-7.117-6.324h-32.138
-                    C175.818,24.449,150.116,0.95,118.989,0.95S62.16,24.454,58.594,54.634H27.278C23.636,54.634,20.579,57.352,20.152,60.958z
-                     M118.984,15.288c23.207,0,42.44,17.098,45.908,39.346H73.076C76.542,32.386,95.777,15.288,118.984,15.288z M65.296,68.971
-                    h107.371h32.482l18.393,154.534H15.24L33.635,68.971H65.296z"></path>
-                    </g></g></svg>Sacola
+            <button id="nav_back_none"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg></button>
+            <div class="nav_bag active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(235, 163, 36, 1);transform: msFilter;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg>Sacola
             </div>
-            <div class="nav_checkout"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="16pt" width="16pt" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g>
-                <path d="M438.857,0H73.143c-5.77,0-10.449,4.679-10.449,10.449v491.102c0,5.77,4.679,10.449,10.449,10.449h219.429
-                    c0.7,0,1.392-0.071,2.067-0.209c0.42-0.084,0.812-0.235,1.212-0.367c0.246-0.082,0.502-0.13,0.74-0.23
-                    c0.428-0.18,0.821-0.418,1.218-0.65c0.19-0.111,0.394-0.191,0.577-0.314c0.49-0.329,0.937-0.712,1.363-1.117
-                    c0.066-0.062,0.146-0.107,0.211-0.172l146.286-146.286c0.065-0.065,0.11-0.144,0.173-0.211c0.405-0.426,0.788-0.874,1.117-1.364
-                    c0.122-0.181,0.202-0.385,0.312-0.574c0.233-0.398,0.473-0.792,0.652-1.222c0.098-0.235,0.146-0.487,0.227-0.73
-                    c0.135-0.403,0.286-0.799,0.371-1.222c0.136-0.676,0.208-1.367,0.208-2.067V10.449C449.306,4.679,444.628,0,438.857,0z
-                     M303.02,476.325V365.714h110.611L303.02,476.325z M428.408,344.816H292.571c-5.77,0-10.449,4.679-10.449,10.449v135.837H83.592
-                    V20.898h344.816V344.816z"></path>
-                    </g>
-                    </g>
-                    <g>
-                        <g>
-                            <rect x="135.837" y="104.49" width="240.327" height="20.898"></rect>
-                        </g>
-                    </g>
-                    <g>
-                        <g>
-                            <rect x="135.837" y="188.082" width="240.327" height="20.898"></rect>
-                        </g>
-                    </g>
-                    <g>
-                        <g>
-                            <rect x="135.837" y="271.673" width="240.327" height="20.898"></rect>
-                        </g>
-                    </g>
-                    </svg>Checkout
+            <div class="nav_checkout inactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #7a7a7a;transform: msFilter;"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h8a.996.996 0 0 0 .707-.293l7-7a.997.997 0 0 0 .196-.293c.014-.03.022-.061.033-.093a.991.991 0 0 0 .051-.259c.002-.021.013-.041.013-.062V5c0-1.103-.897-2-2-2zM5 5h14v7h-6a1 1 0 0 0-1 1v6H5V5zm9 12.586V14h3.586L14 17.586z"></path></svg>Checkout
             </div>
             
-            <div class="nav_confirm"><svg viewBox="-21 -21 682.66669 682.66669" height="16pt" width="16pt" fill="#ffab00" xmlns="http://www.w3.org/2000/svg">
-                <path d="m322.820312 387.933594 279.949219-307.273438 36.957031 33.671875-314.339843 345.023438-171.363281-162.902344 34.453124-36.238281zm297.492188-178.867188-38.988281 42.929688c5.660156 21.734375 8.675781 44.523437 8.675781 68.003906 0 148.875-121.125 270-270 270s-270-121.125-270-270 121.125-270 270-270c68.96875 0 131.96875 26.007812 179.746094 68.710938l33.707031-37.113282c-58.761719-52.738281-133.886719-81.597656-213.453125-81.597656-85.472656 0-165.835938 33.285156-226.273438 93.726562-60.441406 60.4375-93.726562 140.800782-93.726562 226.273438s33.285156 165.835938 93.726562 226.273438c60.4375 60.441406 140.800782 93.726562 226.273438 93.726562s165.835938-33.285156 226.273438-93.726562c60.441406-60.4375 93.726562-140.800782 93.726562-226.273438 0-38.46875-6.761719-75.890625-19.6875-110.933594zm0 0"></path></svg>
-            Confirmar
+            <div class="nav_confirm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #7a7a7a;transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M9.999 13.587 7.7 11.292l-1.412 1.416 3.713 3.705 6.706-6.706-1.414-1.414z"></path></svg>
+                <!-- <i class="fa-regular fa-money-check"></i> -->
+                Confirmar
             </div>
             <button class="nav_close" onclick="fecharAside()">❌</button>
         </div>
         <div class="cart--area">
             <!-- <div class="menu-closer">❌</div> -->
-            <h1>Carrinho</h1>
             <div class="cart"></div>
             <div class="cart--details">
                 <div class="cart--totalitem subtotal">
@@ -216,54 +185,29 @@
     <!-- aside de finalização -->
     <aside id="aside_endereco">
         <div class="nav_cart">
-            <button id="nav_back" onclick="voltarCarrinho()"><</button>
-            <div class="nav_bag"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="16pt" width="16pt" x="0px" y="0px" viewBox="0 0 238.792 238.792" style="enable-background:new 0 0 238.792 238.792;" xml:space="preserve"><g><g>
-                <path d="M20.152,60.958L0.05,229.833c-0.242,2.035,0.397,4.07,1.76,5.601c1.363,1.531,3.312,2.408,5.362,2.408h224.449
-                    c2.049,0,4-0.877,5.362-2.408c1.363-1.53,1.998-3.575,1.76-5.601L218.638,60.958c-0.425-3.605-3.486-6.324-7.117-6.324h-32.138
-                    C175.818,24.449,150.116,0.95,118.989,0.95S62.16,24.454,58.594,54.634H27.278C23.636,54.634,20.579,57.352,20.152,60.958z
-                     M118.984,15.288c23.207,0,42.44,17.098,45.908,39.346H73.076C76.542,32.386,95.777,15.288,118.984,15.288z M65.296,68.971
-                    h107.371h32.482l18.393,154.534H15.24L33.635,68.971H65.296z"></path>
-                    </g></g></svg>Sacola
+            <button id="nav_back" onclick="voltarCarrinho()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg></button>
+            <div class="nav_bag inactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #7a7a7a;transform: msFilter;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg>Sacola
             </div>
-            <div class="nav_checkout"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="16pt" width="16pt" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g>
-                <path d="M438.857,0H73.143c-5.77,0-10.449,4.679-10.449,10.449v491.102c0,5.77,4.679,10.449,10.449,10.449h219.429
-                    c0.7,0,1.392-0.071,2.067-0.209c0.42-0.084,0.812-0.235,1.212-0.367c0.246-0.082,0.502-0.13,0.74-0.23
-                    c0.428-0.18,0.821-0.418,1.218-0.65c0.19-0.111,0.394-0.191,0.577-0.314c0.49-0.329,0.937-0.712,1.363-1.117
-                    c0.066-0.062,0.146-0.107,0.211-0.172l146.286-146.286c0.065-0.065,0.11-0.144,0.173-0.211c0.405-0.426,0.788-0.874,1.117-1.364
-                    c0.122-0.181,0.202-0.385,0.312-0.574c0.233-0.398,0.473-0.792,0.652-1.222c0.098-0.235,0.146-0.487,0.227-0.73
-                    c0.135-0.403,0.286-0.799,0.371-1.222c0.136-0.676,0.208-1.367,0.208-2.067V10.449C449.306,4.679,444.628,0,438.857,0z
-                     M303.02,476.325V365.714h110.611L303.02,476.325z M428.408,344.816H292.571c-5.77,0-10.449,4.679-10.449,10.449v135.837H83.592
-                    V20.898h344.816V344.816z"></path>
-                    </g>
-                    </g>
-                    <g>
-                        <g>
-                            <rect x="135.837" y="104.49" width="240.327" height="20.898"></rect>
-                        </g>
-                    </g>
-                    <g>
-                        <g>
-                            <rect x="135.837" y="188.082" width="240.327" height="20.898"></rect>
-                        </g>
-                    </g>
-                    <g>
-                        <g>
-                            <rect x="135.837" y="271.673" width="240.327" height="20.898"></rect>
-                        </g>
-                    </g>
-                    </svg>Checkout
+            <div class="nav_checkout active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(235, 163, 36, 1);transform: ;msFilter:;"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h8a.996.996 0 0 0 .707-.293l7-7a.997.997 0 0 0 .196-.293c.014-.03.022-.061.033-.093a.991.991 0 0 0 .051-.259c.002-.021.013-.041.013-.062V5c0-1.103-.897-2-2-2zM5 5h14v7h-6a1 1 0 0 0-1 1v6H5V5zm9 12.586V14h3.586L14 17.586z"></path></svg>Checkout
             </div>
             
-            <div class="nav_confirm"><svg viewBox="-21 -21 682.66669 682.66669" height="16pt" width="16pt" fill="#ffab00" xmlns="http://www.w3.org/2000/svg">
-                <path d="m322.820312 387.933594 279.949219-307.273438 36.957031 33.671875-314.339843 345.023438-171.363281-162.902344 34.453124-36.238281zm297.492188-178.867188-38.988281 42.929688c5.660156 21.734375 8.675781 44.523437 8.675781 68.003906 0 148.875-121.125 270-270 270s-270-121.125-270-270 121.125-270 270-270c68.96875 0 131.96875 26.007812 179.746094 68.710938l33.707031-37.113282c-58.761719-52.738281-133.886719-81.597656-213.453125-81.597656-85.472656 0-165.835938 33.285156-226.273438 93.726562-60.441406 60.4375-93.726562 140.800782-93.726562 226.273438s33.285156 165.835938 93.726562 226.273438c60.4375 60.441406 140.800782 93.726562 226.273438 93.726562s165.835938-33.285156 226.273438-93.726562c60.441406-60.4375 93.726562-140.800782 93.726562-226.273438 0-38.46875-6.761719-75.890625-19.6875-110.933594zm0 0"></path></svg>
-            Confirmar
+            <div class="nav_confirm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #7a7a7a;transform: msFilter;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M9.999 13.587 7.7 11.292l-1.412 1.416 3.713 3.705 6.706-6.706-1.414-1.414z"></path></svg>
+                <!-- <i class="fa-regular fa-money-check"></i> -->
+                Confirmar
             </div>
             <button class="nav_close" onclick="fecharAside()">❌</button>
         </div>
         <div id="cart--area-endereco">
             <!-- <div class="menu-closer" onclick="recolherAside()">❌</div>
             <button id="voltar" onclick="recolherAside()"><<</button> -->
-            <h1>Checkout</h1>
+            <div id="cart--area_titulo">
+                <p>Tipo do pedido</p>
+            </div>
+            <div id="entregar_retirar">
+                <button class="button_entrega" id="entregar" onclick="entregar()">Entrega</button>
+                <button class="button_entrega" id="retirar" onclick="retirarNaLoja()">Retirar na loja</button>
+            </div>
 
             <form action="" autocomplete="off">
                 <fieldset>
@@ -271,7 +215,7 @@
                     <label for="">Nome</label><input class="campo_nome" type="text">
                     <label for="">Telefone</label><input class="campo_telefone" type="number">
                 </fieldset>
-                <fieldset>
+                <fieldset id="info_entrega">
                     <legend>Informações de entrega</legend>
                     <label for="">Nome da rua</label><input class="campo_rua" type="text">
                     <label for="">Número do endereço</label><input class="campo_numero_endereco" type="text">

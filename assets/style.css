@@ -58,7 +58,7 @@ body {
 
 aside {
     background-color:#ffcdd2;
-    width:40vw;
+    width:35vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .1s;
     overflow-x: hidden;
@@ -68,9 +68,8 @@ aside {
     right: 0;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
     z-index: 999;
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
 }
@@ -82,8 +81,10 @@ aside.show {
 
 .nav_cart {
     display: flex;
-    flex-basis: 65px;
+    justify-content: center;
+    flex-basis: 55px;
     flex-shrink: 0;
+    
 
 }
 
@@ -93,6 +94,8 @@ aside.show {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #eba324;
+    
 }
 
 #nav_back_none {
@@ -100,10 +103,39 @@ aside.show {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    background-color: #eba324;
 }
 
-.nav_bag {
+.nav_bag.active {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-grow: 1;
+    flex-basis: 25%;
+    border: solid 0.2px #7a7a7a;
+    flex-direction: column;
+    align-items: center;
+    color: #eba324;
+
+    /* display: block; */
+}
+
+.nav_bag.inactive {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-grow: 1;
+    flex-basis: 25%;
+    border: solid 0.2px #7a7a7a;
+    flex-direction: column;
+    align-items: center;
+    color: hsl(0, 0%, 48%);
+
+    /* display: block; */
+}
+
+
+.nav_checkout.active{
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -112,9 +144,12 @@ aside.show {
     border-bottom: 1px solid #eaeaea;
     flex-direction: column;
     align-items: center;
+    border: solid 1px #7a7a7a;
+    color: #eba324;
+
 }
 
-.nav_checkout {
+.nav_checkout.inactive {
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -123,8 +158,10 @@ aside.show {
     border-bottom: 1px solid #eaeaea;
     flex-direction: column;
     align-items: center;
-}
+    border: solid 1px #7a7a7a;
+    color: #7a7a7a;
 
+}
 .nav_confirm {
     display: flex;
     justify-content: center;
@@ -134,6 +171,15 @@ aside.show {
     border-bottom: 1px solid #eaeaea;
     flex-direction: column;
     align-items: center;
+    border: solid 1px #7a7a7a;
+    color: #7a7a7a
+
+}
+
+.fa-regular {
+    width: 14px;
+    height: 14px;
+    font-size: 20px;
 }
 
 .nav_close {
@@ -142,25 +188,33 @@ aside.show {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #eba324;
+    font-size: 20px;
 }
 
 .proximo {
-    position: absolute;
-    bottom: 55px;
+    bottom: 0px;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .proximo button {
     width: 100%;
     background-color: #eba324;
-    color: white;
-    height: 40px;
+    color: rgb(0, 0, 0);
+    height: 50px;
     font-size: 16px;
     font-weight: 600;
+    border: none;
+    z-index: 10;
+
 }
 
 .cart--area {
-    margin-top: 30px; /* ajuste */
+    margin-top: 5px; /* ajuste */
     padding:20px;
     display: flex;
     flex-direction: column;
@@ -179,18 +233,35 @@ aside.show {
     align-items: center;
 }
 
-#cart--area-endereco h1 {
+
+#cart--area_titulo p {
     margin: 7px;
+    font-weight: bolder;
+}
+
+.button_entrega {
+    background-color: #eba324;
+    border: solid 1px rgb(148, 147, 147);
+    border-radius: 4px;
+    height: 30px;
+    width: 170px;
+}
+
+#retirar {
+    background-color: transparent;
 }
 
 form {
-    width: 250px;
+    width: 90%;
     font-weight: 500;
 }
+
+
 
 legend {
     font-weight: bolder;
 }
+
 
 #recolher {
     margin-right: 328px;
@@ -307,6 +378,7 @@ input[type=number]::-webkit-inner-spin-button,
 fieldset {
     display: flex;
     flex-direction: column;
+    
 }
 
 #whatsapp {
@@ -597,10 +669,9 @@ margin-top:50px;
     height:70px
 }
 
-.cart--item-nome {
-    flex:1;
-    padding-right: 3px;
-}
+/* .cart--item-nome {
+
+} */
 
 .cart--item--qtarea {
     display:inline-flex;
@@ -942,8 +1013,8 @@ footer {
     }
 
     aside {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
     }
 
     .windowBody {
@@ -969,15 +1040,6 @@ footer {
 
     #anchor {
         gap: 0.5rem;
-    }
-
-    /* .cart--finalizar {
-        padding: 10px 20px;
-    } */
-
-    .proximo {
-        position: absolute;
-        bottom: 55px;
     }
 
     .proximo button {
