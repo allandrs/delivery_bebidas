@@ -231,7 +231,7 @@ const abrirCarrinho = () => {
     seleciona('.menu-openner').addEventListener('click', () => {
         if(cart.length > 0) {
             seleciona('aside').classList.add('show')
-            seleciona('aside').style.left = '0vw'
+            seleciona('aside').style.right = '0vw'
         }
     })
 }
@@ -335,15 +335,21 @@ const atualizarCarrinho = () => {
 	}
 }
 
+// BOTAO PROXIMO --> AVANÇA DO CARRINHO PARA O FORM
 const finalizarCompra = () => {
     console.log('Finalizar compra')
     seleciona('#aside_carrinho').classList.remove('show')
     seleciona('.cabecalho').style.display = 'flex'
     seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
-
 }
 
-
+// BOTAO PROXIMO --> AVANÇA DO FORM PARA CONFIRMAÇÃO DE DADOS
+const finalizarForm = () => {
+    console.log('Finalizar formulario')
+    seleciona('#aside_endereco').classList.remove('show')
+    seleciona('.cabecalho').style.display = 'flex'
+    seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
+}
 
 // VOLTAR AO CARRINHO
 const voltarCarrinho = () => {
@@ -355,14 +361,18 @@ const voltarCarrinho = () => {
 
 }
 
-
-
 // FORMULARIO
 const openForm = () => {
     seleciona('#aside_endereco').classList.add('show')
-    seleciona('#aside_carriho').style.left = '150vw'
-    console.log('disparei', form)
+    // seleciona('#aside_carriho').style.left = '150vw'
+    console.log('disparei')
+}
 
+// CONFIRMAÇÃO DE DADOS
+const confirmForm = () => {
+    seleciona('#aside_confirm').classList.add('show')
+    seleciona('#aside_endereco').style.left = '150vw'
+    console.log('disparei')
 }
 
 // RECOLHER ASIDE
