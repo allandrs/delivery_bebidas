@@ -1,5 +1,23 @@
+// const Modal = {
+//     open(){
+//         document
+//             .querySelector('.modal-overlay')
+//             .classList
+//             .add('active')
+
+//     },    
+//     close(){
+//         document
+//             .querySelector('.modal-overlay')
+//             .classList
+//             .remove('active')
+//     }
+// }
+
+
+
 // aula 05
-// criar a variável modalKey sera global
+// criar aa variáveis global
 let modalKey = 0
 
 let keyAtual;
@@ -358,7 +376,15 @@ const voltarCarrinho = () => {
     // seleciona('#aside_endereco').style.right = '0vw'
     seleciona('#aside_carrinho').classList.add('show')
     // seleciona('#aside_carriho').style.right = '0vw'
+}
 
+// VOLTAR AO CARRINHO
+const voltarCheckout = () => {
+    console.log('teste voltar ao checkout');
+    seleciona('#aside_confirm').classList.remove('show')
+    // seleciona('#aside_endereco').style.right = '0vw'
+    seleciona('#aside_endereco').classList.add('show')
+    // seleciona('#aside_carriho').style.right = '0vw'
 }
 
 // FORMULARIO
@@ -371,7 +397,7 @@ const openForm = () => {
 // CONFIRMAÇÃO DE DADOS
 const confirmForm = () => {
     seleciona('#aside_confirm').classList.add('show')
-    seleciona('#aside_endereco').style.left = '150vw'
+    // seleciona('#aside_endereco').style.left = '150vw'
     console.log('disparei')
 }
 
@@ -380,6 +406,7 @@ const fecharAside = () => {
     console.log('teste botao fechar')
     seleciona('#aside_carrinho').classList.remove('show')
     seleciona('#aside_endereco').classList.remove('show')
+    seleciona('#aside_confirm').classList.remove('show')
     seleciona('.cabecalho').style.display = 'flex'
 }
 
@@ -395,6 +422,74 @@ function entregar() {
     seleciona('#retirar').style.backgroundColor = '#a3a3a3'
     seleciona('#entregar').style.backgroundColor = '#eba324'
     seleciona('#info_entrega').style.display = 'flex'
+}
+
+function buttonEntregar() {
+    seleciona('#entregar').classList.add('selected')
+    seleciona('#retirar').classList.remove('selected')
+}
+
+function buttonRetirar() {
+    seleciona('#entregar').classList.remove('selected')
+    seleciona('#retirar').classList.add('selected')
+}
+
+// REVISÃO DOS DADOS NO ASIDE DE CONFIRMAÇÃO
+function revisarDados() {
+    const nomeRevisar = seleciona('.campo_nome').value
+    const telefoneRevisar = seleciona('.campo_telefone').value
+    // const tipoPedidoRevisar = seleciona('.campo_rua').value
+   
+	let subtotalValor = 0
+
+     // para preencher os itens do carrinho, calcular subtotal
+	for(let i in cart) {
+		// use o find para pegar o item por id
+		let produtoItem = cart[i];
+        // let produtoItem = produtoItem.find( (item) => item.id == cart[i].id)		
+        console.log(produtoItem);
+
+        // em cada item pegar o subtotal
+    	subtotalValor += cart[i].price * cart[i].qt
+    }
+
+    console.log(subtotalValor)
+    
+    // saber se é para entregar ou retirada
+    const tipoValor = seleciona('#tipo_valor')
+    const entregar = seleciona('#entregar').classList.contains('selected')
+    console.log(entregar)
+
+    if (entregar == true) {
+        tipoValor.innerHTML = 'Entrega'
+        let total = subtotalValor + 7.00
+        console.log(total)
+        seleciona('#total_valor').innerHTML = formatoReal(total)
+        seleciona('#entrega_valor').style.display = 'block'
+    } else {
+        tipoValor.innerHTML = 'Retirar'
+        seleciona('#total_valor').innerHTML = formatoReal(subtotalValor)
+        seleciona('#entrega_valor').style.display = 'none'
+    }
+    
+    // let str = "Rs. 6,67,000";
+    // let res = str.replace(/\D/g, "");
+    // alert(res);
+
+    // calculo valor total
+    // const taxaEntrega = seleciona('#entrega_valor').text
+    // console.log(taxaEntrega)
+    // var num = txt.replace(/[^0-9]/g, ''); 
+
+    // const entregaRevisar = seleciona('.campo_referencia').value
+    const totalRevisar = seleciona('#total_value').value
+    seleciona('#nome_revisao').innerHTML = nomeRevisar
+    seleciona('#telefone_revisao').innerHTML = telefoneRevisar
+    // seleciona('#tipo_valor').innerHTML = tipoEntrega
+    seleciona('#subtotal_valor').innerHTML = formatoReal(subtotalValor)
+    // seleciona('#entrega_valor').innerHTML = numeroEnderecoRevisar
+    // seleciona('total_valor').innerHTML = totalRevisar
+
 }
 
 // WHATSAPP

@@ -22,13 +22,13 @@ const listItens = {
       {
         id: 4,
         name: 'Skol lata',
-        img: 'images/skol-lata.jpg',
+        img: 'images/skol-lata.png',
         price: [3.25, 35.00]
       },
       {
         id: 5,
         name: 'Skol litrinho',
-        img: 'images/skol-litrinho.jpg',
+        img: 'images/skol-litrinho.png',
         price: [2.40, 52.00]
       },
       {

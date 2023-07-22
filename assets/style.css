@@ -88,7 +88,7 @@ aside.show {
 
 }
 
-#nav_back {
+.nav_back {
     flex-basis: 50px;
     display: flex;
     justify-content: center;
@@ -97,17 +97,7 @@ aside.show {
     background-color: #eba324;
     border: none;
     
-}
-
-#nav_back_none {
-    flex-basis: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #eba324;
-    border: none;
-    font-size: 14px;
-}
+} 
 
 .nav_bag.active {
     display: flex;
@@ -179,6 +169,20 @@ aside.show {
     border-right: none;
     font-size: 13px;
 }
+.nav_confirm.active {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-grow: 1;
+    flex-basis: 25%;
+    border-bottom: 1px solid #eaeaea;
+    flex-direction: column;
+    align-items: center;
+    border: solid 0.1px #8b8a8a;
+    color: #eba324;
+    border-right: none;
+    font-size: 13px;
+}
 
 .fa-regular {
     width: 14px;
@@ -193,7 +197,7 @@ aside.show {
     align-items: center;
     cursor: pointer;
     background-color: #eba324;
-    font-size: 20px;
+    font-size: 16px;
     border: none;
 }
 
@@ -270,6 +274,10 @@ legend {
     font-weight: bolder;
 }
 
+info_pagamento {
+    margin-bottom: 14px;
+}
+
 
 #recolher {
     margin-right: 328px;
@@ -280,6 +288,38 @@ legend {
     margin-right: 328px;
     height: 30px;
 }
+
+#nome_telefone {
+    margin-left: 10px;
+
+}
+
+hr {
+    margin: 30px 10px;
+    border: 0;
+    border-top: 1px dashed #ccc;
+}
+
+.div_revisao {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+}
+
+#total_desc {
+    font-weight: 700;
+}
+
+.p_valor {
+    margin-right: 10px;
+}
+
+#total_valor {
+    font-weight: 700;
+}
+
+
 
 /* cabeçalho */
 header {
