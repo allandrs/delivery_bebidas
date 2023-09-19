@@ -371,9 +371,9 @@ nav a {
 #shortcut-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 100px;
+    justify-content: center;
     width: 100%;
+    gap: 60px;
 }
 
 #anchor {
@@ -386,6 +386,7 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 .icon {
@@ -405,14 +406,50 @@ nav a {
 
 
 .icon-anchor a {
-    font-size: 12px;
-    font-weight: 600;
-    color: rgb(172, 172, 172);
+    font-size: 14px;
+    font-weight: bolder;
+    color: #000;
     white-space: nowrap;
 } 
 
+#search {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+#search img {
+    height: 30px;
+    width: 30px;
+}
+
+#search input {
+    height: 35px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+}
+
+#search input:focus{
+    outline: none;
+}
 
 
+
+/* Botao flutuante */
+#botao_flutuante {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    position: fixed;
+    display: none;
+    bottom: 200px;
+    left: 30px;
+    background-image: url('./images/de-volta-ao-topo.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
 
 
 
@@ -449,17 +486,49 @@ main {
 
 h1, h2 {
     font-family:'Hepta Slab', Helvetica, Arial;
+    display: flex;
     text-align: center;
+    justify-content: center;
 }
 
+
 h2 {
-    padding: 60px 0;
-    font-size: 30px;
-    /* values of properties of animation assigned */
-        text-align: center;
-        line-height: 2;
-        color: rgb(221, 193, 66);
-        animation: neon 1s ease-in-out infinite alternate;
+    margin-bottom: 80px;
+    font-size: 28px;
+    background-color: #eba324;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.titulo_h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titulo_vinhos {
+    height: 80px;
+    width: 220px;
+}
+#titulo_refrigerante {
+    height: 85px;
+    width: 240px;
+}
+
+#titulo_destilados {
+    height: 120px;
+}
+
+#titulo_gelo {
+    height: 90px;
+    width: 140px;
+}
+
+#titulo_consumiveis {
+    height: 40px;
+    width: 240px;
 }
 
 @keyframes neon {
@@ -1011,12 +1080,14 @@ footer {
     .bebidas {
         display: flex;
         flex-direction: column;
-    
+        
     }
     
     #search {
         padding-top: 20px;
+        display: none;
     }
+    
 
     
 }
@@ -1091,6 +1162,7 @@ footer {
         gap: 0.5rem;
     }
 
+
     .proximo button {
         width: 100vw;
     }
@@ -1110,10 +1182,13 @@ footer {
         display: none;
     }
 
+    .icon-anchor a {
+        text-wrap: wrap;
+        text-align:center
+    }
 
-
-    #search {
-        display: none;
+    #bebidas-anchor {
+        margin-bottom: 13px
     }
 
     footer {

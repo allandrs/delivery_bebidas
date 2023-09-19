@@ -66,9 +66,9 @@
     <!-- ---- âncoras e pesquisa ---- -->
     <div id="shortcut-container">
         <div id="anchor">
-            <div class="icon-anchor" id="bebidas-anchor">
+            <div class="icon-anchor" id="bebidas-anchor" href="#bebidas_link">
                 <div class="background">
-                    <img src="images/caixa-de-cerveja.png" alt="" class="icon">
+                    <img src="images/caixa-de-cerveja.png" alt="" class="icon" >
                 </div>
                 <a href="#bebidas_link">Bebidas</a>
             </div>
@@ -99,43 +99,80 @@
             </div>
         </div>
         <div id="search">
-            <label for=""></label>
-            <input type="text">
+            <img src="/assets/images/search-alt-2-regular-24.png" alt="">
+            <input type="text" placeholder="procurar produto">
         </div>
     </div>
     <!-- ---- fim âncoras e pesquisa ---- -->
 
+    <button id="botao_flutuante" onclick="scrollToTop()" title="voltar ao topo"></button>
 
     <!-- conteudo principal -->
     <main>
-        <h2>Bebidas</h2>
-        <p id="bebidas_link"></p>
-        <div class="produto-area" id="bebidas"></div>
-    
-        <h2>Long Neck</h2>
-        <p id="longneck_link"></p>
-        <div class="produto-area" id="longNeck"></div>
-    
-        <h2>Vinhos e Espumantes</h2>
-        <p id="vinhos_link"></p>
-        <div class="produto-area" id="vinhoEspumantes"></div>
-    
-        <h2>Refrigerantes e Cia</h2>
-        <p id="refrigerantes_link"></p>
-        <div class="produto-area" id="refrigerantesCia"></div>
-    
-        <h2>Bebidas quentes e destilados</h2>
-        <p id="bebidasquentes_link"></p>
-        <div class="produto-area" id="bebidasQuentes"></div>
-    
-        <h2>Gelo e Carvão</h2>
-        <p id="gelo_link"></p>
-        <div class="produto-area" id="geloCarvao"></div>
+        <div>
+            <div class="titulo_h2">
+                <h2>Bebidas</h2>
+                <p id="bebidas_link"></p>
+            </div>
 
+            <div class="produto-area" id="bebidas"></div>
+        </div>
+
+        <div>
+            <div class="titulo_h2">
+                <h2>Long Neck</h2>
+                <p id="longneck_link"></p>
+            </div>
+
+            <div class="produto-area" id="longNeck"></div>
+        </div>
+
+        <div>
+            <div class="titulo_h2" >
+                <h2 id="titulo_vinhos">Vinhos e Espumantes</h2>
+                <p id="vinhos_link"></p>
+            </div>
+
+            <div class="produto-area" id="vinhoEspumantes"></div>
+        </div>
+
+        <div>
+            <div class="titulo_h2">
+                <h2 id="titulo_refrigerante">Refrigerantes e Cia</h2>
+                <p id="refrigerantes_link"></p>
+            </div>
+
+            <div class="produto-area" id="refrigerantesCia"></div>
+        </div>
+
+        <div>
+            <div class="titulo_h2">
+                <h2 id="titulo_destilados">Bebidas quentes e destilados</h2>
+                <p id="bebidasquentes_link"></p>
+            </div>
+
+            <div class="produto-area" id="bebidasQuentes"></div>
+        </div>
     
-        <h2>Consumíveis</h2>
+        <div>
+            <div class="titulo_h2">
+                <h2 id="titulo_gelo">Gelo e Carvão</h2>
+                <p id="gelo_link"></p>
+            </div>
+
+            <div class="produto-area" id="geloCarvao"></div>
+        </div>
+            
+        <div>
+            <div class="titulo_h2">
+                <h2 id="titulo_consumiveis">Consumíveis</h2>
+                <p id="consumiveis_link"></p>
+            </div>
     
-        <div class="produto-area" id="consumiveis"></div>
+            <div class="produto-area" id="consumiveis"></div>
+        </div>
+
+
     
     </main>
     <!-- /conteudo principal -->

@@ -129,6 +129,45 @@ const escolherTamanhoPreco = (key, type) => {
 }
 
 
+// ANCORA DO MENU PARA IR ATÉ UM PONTO DA PÁGINA
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll(".icon-anchor");
+
+    sections.forEach(function(section) {
+        section.addEventListener("click", function() {
+            // obtem o id da seção clicada
+            const sectionId = this.getAttribute("id");
+
+            // define o fragmento de url para o id da seção
+            window.location.hash = sectionId;
+        })
+    })
+})
+
+// BOTÃO FLUTUANTE SCROLL TO TOP
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // efeito suave de rolagem
+    })
+}
+// mostrar botão quando o usuário rolar para baixo
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('botao_flutuante').style.display = "block";
+    } else {
+        document.getElementById("botao_flutuante").style.display = "none";
+    }
+}
+
+// FUNÇÃO PESQUISAR PRODUTO
+function pesquisarProduto(array, nomePesquisado) {
+    // método filter para criar um novo array com objetos de nomes correspondentes à pesquisa
+    const resultados = array.filter((pessoa) =>
+    pessoa.nome.toLowerCase().includes(inputNome))
+
+    return resultados;
+}
 
 //MUDAR A QUANTIDADE BOTÕES + e - da janela modal
 // const mudarQuantidade = () => {
