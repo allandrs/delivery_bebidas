@@ -445,7 +445,7 @@ nav a {
     display: none;
     bottom: 200px;
     left: 30px;
-    background-image: url('/assets/images/de-volta-ao-topo.png');
+    background-image: url('./images/de-volta-ao-topo.png');
     background-size: cover;
     border: none;
     cursor: pointer;
