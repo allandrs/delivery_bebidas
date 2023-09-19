@@ -66,31 +66,31 @@
     <!-- ---- âncoras e pesquisa ---- -->
     <div id="shortcut-container">
         <div id="anchor">
-            <div class="icon-anchor" id="bebidas-anchor" href="#bebidas_link">
+            <div class="icon-anchor" data-id="id_bebidas" id="bebidas_id">
                 <div class="background">
                     <img src="images/caixa-de-cerveja.png" alt="" class="icon" >
                 </div>
                 <a href="#bebidas_link">Bebidas</a>
             </div>
-            <div class="icon-anchor" id="long-neck-anchor">
+            <div class="icon-anchor" data-id="id_longNeck">
                 <div class="background">
                     <img src="images/long-neck.png" alt="" class="icon" href="#longneck_link">
                 </div>
                 <a href="#longneck_link">Long Neck</a>
             </div>
-            <div class="icon-anchor" id="vinhos-anchor">
-                <div class="background">
+            <div class="icon-anchor" data-id="id_vinhoEspumantes">
+                <div class="background" >
                     <img src="images/vinho.png" alt="" class="icon">
                 </div>
                 <a href="#vinhos_link">Vinhos e Espumantes</a>
             </div>
-            <div class="icon-anchor" id="refrigerantes-anchor">
+            <div class="icon-anchor" data-id="id_refrigetantesCia">
                 <div class="background">
                     <img src="images/refrigerantes.png" alt="" class="icon">
                 </div>
                 <a href="#refrigerantes_link">Refrigerantes e Cia</a>
             </div>
-            <div class="icon-anchor" id="gelo-anchor">
+            <div class="icon-anchor" data-id="id_gelo">
                 <div class="background">
                     <img src="images/carvao.png" alt="" class="icon">
                 </div>
@@ -99,7 +99,7 @@
             </div>
         </div>
         <div id="search">
-            <img src="/assets/images/search-alt-2-regular-24.png" alt="">
+            <img src="./assets/images/search-alt-2-regular-24.png" alt="imagem da caixa de pesquisa">
             <input type="text" placeholder="procurar produto">
         </div>
     </div>
@@ -110,7 +110,7 @@
     <!-- conteudo principal -->
     <main>
         <div>
-            <div class="titulo_h2">
+            <div class="titulo_h2" id="id_bebidas">
                 <h2>Bebidas</h2>
                 <p id="bebidas_link"></p>
             </div>
@@ -119,7 +119,7 @@
         </div>
 
         <div>
-            <div class="titulo_h2">
+            <div class="titulo_h2" id="id_longNeck">
                 <h2>Long Neck</h2>
                 <p id="longneck_link"></p>
             </div>
@@ -128,7 +128,7 @@
         </div>
 
         <div>
-            <div class="titulo_h2" >
+            <div class="titulo_h2" id="id_vinhoEspumantes" >
                 <h2 id="titulo_vinhos">Vinhos e Espumantes</h2>
                 <p id="vinhos_link"></p>
             </div>
@@ -137,7 +137,7 @@
         </div>
 
         <div>
-            <div class="titulo_h2">
+            <div class="titulo_h2" id="id_refrigetantesCia">
                 <h2 id="titulo_refrigerante">Refrigerantes e Cia</h2>
                 <p id="refrigerantes_link"></p>
             </div>
@@ -155,7 +155,7 @@
         </div>
     
         <div>
-            <div class="titulo_h2">
+            <div class="titulo_h2" id="id_gelo">
                 <h2 id="titulo_gelo">Gelo e Carvão</h2>
                 <p id="gelo_link"></p>
             </div>
@@ -225,7 +225,7 @@
             <button class="nav_back" id="nav_back_cart" onclick="voltarCarrinho()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg></button>
             <div class="nav_bag inactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #7a7a7a;transform: msFilter;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg>Sacola
             </div>
-            <div class="nav_checkout active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(235, 163, 36, 1);transform: ;msFilter:;"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h8a.996.996 0 0 0 .707-.293l7-7a.997.997 0 0 0 .196-.293c.014-.03.022-.061.033-.093a.991.991 0 0 0 .051-.259c.002-.021.013-.041.013-.062V5c0-1.103-.897-2-2-2zM5 5h14v7h-6a1 1 0 0 0-1 1v6H5V5zm9 12.586V14h3.586L14 17.586z"></path></svg>Checkout
+            <div class="nav_checkout active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(235, 163, 36, 1);transform: msFilter;"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h8a.996.996 0 0 0 .707-.293l7-7a.997.997 0 0 0 .196-.293c.014-.03.022-.061.033-.093a.991.991 0 0 0 .051-.259c.002-.021.013-.041.013-.062V5c0-1.103-.897-2-2-2zM5 5h14v7h-6a1 1 0 0 0-1 1v6H5V5zm9 12.586V14h3.586L14 17.586z"></path></svg>Checkout
             </div>
             
             <div class="nav_confirm">

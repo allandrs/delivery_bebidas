@@ -131,15 +131,16 @@ const escolherTamanhoPreco = (key, type) => {
 
 // ANCORA DO MENU PARA IR ATÉ UM PONTO DA PÁGINA
 document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll(".icon-anchor");
-
-    sections.forEach(function(section) {
-        section.addEventListener("click", function() {
+    const buttons = document.querySelectorAll(".icon-anchor");
+    
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
             // obtem o id da seção clicada
-            const sectionId = this.getAttribute("id");
-
+            const sectionId = this.getAttribute("data-id");
+            
             // define o fragmento de url para o id da seção
-            window.location.hash = sectionId;
+            // window.location.hash = `#${sectionId}`;
+            document.getElementById(sectionId).scrollIntoView({block: "center"})
         })
     })
 })
@@ -295,10 +296,10 @@ const abrirCarrinho = () => {
 
 const fecharCarrinho = () => {
     // fechar o carrinho com o botão X no modo mobile
-    seleciona('.menu-closer').addEventListener('click', () => {
-        seleciona('aside').style.right = '150vw' // usando 150vw ele ficara fora da tela
-        seleciona('.cabecalho').style.display = 'flex'
-    })
+    // seleciona('.menu-closer').addEventListener('click', () => {
+    //     seleciona('aside').style.right = '150vw' // usando 150vw ele ficara fora da tela
+    //     seleciona('.cabecalho').style.display = 'flex'
+    // })
 }
 
 const atualizarCarrinho = () => {
