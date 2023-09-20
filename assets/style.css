@@ -438,8 +438,8 @@ nav a {
 
 /* Botao flutuante */
 #botao_flutuante {
-    width: 40px;
-    height: 40px;
+    width: 65px;
+    height: 65px;
     border-radius: 30px;
     position: fixed;
     display: none;
@@ -494,12 +494,14 @@ h1, h2 {
 
 h2 {
     margin-bottom: 80px;
-    font-size: 28px;
+    font-size: 24px;
     background-color: #eba324;
-    width: 200px;
-    height: 40px;
+    width: 160px;
+    height: 50px;
     border-radius: 30px;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex-wrap: nowrap;
 }
 
 .titulo_h2 {
@@ -508,27 +510,27 @@ h2 {
     justify-content: center;
 }
 
+#titulo_longNeck {
+    width: 200px;
+}
+
 #titulo_vinhos {
-    height: 80px;
-    width: 220px;
+    width: 320px;
 }
 #titulo_refrigerante {
-    height: 85px;
-    width: 240px;
+    width: 310px;
 }
 
 #titulo_destilados {
-    height: 120px;
+    width: 430px;
 }
 
 #titulo_gelo {
-    height: 90px;
-    width: 140px;
+    width: 220px;
 }
 
 #titulo_consumiveis {
-    height: 40px;
-    width: 240px;
+    width: 210px;
 }
 
 @keyframes neon {
@@ -896,7 +898,7 @@ margin-top:50px;
 footer {
     background-color: #eba324;
     width: 100%;
-    height: 150px;
+    height: 160px;
 
 }
 
@@ -908,19 +910,25 @@ footer {
 
 }
 
+#text_footer_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-footer img {
     width: 140px;
     height: 140px;
 }
 
-#sociais {
+#horario {
     display: flex;
     flex-direction: column;
     color: #000000;
     margin-bottom: 30px;
 }
 
-#sociais p {
+#horario p {
     color: #000000;
     font-size: 14px;
     font-weight: 300;
@@ -930,6 +938,19 @@ footer {
 
  h3 {
     font-size: 17px;
+}
+
+#container_finaly {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#social_icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .formas-de-pagamento {
@@ -976,7 +997,7 @@ footer {
     font-size: 11px;
     color: #000;
     opacity: 0.7;
-    margin-top: 110px;
+    /* margin-top: 100px; */
 }
 
 @media (max-width:1000px) {
@@ -1202,8 +1223,12 @@ footer {
         
     }
 
-    #sociais {
+    #horario {
         margin-bottom: 0;
+    }
+
+    h2 {
+        height: 70px;
     }
 
 }

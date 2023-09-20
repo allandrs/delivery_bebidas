@@ -137,9 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             // obtem o id da seção clicada
             const sectionId = this.getAttribute("data-id");
-            
-            // define o fragmento de url para o id da seção
-            // window.location.hash = `#${sectionId}`;
+
             document.getElementById(sectionId).scrollIntoView({block: "center"})
         })
     })
