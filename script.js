@@ -128,7 +128,6 @@ const escolherTamanhoPreco = (key, type) => {
     })
 }
 
-
 // ANCORA DO MENU PARA IR ATÉ UM PONTO DA PÁGINA
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll(".icon-anchor");
@@ -160,12 +159,30 @@ window.onscroll = function() {
 }
 
 // FUNÇÃO PESQUISAR PRODUTO
-function pesquisarProduto(array, nomePesquisado) {
+function pesquisarProduto(array, inputName) {
     // método filter para criar um novo array com objetos de nomes correspondentes à pesquisa
-    const resultados = array.filter((pessoa) =>
-    pessoa.nome.toLowerCase().includes(inputNome))
+    const resultados = array.filter((listItem) =>
+    listItem.nome.toLowerCase().includes(inputName.toLowerCase())
+    );      
 
     return resultados;
+}
+// função para lidar com a entrada do usuário e exibir os resultados
+function pesquisar() {
+    const input = document.getElementById('input').value
+
+    if(input) {
+        const resultadosDaPesquisa = pesquisarPorNome(pessoas, input);
+
+        if(resultadosDaPesquisa === 0) {
+            console.log('Nenhum resultado encontrado.');
+        } else {
+            console.log('Resultados da pesquisa:');
+            resultadosDaPesquisa.forEach((pessoa) => {
+                console.log(`Nome: ${pessoa.name}`)
+            })
+        }
+    }
 }
 
 //MUDAR A QUANTIDADE BOTÕES + e - da janela modal
