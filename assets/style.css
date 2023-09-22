@@ -1109,6 +1109,10 @@ footer {
         display: none;
     }
     
+    .icon-anchor a {
+        text-wrap: wrap;
+        text-align:center
+    }
 
     
 }
