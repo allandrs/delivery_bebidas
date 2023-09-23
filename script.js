@@ -547,6 +547,12 @@ function revisarDados() {
 
 }
 
+function sendToInstagram() {
+    let url = "https://www.instagram.com/diskvilabeer/"
+
+    window.open(url, '_blank').focus();
+}
+
 // WHATSAPP
 function whatsapp() {
     let nameWpp = seleciona('.campo_nome').value;
@@ -564,7 +570,7 @@ function whatsapp() {
     console.log(itens)
 
     // let url = "https://wa.me/75991281921?text="
-    let url = "https://wa.me/55997323505?text="
+    let url = "https://wa.me/75991281921?text="
     +"*Nome :* "+nameWpp+"%0a"
     +"*Telefone :* "+telefoneWpp+"%0a"
     +"*Rua :* "+ruaWpp+"%0a"
