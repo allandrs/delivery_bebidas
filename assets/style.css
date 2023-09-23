@@ -1236,3 +1236,9 @@ footer {
 
 }
 
+@media (max-width:330px) {
+    #id_vinhoEspumantes {
+        display: none;
+    }
+}
+
