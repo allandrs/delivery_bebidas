@@ -1237,7 +1237,7 @@ footer {
 }
 
 @media (max-width:330px) {
-    #id_vinhoEspumantes {
+    #vinhos_espumantes {
         display: none;
     }
 }
