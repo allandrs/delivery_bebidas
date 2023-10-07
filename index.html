@@ -104,6 +104,7 @@
         <div id="search">
             <img src="./assets/images/search-alt-2-regular-24.png" alt="imagem da caixa de pesquisa">
             <input type="text" placeholder="procurar produto" id="input">
+            <ul id="results"></ul>
         </div>
     </div>
     <!-- ---- fim âncoras e pesquisa ---- -->
@@ -303,12 +304,20 @@
             <div id="nome_telefone">
                 <p id="nome_revisao">--</p>
                 <p id="telefone_revisao">--</p>
+                <p id="endereco_revisao">--</p>
             </div>
             <hr id="h1">
             <div class="div_revisao" id="tipo_pedido_div">
                 <p class="p_desc" id="tipo_pedido_desc">Tipo do Pedido</p>
                 <p class="p_valor" id="tipo_valor">--</p>
             </div>
+            <div id="container_itens_revisao"></div>
+            <!-- <div class="div_revisao itens_revisao"id="itens_div">
+                <p id="itens_name">--</p>
+                <p id="itens_qtd">--</p>
+            </div> -->
+
+
             <div class="div_revisao" id="subtotal_div">
                 <p class="p_desc" id="subtotal_desc">Subtotal</p>
                 <p class="p_valor" id="subtotal_valor">R$ --</p>
@@ -409,9 +418,9 @@
             </div>
         <div id="container_finaly">
             <div id="social_icons">
-                <img src="/assets/images/bxl-instagram.png" alt="instagram" onclick="sendToInstagram()">
-                <img src="/assets/images/bxl-facebook-circle.png" alt="facebook">
-                <img src="/assets/images/bx-envelope.png" alt="e-mail">
+                <img src="./assets/images/bxl-instagram.png" alt="instagram" onclick="sendToInstagram()">
+                <img src="./assets/images/bxl-facebook-circle.png" alt="facebook">
+                <img src="./assets/images/bx-envelope.png" alt="e-mail">
             </div>
             <div id="direitos">
                 <p>©2022 Designed By Allan Douglas Code. | All Rights Reserved.</p>

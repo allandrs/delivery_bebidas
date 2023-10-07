@@ -112,6 +112,7 @@ aside.show {
     color: #eba324;
     border-left: none;
     font-size: 13px;
+    background-color: #3a3535;
 }
 
 .nav_bag.inactive {
@@ -126,6 +127,7 @@ aside.show {
     color: hsl(0, 0%, 48%);
     border-left: none;
     font-size: 13px;
+    background-color: #3a3535;
 }
 
 
@@ -141,6 +143,7 @@ aside.show {
     border: solid 1px #8b8a8a;
     color: #eba324;
     font-size: 13px;
+    background-color: #3a3535;
 }
 
 .nav_checkout.inactive {
@@ -155,6 +158,7 @@ aside.show {
     border: solid 0.1px #8b8a8a;
     color: #8b8a8a;
     font-size: 13px;
+    background-color: #3a3535;
 }
 .nav_confirm {
     display: flex;
@@ -169,6 +173,7 @@ aside.show {
     color: #8b8a8a;
     border-right: none;
     font-size: 13px;
+    background-color: #3a3535;
 }
 .nav_confirm.active {
     display: flex;
@@ -183,6 +188,7 @@ aside.show {
     color: #eba324;
     border-right: none;
     font-size: 13px;
+    background-color: #3a3535;
 }
 
 .fa-regular {
@@ -296,7 +302,7 @@ info_pagamento {
 }
 
 hr {
-    margin: 30px 10px;
+    margin: 25px 10px;
     border: 0;
     border-top: 1px dashed #ccc;
 }
@@ -439,7 +445,7 @@ nav a {
     outline: none;
 }
 
-input {
+#input {
     padding: 0 0 0 20px;
 }
 
@@ -801,11 +807,16 @@ margin-top:50px;
 
 } */
 
+.cart--item-nome {
+    text-wrap: wrap;
+}
+
 .cart--item--qtarea {
     display:inline-flex;
     background-color:#EEE;
     border-radius:10px;
     height:30px;
+    margin-left: 3px;
 }
 
 .cart--item--qtarea button {
@@ -816,6 +827,11 @@ margin-top:50px;
     cursor:pointer;
     padding:0px 10px;
     color:#333;
+}
+
+.cart--item--qtarea .revisao {
+    display:inline-flex;
+    background-color: yellow;
 }
 
 .cart--item--qt {
@@ -1022,7 +1038,7 @@ footer {
 @media (max-width:840px) {
     
     aside {
-        width: 40vw;
+        width: 70%;
         height: 100vh;
     }
     
@@ -1040,12 +1056,11 @@ footer {
         display:flex;
     }
 
-
-    .cart--area {
+    /* .cart--area {
         width:100vw;
         margin: 0px;
         padding: 0px;
-    }
+    } */
 
     .menu-closer {
         display:block;

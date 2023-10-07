@@ -158,32 +158,39 @@ window.onscroll = function() {
     }
 }
 
-// FUNÇÃO PESQUISAR PRODUTO
+// FUNÇÃO PESQUISAR PRODUTO NO ARRAY
 function pesquisarProduto(array, inputName) {
+    
+    inputName = inputName.toLowerCase();
+
     // método filter para criar um novo array com objetos de nomes correspondentes à pesquisa
-    const resultados = array.filter((listItem) =>
-    listItem.nome.toLowerCase().includes(inputName.toLowerCase())
+    const resultados = array.filter((product) =>
+    product.nome.toLowerCase().includes(inputName.toLowerCase())
     );      
 
     return resultados;
 }
-// função para lidar com a entrada do usuário e exibir os resultados
-function pesquisar() {
-    const input = document.getElementById('input').value
+// função para lidar com a entrada do teclado e pesquisar
+function handleKeyUp(event) {
+    const input = document.getElementById('input')
+    const resultsList = document.getElementById('results');
 
-    if(input) {
-        const resultadosDaPesquisa = pesquisarPorNome(pessoas, input);
+    resultsList.innerHTML = "";
 
-        if(resultadosDaPesquisa === 0) {
-            console.log('Nenhum resultado encontrado.');
-        } else {
-            console.log('Resultados da pesquisa:');
-            resultadosDaPesquisa.forEach((pessoa) => {
-                console.log(`Nome: ${pessoa.name}`)
-            })
-        }
-    }
+    const searchName = input.value;
+    const searchResults = pesquisarProduto(listItens, searchName);
+
+//     searchResults.forEach((result) => {
+//         const listItem = document.createElement("li");
+//         listItem.textContent = `Name: ${result.name}, Age: ${result.age}`;
+//         resultsList.appendChild(listItem);
+//     });
+// }
+
+// const searchInput = document.getElementById("searchInput");
+// searchInput.addEventListener("keyup", handleKeyUp);
 }
+
 
 //MUDAR A QUANTIDADE BOTÕES + e - da janela modal
 // const mudarQuantidade = () => {
@@ -198,6 +205,8 @@ function mudarQtdMenos() {
         seleciona('.itemInfo--qt').innerHTML = quantProduto	
     }
 }
+
+
 // }
 // /aula 05
 // const mudarQuantidade = () => {
@@ -214,7 +223,6 @@ function mudarQtdMenos() {
 //         }
 //     })
 // }
-
 
 
 // aula 06
@@ -470,6 +478,7 @@ function retirarNaLoja() {
     seleciona('#retirar').style.backgroundColor = '#eba324'
     seleciona('#entregar').style.backgroundColor = '#a3a3a3'
     seleciona('#info_entrega').style.display = 'none'
+    seleciona('#endereco_revisao').style.display = 'none'
 }
 
 // ATIVAR FORMULARIO ENTREGA
@@ -493,22 +502,86 @@ function buttonRetirar() {
 function revisarDados() {
     const nomeRevisar = seleciona('.campo_nome').value
     const telefoneRevisar = seleciona('.campo_telefone').value
+    
+    
+    //pegando dados de endereço e exibindo na tela de revisão
+    const enderecoRevisar = seleciona('#info_entrega')
+    const childrenInputs = enderecoRevisar.querySelectorAll('input')
+
+    const inputValues = []
+
+    childrenInputs.forEach(input => {
+        inputValues.push(input.value)
+    })
+
+    console.log(inputValues)
+
+    
+
+
     // const tipoPedidoRevisar = seleciona('.campo_rua').value
    
-	let subtotalValor = 0
+    seleciona('#container_itens_revisao').innerHTML = ''
 
-     // para preencher os itens do carrinho, calcular subtotal
+
+    let subtotalValor = 0
+    
+    // para preencher os itens do carrinho, calcular subtotal
 	for(let i in cart) {
 		// use o find para pegar o item por id
 		let produtoItem = cart[i];
         // let produtoItem = produtoItem.find( (item) => item.id == cart[i].id)		
         console.log(produtoItem);
 
+
+        // seleciona('#itens_name').innerHTML += produtoItem.name
+
+        // fazer o clone, exibir na tela e depois preencher as informacoes
+        let cartItem = seleciona('.models .cart--item').cloneNode(true)
+			seleciona('#container_itens_revisao').append(cartItem)
+
+			let produtoSizeName = cart[i].size
+
+			let produtoName = `${produtoItem.name} (${produtoSizeName})`
+
+            let produtoPrice = cart[i].price * cart[i].qt
+
+            console.log(produtoName)
+
+
+			// preencher as informacoes
+
+            cartItem.querySelector('img').style.display = 'none'
+			cartItem.querySelector('.cart--item-nome').innerHTML = 
+            `
+            <p>${produtoName} Qtd: ${cart[i].qt}</p> 
+            <p>Valor: ${formatoReal(produtoPrice)}</p>
+            -------------------------------------
+            `
+            
+			cartItem.querySelector('.cart--item--qt').style.display = 'none'
+			cartItem.querySelector('.cart--item--qt').style.fontSize = '12px'
+            cartItem.querySelector('.cart--item-qtmenos').style.display = 'none'
+            cartItem.querySelector('.cart--item-qtmais').style.display = 'none'
+            cartItem.querySelector('.cart--item--qtarea').style.backgroundColor = 'transparent'
+            cartItem.querySelector('.cart--item-nome').style.margin = '5px 10px 0 10px'
+            cartItem.querySelector('.cart--item-nome').style.fontWeight = 'bold'
+            // cartItem.querySelector('')
+            
+            // let createDivRevisaoValor = document.createElement('div')
+            // createDivRevisaoValor.classList.add('valor_rev')
+            // createDivRevisaoValor.textContent('valores')
+            // createDivRevisaoValor.seleciona('#container_itens_revisao').append(createDivRevisaoValor)
+
+        
+        // console.log(cart[i].price)
+
         // em cada item pegar o subtotal
     	subtotalValor += cart[i].price * cart[i].qt
+
     }
 
-    console.log(subtotalValor)
+
     
     // saber se é para entregar ou retirada
     const tipoValor = seleciona('#tipo_valor')
@@ -526,7 +599,8 @@ function revisarDados() {
         seleciona('#total_valor').innerHTML = formatoReal(subtotalValor)
         seleciona('#entrega_valor').style.display = 'none'
     }
-    
+
+    console.log(tipoValor.textContent)
     // let str = "Rs. 6,67,000";
     // let res = str.replace(/\D/g, "");
     // alert(res);
@@ -538,8 +612,9 @@ function revisarDados() {
 
     // const entregaRevisar = seleciona('.campo_referencia').value
     const totalRevisar = seleciona('#total_value').value
-    seleciona('#nome_revisao').innerHTML = nomeRevisar
-    seleciona('#telefone_revisao').innerHTML = telefoneRevisar
+    seleciona('#nome_revisao').innerHTML = `${nomeRevisar}`
+    seleciona('#telefone_revisao').innerHTML = `${telefoneRevisar}`
+    seleciona('#endereco_revisao').innerHTML = `${seleciona('.campo_rua').value}, Nº ${seleciona('.campo_numero_endereco').value}, ${seleciona('.campo_referencia').value} <p>${seleciona('.campo_bairro').value}</p>`
     // seleciona('#tipo_valor').innerHTML = tipoEntrega
     seleciona('#subtotal_valor').innerHTML = formatoReal(subtotalValor)
     // seleciona('#entrega_valor').innerHTML = numeroEnderecoRevisar
@@ -547,11 +622,7 @@ function revisarDados() {
 
 }
 
-function sendToInstagram() {
-    let url = "https://www.instagram.com/diskvilabeer/"
 
-    window.open(url, '_blank').focus();
-}
 
 // WHATSAPP
 function whatsapp() {
@@ -562,27 +633,74 @@ function whatsapp() {
     let referenciaWpp = seleciona('.campo_referencia').value;
     let bairroWpp = seleciona('.campo_bairro').value;
     let pagamentoWpp = seleciona('#pagamento').value;
+    let totalValor = seleciona('#total_valor')
     let itens = cart.map(produto => Object.values({
         nome: produto.name,
-        qtd: produto.qt
+        qtd: produto.qt,
+        price: produto.price,
+        size: produto.size
     }).join(': '));
 
     console.log(itens)
 
+    const tipoValor = seleciona('#tipo_valor')
+
+    // função para gerar número do pedido
+    function gerarNumeroPedido() {
+        const data = new Date();
+        const ano = data.getFullYear();
+        const mes = (data.getMonth() + 1).toString().padStart(2, '0'); // +1 porque os meses começam em 0
+        const dia = data.getDate().toString().padStart(2, '0');
+        const numeroAleatorio = Math.floor(Math.random() * 10000); // Número aleatório de 0 a 9999
+
+        const numeroPedido = `${dia}${mes}${ano}-${numeroAleatorio}`;
+        return numeroPedido;
+    }
+
+    const numeroPedidoGerado = gerarNumeroPedido();
+    console.log(numeroPedidoGerado)
+
+    let message = ` 
+    *NÚMERO DO PEDIDO:* ${numeroPedidoGerado}
+
+    ${cart.map((produto) => (
+    `
+    ------------------------------
+    *${produto.name}*
+    *${produto.qt}x*
+    *${produto.size}*
+    *${formatoReal(produto.price * produto.qt)}*
+    ------------------------------
+    ` 
+    ))}
+    
+    *VALOR TOTAL:* ${totalValor.textContent}
+    
+
+    *Tipo do pedido:* ${tipoValor.textContent}
+    *Pagamento:* ${pagamentoWpp}   
+    
+    *Nome:* ${nameWpp}
+    *Telefone:* ${telefoneWpp}
+    *Rua:* ${ruaWpp}
+    *Numero:* ${numeroWpp}
+    *Referência:* ${referenciaWpp}
+    *Bairro:* ${bairroWpp}
+    `
+
     // let url = "https://wa.me/75991281921?text="
-    let url = "https://wa.me/75991281921?text="
-    +"*Nome :* "+nameWpp+"%0a"
-    +"*Telefone :* "+telefoneWpp+"%0a"
-    +"*Rua :* "+ruaWpp+"%0a"
-    +"*Numero :* "+numeroWpp+"%0a"
-    +"*Referência :* "+referenciaWpp+"%0a"
-    +"*Bairro :* "+bairroWpp+"%0a"
-    +"*Pagamento :* "+pagamentoWpp+"%0a"
-    +"*Produtos :* "+itens+"%0a";
+    let url = `https://wa.me/55997323505?text=${encodeURI(message)}`  
+    
 
     window.open(url, '_blank').focus();
 }
 
+// IR PARA O INSTAGRAM
+function sendToInstagram() {
+    let url = "https://www.instagram.com/diskvilabeer/"
+
+    window.open(url, '_blank').focus();
+}
 
 // /aula 06
 function redenrizaItem (item, index, clas) {
