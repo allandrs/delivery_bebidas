@@ -634,6 +634,7 @@ function whatsapp() {
     let bairroWpp = seleciona('.campo_bairro').value;
     let pagamentoWpp = seleciona('#pagamento').value;
     let totalValor = seleciona('#total_valor')
+    let entrega = seleciona('#entrega_valor')
     let itens = cart.map(produto => Object.values({
         nome: produto.name,
         qtd: produto.qt,
@@ -674,12 +675,15 @@ function whatsapp() {
     ` 
     ))}
     
+    *Entrega:* ${entrega.textContent}
     *VALOR TOTAL:* ${totalValor.textContent}
     
 
     *Tipo do pedido:* ${tipoValor.textContent}
     *Pagamento:* ${pagamentoWpp}   
     
+    ======= CLIENTE ========
+
     *Nome:* ${nameWpp}
     *Telefone:* ${telefoneWpp}
     *Rua:* ${ruaWpp}
