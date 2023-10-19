@@ -475,16 +475,16 @@ const fecharAside = () => {
 
 // ATIVAR FORMULARIO RETIRAR NA LOJA
 function retirarNaLoja() {
-    seleciona('#retirar').style.backgroundColor = '#eba324'
-    seleciona('#entregar').style.backgroundColor = '#a3a3a3'
+    seleciona('#retirar').style.backgroundColor = '#a3a3a3'
+    seleciona('#entregar').style.backgroundColor = '#eba324'
     seleciona('#info_entrega').style.display = 'none'
     seleciona('#endereco_revisao').style.display = 'none'
 }
 
 // ATIVAR FORMULARIO ENTREGA
 function entregar() {
-    seleciona('#retirar').style.backgroundColor = '#a3a3a3'
-    seleciona('#entregar').style.backgroundColor = '#eba324'
+    seleciona('#retirar').style.backgroundColor = '#eba324'
+    seleciona('#entregar').style.backgroundColor = '#a3a3a3'
     seleciona('#info_entrega').style.display = 'flex'
 }
 
@@ -705,6 +705,34 @@ function sendToInstagram() {
 
     window.open(url, '_blank').focus();
 }
+
+// LOJA FECHADA
+const openingTime = new Date();
+openingTime.setHours(18, 0, 0);// Define o horário de abertura (18:00 PM)
+const closingTime = new Date();
+closingTime.setHours(22, 30, 0); // Define o horário de fechamento (22:30 PM)
+console.log(openingTime)
+
+function closeStore() {
+    const now = new Date();
+    console.log(now)
+    if (now < openingTime || now >= closingTime) {
+        const mensage = document.createElement('p');
+        mensage.setAttribute("class", "closed")
+        mensage.textContent = 'A loja está fechada no momento.'
+        
+        // substitui a mensagem
+        const conteudo = seleciona('#content')
+        conteudo.innerHTML = "";
+        conteudo.appendChild(mensage)
+    }
+}
+
+// Verifique o status da loja a cada minuto (ajuste o intervalo conforme necessário)
+setInterval(closeStore, 60000);
+
+// Verifique o status da loja imediatamente ao carregar a página
+window.addEventListener("load", closeStore);
 
 // /aula 06
 function redenrizaItem (item, index, clas) {
