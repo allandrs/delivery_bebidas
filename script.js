@@ -34,9 +34,6 @@ let cart = [] // carrinho
 // /aula 05
 
 // funcoes auxiliares ou uteis
-const seleciona = (elemento) => document.querySelector(elemento)
-const selecionaTodos = (elemento) => document.querySelectorAll(elemento)
-
 const formatoReal = (valor) => {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 }
@@ -48,20 +45,20 @@ const formatoMonetario = (valor) => {
 }
 
 const abrirModal = () => {
-    seleciona('.windowArea').style.opacity = 0 // transparente
-    seleciona('.windowArea').style.display = 'flex'
-    setTimeout(() => seleciona('.windowArea').style.opacity = 1, 150)
+    document.querySelector('.windowArea').style.opacity = 0 // transparente
+    document.querySelector('.windowArea').style.display = 'flex'
+    setTimeout(() => document.querySelector('.windowArea').style.opacity = 1, 150)
     
 }
 
 const fecharModal = () => {
-    seleciona('.windowArea').style.opacity = 0 // transparente
-    setTimeout(() => seleciona('.windowArea').style.display = 'none', 500)
+    document.querySelector('.windowArea').style.opacity = 0 // transparente
+    setTimeout(() => document.querySelector('.windowArea').style.display = 'none', 500)
 }
 
 const botoesFechar = () => {
     // BOTOES FECHAR MODAL
-    selecionaTodos('.itemInfo--cancelButton, .itemInfo--cancelMobileButton').forEach( (item) => item.addEventListener('click', fecharModal) )
+    document.querySelectorAll('.itemInfo--cancelButton, .itemInfo--cancelMobileButton').forEach( (item) => item.addEventListener('click', fecharModal) )
 }
 
 const preencheDadosDosProdutos = (produtoItem, item, index, clas) => {
@@ -75,9 +72,9 @@ const preencheDadosDosProdutos = (produtoItem, item, index, clas) => {
 }
 
 const preencheDadosModal = (item) => {
-    seleciona('.produtoBig img').src = item.img
-    seleciona('.itemInfo h1').innerHTML = item.name
-    seleciona('.itemInfo--actualPrice').innerHTML = formatoReal(item.price[0])
+    document.querySelector('.produtoBig img').src = item.img
+    document.querySelector('.itemInfo h1').innerHTML = item.name
+    document.querySelector('.itemInfo--actualPrice').innerHTML = formatoReal(item.price[0])
 }
 
 // aula 05
@@ -99,10 +96,10 @@ const pegarKey = (e, dataSet) => {
 
 const preencherTamanhos = () => {
     // tirar a selecao de tamanho atual e selecionar a unidade
-    seleciona('.itemInfo-size.selected').classList.remove('selected')
+    document.querySelector('.itemInfo-size.selected').classList.remove('selected')
 
     // **selecionar todos os tamanhos
-    selecionaTodos('.itemInfo-size').forEach((size, sizeIndex) => {
+    document.querySelectorAll('.itemInfo-size').forEach((size, sizeIndex) => {
         // selecionar a unidade
         (sizeIndex == 0) ? size.classList.add('selected') : ''
         // size.querySelector('span').innerHTML = listItens[key].sizes[sizeIndex]
@@ -113,17 +110,17 @@ const escolherTamanhoPreco = (key, type) => {
     // Ações nos botões de tamanho
     // selecionar todos os tamanhos
     
-    selecionaTodos('.itemInfo-size').forEach((size, sizeIndex) => {
+    document.querySelectorAll('.itemInfo-size').forEach((size, sizeIndex) => {
         size.addEventListener('click', (e) => {
             // clicou em um item, tirar a selecao dos outros e marca o q vc clicou
             // ** tirar a selecao de tamanho atual e selecionar a caixa
 
-            seleciona('.itemInfo-size.selected').classList.remove('selected')
+            document.querySelector('.itemInfo-size.selected').classList.remove('selected')
             // marcar o que vc clicou, ao inves de usar e.target use size, pois ele é nosso item dentro do loop
             size.classList.add('selected')
 
             // mudar o preço de acordo com o tamanho
-            seleciona('.itemInfo--actualPrice').innerHTML = formatoReal(listItens.data[type][key].price[sizeIndex])
+            document.querySelector('.itemInfo--actualPrice').innerHTML = formatoReal(listItens.data[type][key].price[sizeIndex])
         })
     })
 }
@@ -196,13 +193,13 @@ function handleKeyUp(event) {
 // const mudarQuantidade = () => {
 function mudarQtdMais() {
     quantProduto++
-    seleciona('.itemInfo--qt').innerHTML = quantProduto
+    document.querySelector('.itemInfo--qt').innerHTML = quantProduto
 
 }
 function mudarQtdMenos() {
     if(quantProduto > 1) {
         quantProduto--
-        seleciona('.itemInfo--qt').innerHTML = quantProduto	
+        document.querySelector('.itemInfo--qt').innerHTML = quantProduto	
     }
 }
 
@@ -211,15 +208,15 @@ function mudarQtdMenos() {
 // /aula 05
 // const mudarQuantidade = () => {
 //     // Ações nos botões + e - da janela modal
-//     seleciona('.pizzaInfo--qtmais').addEventListener('click', () => {
+//     document.querySelector('.pizzaInfo--qtmais').addEventListener('click', () => {
 //         quantPizzas++
-//         seleciona('.pizzaInfo--qt').innerHTML = quantPizzas
+//         document.querySelector('.pizzaInfo--qt').innerHTML = quantPizzas
 //     })
 
-//     seleciona('.pizzaInfo--qtmenos').addEventListener('click', () => {
+//     document.querySelector('.pizzaInfo--qtmenos').addEventListener('click', () => {
 //         if(quantPizzas > 1) {
 //             quantPizzas--
-//             seleciona('.pizzaInfo--qt').innerHTML = quantPizzas	
+//             document.querySelector('.pizzaInfo--qt').innerHTML = quantPizzas	
 //         }
 //     })
 // }
@@ -235,7 +232,7 @@ const adicionarNoCarrinho = () => {
     	console.log("produto " + modalKey)
 
     	// tamanho
-	    let size = seleciona('.itemInfo-size.selected').getAttribute('data-key')
+	    let size = document.querySelector('.itemInfo-size.selected').getAttribute('data-key')
 	    console.log("Tamanho " + size)
 	    // quantidade
     	console.log("Quant. " + quantProduto)
@@ -300,43 +297,51 @@ const adicionarNoCarrinho = () => {
 
 const abrirCarrinho = () => {
     console.log('Qtd de itens no carrinho ' + cart.length)
-    if(cart.length > 0) {
-        // mostrar o carrinho
-	    seleciona('#aside_carrinho').classList.add('show')
-        // seleciona('aside').style.left = '0vw' // usando 0vw ele ficara na tela
-        seleciona('#aside_carrinho').style.right = '0vw'
-        seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
-    }
-    
+    // if(cart.length > 0) {
+    //     // mostrar o carrinho
+	//     document.querySelector('#aside_carrinho').classList.add('show')
+    //     // document.querySelector('aside').style.left = '0vw' // usando 0vw ele ficara na tela
+    //     document.querySelector('#aside_carrinho').style.right = '0vw'
+    //     document.querySelector('.cabecalho').style.display = 'none' // não mostrar barra superior
+    // }
+
     // exibir aside do carrinho no modo mobile
-    seleciona('.menu-openner').addEventListener('click', () => {
-        if(cart.length > 0) {
-            seleciona('aside').classList.add('show')
-            seleciona('aside').style.right = '0vw'
-        }
-    })
+    // document.querySelector('.menu-openner').addEventListener('click', () => {
+    //     console.log('teste carrinho')
+    //     if(cart.length > 0) {
+    //         document.querySelector('aside').classList.add('show')
+    //         document.querySelector('aside').style.right = '0vw'
+    //     }
+    // })
+
+    document.querySelector('aside').classList.add('show')
+    document.querySelector('aside').style.right = '0vw'
+
+    // if(cart.length === 0) {
+
+    // }
 }
 
 const fecharCarrinho = () => {
     // fechar o carrinho com o botão X no modo mobile
-    // seleciona('.menu-closer').addEventListener('click', () => {
-    //     seleciona('aside').style.right = '150vw' // usando 150vw ele ficara fora da tela
-    //     seleciona('.cabecalho').style.display = 'flex'
+    // document.querySelector('.menu-closer').addEventListener('click', () => {
+    //     document.querySelector('aside').style.right = '150vw' // usando 150vw ele ficara fora da tela
+    //     document.querySelector('.cabecalho').style.display = 'flex'
     // })
 }
 
 const atualizarCarrinho = () => {
     // exibir número de itens no carrinho
-	seleciona('.menu-openner span').innerHTML = cart.length
+	document.querySelector('.menu-openner .quant_cart').innerHTML = cart.length
 	
 	// mostrar ou nao o carrinho
 	if(cart.length > 0) {
 
 		// mostrar o carrinho
-		seleciona('#aside_carrinho').classList.add('show')
+		// document.querySelector('#aside_carrinho').classList.add('show')
 
 		// zerar meu .cart para nao fazer insercoes duplicadas
-		seleciona('.cart').innerHTML = ''
+		document.querySelector('.cart').innerHTML = ''
 
         // crie as variaveis antes do for
 		let subtotal = 0
@@ -356,8 +361,8 @@ const atualizarCarrinho = () => {
             //console.log(cart[i].price)
 
 			// fazer o clone, exibir na telas e depois preencher as informacoes
-			let cartItem = seleciona('.models .cart--item').cloneNode(true)
-			seleciona('.cart').append(cartItem)
+			let cartItem = document.querySelector('.models .cart--item').cloneNode(true)
+			document.querySelector('.cart').append(cartItem)
 
 			let produtoSizeName = cart[i].size
 
@@ -387,13 +392,13 @@ const atualizarCarrinho = () => {
 					cart.splice(i, 1)
 				}
 
-                (cart.length < 1) ? seleciona('.cabecalho').style.display = 'flex' : ''
+                (cart.length < 1) ? document.querySelector('.cabecalho').style.display = 'flex' : ''
 
 				// atualizar a quantidade
 				atualizarCarrinho()
 			})
 
-			seleciona('.cart').append(cartItem)
+			document.querySelector('.cart').append(cartItem)
 
 		} // fim do for
 
@@ -405,107 +410,107 @@ const atualizarCarrinho = () => {
 
 		// exibir na tela os resultados
 		// selecionar o ultimo span do elemento
-		seleciona('.subtotal span:last-child').innerHTML = formatoReal(subtotal)
-		seleciona('.desconto span:last-child').innerHTML = formatoReal(desconto)
-		seleciona('.total span:last-child').innerHTML    = formatoReal(total)
+		document.querySelector('.subtotal span:last-child').innerHTML = formatoReal(subtotal)
+		document.querySelector('.desconto span:last-child').innerHTML = formatoReal(desconto)
+		document.querySelector('.total span:last-child').innerHTML    = formatoReal(total)
 
 	} else {
 		// ocultar o carrinho
-		seleciona('aside').classList.remove('show')
-		// seleciona('aside').style.left = '100vw'
+		document.querySelector('aside').classList.remove('show')
+		// document.querySelector('aside').style.left = '100vw'
 	}
 }
 
 // BOTAO PROXIMO --> AVANÇA DO CARRINHO PARA O FORM
 const finalizarCompra = () => {
     console.log('Finalizar compra')
-    seleciona('#aside_carrinho').classList.remove('show')
-    seleciona('.cabecalho').style.display = 'flex'
-    seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
+    document.querySelector('#aside_carrinho').classList.remove('show')
+    document.querySelector('.cabecalho').style.display = 'flex'
+    document.querySelector('.cabecalho').style.display = 'none' // não mostrar barra superior
 }
 
 // BOTAO PROXIMO --> AVANÇA DO FORM PARA CONFIRMAÇÃO DE DADOS
 const finalizarForm = () => {
     console.log('Finalizar formulario')
-    seleciona('#aside_endereco').classList.remove('show')
-    seleciona('.cabecalho').style.display = 'flex'
-    seleciona('.cabecalho').style.display = 'none' // não mostrar barra superior
+    document.querySelector('#aside_endereco').classList.remove('show')
+    document.querySelector('.cabecalho').style.display = 'flex'
+    document.querySelector('.cabecalho').style.display = 'none' // não mostrar barra superior
 }
 
 // VOLTAR AO CARRINHO
 const voltarCarrinho = () => {
     console.log('teste voltar ao carrinho');
-    seleciona('#aside_endereco').classList.remove('show')
-    // seleciona('#aside_endereco').style.right = '0vw'
-    seleciona('#aside_carrinho').classList.add('show')
-    // seleciona('#aside_carriho').style.right = '0vw'
+    document.querySelector('#aside_endereco').classList.remove('show')
+    // document.querySelector('#aside_endereco').style.right = '0vw'
+    document.querySelector('#aside_carrinho').classList.add('show')
+    // document.querySelector('#aside_carriho').style.right = '0vw'
 }
 
 // VOLTAR AO CARRINHO
 const voltarCheckout = () => {
     console.log('teste voltar ao checkout');
-    seleciona('#aside_confirm').classList.remove('show')
-    // seleciona('#aside_endereco').style.right = '0vw'
-    seleciona('#aside_endereco').classList.add('show')
-    // seleciona('#aside_carriho').style.right = '0vw'
+    document.querySelector('#aside_confirm').classList.remove('show')
+    // document.querySelector('#aside_endereco').style.right = '0vw'
+    document.querySelector('#aside_endereco').classList.add('show')
+    // document.querySelector('#aside_carriho').style.right = '0vw'
 }
 
 // FORMULARIO
 const openForm = () => {
-    seleciona('#aside_endereco').classList.add('show')
-    // seleciona('#aside_carriho').style.left = '150vw'
+    document.querySelector('#aside_endereco').classList.add('show')
+    // document.querySelector('#aside_carriho').style.left = '150vw'
     console.log('disparei')
 }
 
 // CONFIRMAÇÃO DE DADOS
 const confirmForm = () => {
-    seleciona('#aside_confirm').classList.add('show')
-    // seleciona('#aside_endereco').style.left = '150vw'
+    document.querySelector('#aside_confirm').classList.add('show')
+    // document.querySelector('#aside_endereco').style.left = '150vw'
     console.log('disparei')
 }
 
 // RECOLHER ASIDE
 const fecharAside = () => {
     console.log('teste botao fechar')
-    seleciona('#aside_carrinho').classList.remove('show')
-    seleciona('#aside_endereco').classList.remove('show')
-    seleciona('#aside_confirm').classList.remove('show')
-    seleciona('.cabecalho').style.display = 'flex'
+    document.querySelector('#aside_carrinho').classList.remove('show')
+    document.querySelector('#aside_endereco').classList.remove('show')
+    document.querySelector('#aside_confirm').classList.remove('show')
+    document.querySelector('.cabecalho').style.display = 'flex'
 }
 
 // ATIVAR FORMULARIO RETIRAR NA LOJA
 function retirarNaLoja() {
-    seleciona('#retirar').style.backgroundColor = '#a3a3a3'
-    seleciona('#entregar').style.backgroundColor = '#eba324'
-    seleciona('#info_entrega').style.display = 'none'
-    seleciona('#endereco_revisao').style.display = 'none'
+    document.querySelector('#retirar').style.backgroundColor = '#a3a3a3'
+    document.querySelector('#entregar').style.backgroundColor = '#eba324'
+    document.querySelector('#info_entrega').style.display = 'none'
+    document.querySelector('#endereco_revisao').style.display = 'none'
 }
 
 // ATIVAR FORMULARIO ENTREGA
 function entregar() {
-    seleciona('#retirar').style.backgroundColor = '#eba324'
-    seleciona('#entregar').style.backgroundColor = '#a3a3a3'
-    seleciona('#info_entrega').style.display = 'flex'
+    document.querySelector('#retirar').style.backgroundColor = '#eba324'
+    document.querySelector('#entregar').style.backgroundColor = '#a3a3a3'
+    document.querySelector('#info_entrega').style.display = 'flex'
 }
 
 function buttonEntregar() {
-    seleciona('#entregar').classList.add('selected')
-    seleciona('#retirar').classList.remove('selected')
+    document.querySelector('#entregar').classList.add('selected')
+    document.querySelector('#retirar').classList.remove('selected')
 }
 
 function buttonRetirar() {
-    seleciona('#entregar').classList.remove('selected')
-    seleciona('#retirar').classList.add('selected')
+    document.querySelector('#entregar').classList.remove('selected')
+    document.querySelector('#retirar').classList.add('selected')
 }
 
 // REVISÃO DOS DADOS NO ASIDE DE CONFIRMAÇÃO
 function revisarDados() {
-    const nomeRevisar = seleciona('.campo_nome').value
-    const telefoneRevisar = seleciona('.campo_telefone').value
+    const nomeRevisar = document.querySelector('.campo_nome').value
+    const telefoneRevisar = document.querySelector('.campo_telefone').value
     
     
     //pegando dados de endereço e exibindo na tela de revisão
-    const enderecoRevisar = seleciona('#info_entrega')
+    const enderecoRevisar = document.querySelector('#info_entrega')
     const childrenInputs = enderecoRevisar.querySelectorAll('input')
 
     const inputValues = []
@@ -519,9 +524,9 @@ function revisarDados() {
     
 
 
-    // const tipoPedidoRevisar = seleciona('.campo_rua').value
+    // const tipoPedidoRevisar = document.querySelector('.campo_rua').value
    
-    seleciona('#container_itens_revisao').innerHTML = ''
+    document.querySelector('#container_itens_revisao').innerHTML = ''
 
 
     let subtotalValor = 0
@@ -534,11 +539,11 @@ function revisarDados() {
         console.log(produtoItem);
 
 
-        // seleciona('#itens_name').innerHTML += produtoItem.name
+        // document.querySelector('#itens_name').innerHTML += produtoItem.name
 
         // fazer o clone, exibir na tela e depois preencher as informacoes
-        let cartItem = seleciona('.models .cart--item').cloneNode(true)
-			seleciona('#container_itens_revisao').append(cartItem)
+        let cartItem = document.querySelector('.models .cart--item').cloneNode(true)
+			document.querySelector('#container_itens_revisao').append(cartItem)
 
 			let produtoSizeName = cart[i].size
 
@@ -571,7 +576,7 @@ function revisarDados() {
             // let createDivRevisaoValor = document.createElement('div')
             // createDivRevisaoValor.classList.add('valor_rev')
             // createDivRevisaoValor.textContent('valores')
-            // createDivRevisaoValor.seleciona('#container_itens_revisao').append(createDivRevisaoValor)
+            // createDivRevisaoValor.document.querySelector('#container_itens_revisao').append(createDivRevisaoValor)
 
         
         // console.log(cart[i].price)
@@ -584,20 +589,20 @@ function revisarDados() {
 
     
     // saber se é para entregar ou retirada
-    const tipoValor = seleciona('#tipo_valor')
-    const entregar = seleciona('#entregar').classList.contains('selected')
+    const tipoValor = document.querySelector('#tipo_valor')
+    const entregar = document.querySelector('#entregar').classList.contains('selected')
     console.log(entregar)
 
     if (entregar == true) {
         tipoValor.innerHTML = 'Entrega'
         let total = subtotalValor + 7.00
         console.log(total)
-        seleciona('#total_valor').innerHTML = formatoReal(total)
-        seleciona('#entrega_valor').style.display = 'block'
+        document.querySelector('#total_valor').innerHTML = formatoReal(total)
+        document.querySelector('#entrega_valor').style.display = 'block'
     } else {
         tipoValor.innerHTML = 'Retirar'
-        seleciona('#total_valor').innerHTML = formatoReal(subtotalValor)
-        seleciona('#entrega_valor').style.display = 'none'
+        document.querySelector('#total_valor').innerHTML = formatoReal(subtotalValor)
+        document.querySelector('#entrega_valor').style.display = 'none'
     }
 
     console.log(tipoValor.textContent)
@@ -606,35 +611,53 @@ function revisarDados() {
     // alert(res);
 
     // calculo valor total
-    // const taxaEntrega = seleciona('#entrega_valor').text
+    // const taxaEntrega = document.querySelector('#entrega_valor').text
     // console.log(taxaEntrega)
     // var num = txt.replace(/[^0-9]/g, ''); 
 
-    // const entregaRevisar = seleciona('.campo_referencia').value
-    const totalRevisar = seleciona('#total_value').value
-    seleciona('#nome_revisao').innerHTML = `${nomeRevisar}`
-    seleciona('#telefone_revisao').innerHTML = `${telefoneRevisar}`
-    seleciona('#endereco_revisao').innerHTML = `${seleciona('.campo_rua').value}, Nº ${seleciona('.campo_numero_endereco').value}, ${seleciona('.campo_referencia').value} <p>${seleciona('.campo_bairro').value}</p>`
-    // seleciona('#tipo_valor').innerHTML = tipoEntrega
-    seleciona('#subtotal_valor').innerHTML = formatoReal(subtotalValor)
-    // seleciona('#entrega_valor').innerHTML = numeroEnderecoRevisar
-    // seleciona('total_valor').innerHTML = totalRevisar
+    // const entregaRevisar = document.querySelector('.campo_referencia').value
+    const totalRevisar = document.querySelector('#total_value').value
+    document.querySelector('#nome_revisao').innerHTML = `${nomeRevisar}`
+    document.querySelector('#telefone_revisao').innerHTML = `${telefoneRevisar}`
+    document.querySelector('#endereco_revisao').innerHTML = `${document.querySelector('.campo_rua').value}, Nº ${document.querySelector('.campo_numero_endereco').value}, ${document.querySelector('.campo_referencia').value} <p>${document.querySelector('.campo_bairro').value}</p>`
+    // document.querySelector('#tipo_valor').innerHTML = tipoEntrega
+    document.querySelector('#subtotal_valor').innerHTML = formatoReal(subtotalValor)
+    // document.querySelector('#entrega_valor').innerHTML = numeroEnderecoRevisar
+    // document.querySelector('total_valor').innerHTML = totalRevisar
 
 }
 
+// BOTAO CARRINHO
+// function botaoCarrinho() {
+    
+//     // mostrar o carrinho
+// 		document.querySelector('#aside_carrinho').classList.add('show')
 
+// 		// zerar meu .cart para nao fazer insercoes duplicadas
+// 		document.querySelector('.cart').innerHTML = ''
+
+//     let subtotalValor = 0
+    
+//     // para preencher os itens do carrinho, calcular subtotal
+// 	for(let i in cart) {
+//         subtotalValor += cart[i].price * cart[i].qt
+//     }
+    
+//     const totalRevisar = document.querySelector('#total_value').value
+//     document.querySelector('.subtotal_cart').innerHTML = formatoReal(subtotalValor)
+// }
 
 // WHATSAPP
 function whatsapp() {
-    let nameWpp = seleciona('.campo_nome').value;
-    let telefoneWpp = seleciona('.campo_telefone').value;
-    let ruaWpp = seleciona('.campo_rua').value;
-    let numeroWpp = seleciona('.campo_numero_endereco').value;
-    let referenciaWpp = seleciona('.campo_referencia').value;
-    let bairroWpp = seleciona('.campo_bairro').value;
-    let pagamentoWpp = seleciona('#pagamento').value;
-    let totalValor = seleciona('#total_valor')
-    let entrega = seleciona('#entrega_valor')
+    let nameWpp = document.querySelector('.campo_nome').value;
+    let telefoneWpp = document.querySelector('.campo_telefone').value;
+    let ruaWpp = document.querySelector('.campo_rua').value;
+    let numeroWpp = document.querySelector('.campo_numero_endereco').value;
+    let referenciaWpp = document.querySelector('.campo_referencia').value;
+    let bairroWpp = document.querySelector('.campo_bairro').value;
+    let pagamentoWpp = document.querySelector('#pagamento').value;
+    let totalValor = document.querySelector('#total_valor')
+    let entrega = document.querySelector('#entrega_valor')
     let itens = cart.map(produto => Object.values({
         nome: produto.name,
         qtd: produto.qt,
@@ -644,7 +667,7 @@ function whatsapp() {
 
     console.log(itens)
 
-    const tipoValor = seleciona('#tipo_valor')
+    const tipoValor = document.querySelector('#tipo_valor')
 
     // função para gerar número do pedido
     function gerarNumeroPedido() {
@@ -693,7 +716,7 @@ function whatsapp() {
     `
 
     // let url = "https://wa.me/75991281921?text="
-    let url = `https://wa.me/55997323505?text=${encodeURI(message)}`  
+    let url = `https://wa.me/75991281921?text=${encodeURI(message)}`  
     
 
     window.open(url, '_blank').focus();
@@ -708,9 +731,9 @@ function sendToInstagram() {
 
 // LOJA FECHADA
 const openingTime = new Date();
-openingTime.setHours(18, 0, 0);// Define o horário de abertura (18:00 PM)
+openingTime.setHours(9, 0, 0);// Define o horário de abertura (18:00 PM)
 const closingTime = new Date();
-closingTime.setHours(22, 30, 0); // Define o horário de fechamento (22:30 PM)
+closingTime.setHours(23, 59, 0); // Define o horário de fechamento (22:30 PM)
 console.log(openingTime)
 
 function closeStore() {
@@ -722,9 +745,13 @@ function closeStore() {
         mensage.textContent = 'A loja está fechada no momento.'
         
         // substitui a mensagem
-        const conteudo = seleciona('#content')
+        const conteudo = document.querySelector('#content')
         conteudo.innerHTML = "";
         conteudo.appendChild(mensage)
+
+        document.querySelector('.menu-openner').style.display = 'none'
+
+
     }
 }
 
@@ -738,7 +765,7 @@ window.addEventListener("load", closeStore);
 function redenrizaItem (item, index, clas) {
     let produtoItem = document.querySelector('.models .produto-item').cloneNode(true)
     //console.log(produtoItem)
-    seleciona(clas).append(produtoItem)
+    document.querySelector(clas).append(produtoItem)
 
     // preencher os dados de cada produto
     preencheDadosDosProdutos(produtoItem, item, index, clas)
@@ -765,7 +792,7 @@ function redenrizaItem (item, index, clas) {
         preencherTamanhos(chave)
 
 		// definir quantidade inicial como 1
-		seleciona('.itemInfo--qt').innerHTML = quantProduto
+		document.querySelector('.itemInfo--qt').innerHTML = quantProduto
 
         // selecionar o tamanho e preco com o clique no botao
         escolherTamanhoPreco(chave, type)

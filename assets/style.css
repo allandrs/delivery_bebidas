@@ -480,6 +480,56 @@ nav a {
 
 }
 
+.menu-openner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 290px;
+    height: 45px;
+    border-radius: 10px;
+    position: fixed;
+    /* display: none; */
+    bottom: 25px;
+    left: 335px;
+    background-image: url('./images/de-volta-ao-topo.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    /* background-color: #FFF; */
+}
+
+.quant_cart {
+    font-size: 16px;
+    background-color: #fff;
+    width: 20px;
+    border-radius: 40px;
+    color: #eba324;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 18px; */
+}
+
+.quant_cart span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-openner div:nth-child(2) {
+    font-size: 17px;
+    /* margin-right: 18px; */
+}
+
+.menu-openner div:nth-child(3) {
+    font-size: 17px;
+    /* margin-right: 18px; */
+}
+
+.menu-openner div:nth-child(4) {
+    font-size: 19px;
+}
 
 /* FORMULARIO INICIO */
 input[type=number]::-webkit-inner-spin-button,
@@ -1137,6 +1187,7 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content:space-between;
+        gap: 10px;
     }
     
     .bebidas {
@@ -1147,7 +1198,7 @@ footer {
     
     #search {
         padding-top: 20px;
-        display: none;
+        /* display: none; */
     }
     
     .icon-anchor a {
