@@ -75,10 +75,10 @@ const listItens = {
       },
       {
         id: 13,
-        name: 'Petra lata',
+        name: 'Ceverja teste',
         img: 'images/petra-lata.png',
-        price: [3.00, 34.00]
-      }
+        price: [9.00, 34.00]
+      },
     ],
     longNeck: [
       {

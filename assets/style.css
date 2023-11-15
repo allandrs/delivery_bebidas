@@ -51,18 +51,7 @@ body {
     padding-top: 20%;
 }
 
-.menu-openner {
-    margin-right: 15px;
-    font-size: 26px;
-    background-color: #eba324;
-    padding: 5px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.menu-openner span {
-    margin-right:10px;
-}
 
 .menu-closer {
     width:32px;
@@ -340,8 +329,6 @@ hr {
     font-weight: 700;
 }
 
-
-
 /* cabeçalho */
 header {
     display: flex;
@@ -352,10 +339,19 @@ header {
     height: 100%;
 }
 
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    width: 250px;
+    height: 250px;
+}
+
 #logo img {
     width: 250px;
     height: 250px;
-    margin-top: 80px;
+    /* margin: ; */
 }
 
 #social img{
@@ -364,21 +360,22 @@ header {
     margin-bottom: 5px;
 }
 
-nav {
+#nav {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     gap: 84px;
     background-color: #eba324;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
-nav a {
+#nav a {
     color:#000000;
     font-weight: 600;
     font-size: 16px;
     white-space: nowrap;
+    display: none;
 }
 
 .insta-div {
@@ -386,11 +383,12 @@ nav a {
 }
 
 /* âncora e pesquisa */
-.main {
+main {
+    /* display: flex;
+    flex-direction: column; */
     flex: 1;
     width: 100vw;
     padding: 20px 0;
-
 }
 
 #shortcut-container {
@@ -444,9 +442,12 @@ nav a {
 }
 
 #search img {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
+    /* color: #000; */
+    /* background-color: #fff; */
 }
+
 
 #search input {
     height: 35px;
@@ -481,6 +482,10 @@ nav a {
 }
 
 .menu-openner {
+    background-color: #eba324;
+    padding: 0px 15px;
+    border-radius: 5px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -489,14 +494,18 @@ nav a {
     height: 45px;
     border-radius: 10px;
     position: fixed;
-    /* display: none; */
     bottom: 25px;
-    left: 335px;
+    left: 50%;
+    transform: translateX(-50%);
     background-image: url('./images/de-volta-ao-topo.png');
     background-size: cover;
     border: none;
     cursor: pointer;
     /* background-color: #FFF; */
+}
+
+.menu-openner, .menu-openner > * {
+    font-size: 15px;
 }
 
 .quant_cart {
@@ -508,27 +517,6 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-right: 18px; */
-}
-
-.quant_cart span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-openner div:nth-child(2) {
-    font-size: 17px;
-    /* margin-right: 18px; */
-}
-
-.menu-openner div:nth-child(3) {
-    font-size: 17px;
-    /* margin-right: 18px; */
-}
-
-.menu-openner div:nth-child(4) {
-    font-size: 19px;
 }
 
 /* FORMULARIO INICIO */
@@ -557,7 +545,7 @@ fieldset {
 
 
 main {
-    flex:1;
+    /* flex:1; */
     padding:20px;
     margin-top:10px;
 }
@@ -953,15 +941,14 @@ margin-top:50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin: 0 0 20px 0;
 }
 
 .insta-div {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-
+    gap: 6px;
 }
 
 .insta-div img {
@@ -1093,10 +1080,12 @@ footer {
     /* margin-top: 100px; */
 }
 
+
 @media (max-width:1000px) {
     .produto-area {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media (max-width:840px) {
@@ -1119,12 +1108,6 @@ footer {
     header {
         display:flex;
     }
-
-    /* .cart--area {
-        width:100vw;
-        margin: 0px;
-        padding: 0px;
-    } */
 
     .menu-closer {
         display:block;
@@ -1196,17 +1179,11 @@ footer {
         
     }
     
-    #search {
-        padding-top: 20px;
-        /* display: none; */
-    }
-    
     .icon-anchor a {
         text-wrap: wrap;
         text-align:center
     }
 
-    
 }
 
 @media (max-width:450px) {
@@ -1225,20 +1202,22 @@ footer {
         width: 100vw;
     }
 
-    nav {
+    #nav {
         position: relative;
-        display: inline-block;
-        padding: 25px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 0;
     }
-    nav a {
+    /* #nav a {
         display: none;
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
-    }
-    nav:hover .dropdown-content {
+    } */
+    #nav:hover .dropdown-content {
         display: block;
     }
 
@@ -1333,7 +1312,6 @@ footer {
     h2 {
         height: 70px;
     }
-
 }
 
 @media (max-width:330px) {

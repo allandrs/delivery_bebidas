@@ -1,23 +1,4 @@
-// const Modal = {
-//     open(){
-//         document
-//             .querySelector('.modal-overlay')
-//             .classList
-//             .add('active')
-
-//     },    
-//     close(){
-//         document
-//             .querySelector('.modal-overlay')
-//             .classList
-//             .remove('active')
-//     }
-// }
-
-
-
-// aula 05
-// criar aa variáveis global
+// VARIÁVEIS GLOBAIS
 let modalKey = 0
 
 let keyAtual;
@@ -25,13 +6,13 @@ let keyAtual;
 let typeAtual;
 
 
-// variavel para controlar a quantidade inicial de produtos na modal
+// variavel para controlar a quantidade inicial de produtos no modal
 let quantProduto = 0
 
 
+// carrinho
+let cart = [] 
 
-let cart = [] // carrinho
-// /aula 05
 
 // funcoes auxiliares ou uteis
 const formatoReal = (valor) => {
@@ -56,13 +37,13 @@ const fecharModal = () => {
     setTimeout(() => document.querySelector('.windowArea').style.display = 'none', 500)
 }
 
+// BOTOES FECHAR MODAL
 const botoesFechar = () => {
-    // BOTOES FECHAR MODAL
     document.querySelectorAll('.itemInfo--cancelButton, .itemInfo--cancelMobileButton').forEach( (item) => item.addEventListener('click', fecharModal) )
 }
 
 const preencheDadosDosProdutos = (produtoItem, item, index, clas) => {
-    // aula 05
+    
     // setar um atributo para identificar qual elemento foi clicado
 	produtoItem.setAttribute('data-key', index)
 	produtoItem.setAttribute('data-type', clas.slice(1))
@@ -77,13 +58,10 @@ const preencheDadosModal = (item) => {
     document.querySelector('.itemInfo--actualPrice').innerHTML = formatoReal(item.price[0])
 }
 
-// aula 05
 const pegarKey = (e, dataSet) => {
-    // .closest retorna o elemento mais proximo que tem a class que passamos
-    // do .produto-item ele vai pegar o valor do atributo data-key
+    // .closest retorna o elemento mais proximo que tem a class que passamos do .produto-item. Ele vai pegar o valor do atributo data-key
     let key = e.target.closest('.produto-item').getAttribute(dataSet)
     console.log('Produto clicado ' + key)
-
 
     // garantir que a quantidade inicial de produto é 1
     quantProduto = 1
@@ -189,47 +167,26 @@ function handleKeyUp(event) {
 }
 
 
-//MUDAR A QUANTIDADE BOTÕES + e - da janela modal
+//MUDAR A QUANTIDADE BOTÕES + e - na janela modal do produto
 // const mudarQuantidade = () => {
 function mudarQtdMais() {
     quantProduto++
     document.querySelector('.itemInfo--qt').innerHTML = quantProduto
-
 }
 function mudarQtdMenos() {
     if(quantProduto > 1) {
         quantProduto--
-        document.querySelector('.itemInfo--qt').innerHTML = quantProduto	
+        document.querySelector('.itemInfo--qt').innerHTML = quantProduto
     }
 }
 
-
-// }
-// /aula 05
-// const mudarQuantidade = () => {
-//     // Ações nos botões + e - da janela modal
-//     document.querySelector('.pizzaInfo--qtmais').addEventListener('click', () => {
-//         quantPizzas++
-//         document.querySelector('.pizzaInfo--qt').innerHTML = quantPizzas
-//     })
-
-//     document.querySelector('.pizzaInfo--qtmenos').addEventListener('click', () => {
-//         if(quantPizzas > 1) {
-//             quantPizzas--
-//             document.querySelector('.pizzaInfo--qt').innerHTML = quantPizzas	
-//         }
-//     })
-// }
-
-
-// aula 06
 const adicionarNoCarrinho = () => {
     
-        console.log('Adicionar no carrinho')
+        console.log('Produto adicionado no carrinho')
 
         // pegar dados da janela modal atual
     	// qual produto? pegue o modalKey para usar listItens[modalKey]
-    	console.log("produto " + modalKey)
+    	console.log("Categoria: " + modalKey)
 
     	// tamanho
 	    let size = document.querySelector('.itemInfo-size.selected').getAttribute('data-key')
@@ -237,22 +194,14 @@ const adicionarNoCarrinho = () => {
 	    // quantidade
     	console.log("Quant. " + quantProduto)
 
-
         const product = listItens.data[typeAtual][keyAtual]
 
-
         console.log(product)
-
-        // console.log(product)
-        // const repo = product
 
         // preco
         let price = size === "unidade" ? product.price[0] : product.price[1];
 
         console.log(price)
-
-        // const ids = repo.reduce((ids, item) => item.id, [])
-
 
         // crie um identificador que junte id e tamanho
 	    // concatene as duas informacoes separadas por um símbolo, vc escolhe
@@ -260,18 +209,14 @@ const adicionarNoCarrinho = () => {
 
         console.log(`IDENTIFICADOR ${identificador}`)
 
-        // antes de adicionar verifique se ja tem aquele codigo e tamanho
-        // para adicionarmos a quantidade
+        // antes de adicionar verifique se ja tem aquele codigo e tamanho para adicionarmos a quantidade
         let indexNoCart = cart.findIndex( (item) => item.identificador == identificador)
 
         console.log(indexNoCart)
 
-
         if(indexNoCart > -1) {
-
-            cart[indexNoCart].qt += quantProduto
-
             // se encontrar aumente a quantidade
+            cart[indexNoCart].qt += quantProduto
             
         } else {
             // adicionar objeto produto no carrinho
@@ -284,66 +229,30 @@ const adicionarNoCarrinho = () => {
                 qt: quantProduto,
                 price, // price: price
             }
-            console.log(cart)
+
             cart = [...cart,produto]
+
             console.log(produto)
-            console.log('Sub total R$ ' + (produto.qt * produto.price).toFixed(2))
+            
         }
+        
+        console.log(cart)
 
         fecharModal()
-        abrirCarrinho()
         atualizarCarrinho()
+
 }
 
-const abrirCarrinho = () => {
-    console.log('Qtd de itens no carrinho ' + cart.length)
-    // if(cart.length > 0) {
-    //     // mostrar o carrinho
-	//     document.querySelector('#aside_carrinho').classList.add('show')
-    //     // document.querySelector('aside').style.left = '0vw' // usando 0vw ele ficara na tela
-    //     document.querySelector('#aside_carrinho').style.right = '0vw'
-    //     document.querySelector('.cabecalho').style.display = 'none' // não mostrar barra superior
-    // }
-
-    // exibir aside do carrinho no modo mobile
-    // document.querySelector('.menu-openner').addEventListener('click', () => {
-    //     console.log('teste carrinho')
-    //     if(cart.length > 0) {
-    //         document.querySelector('aside').classList.add('show')
-    //         document.querySelector('aside').style.right = '0vw'
-    //     }
-    // })
-
-    document.querySelector('aside').classList.add('show')
-    document.querySelector('aside').style.right = '0vw'
-
-    // if(cart.length === 0) {
-
-    // }
-}
-
-const fecharCarrinho = () => {
-    // fechar o carrinho com o botão X no modo mobile
-    // document.querySelector('.menu-closer').addEventListener('click', () => {
-    //     document.querySelector('aside').style.right = '150vw' // usando 150vw ele ficara fora da tela
-    //     document.querySelector('.cabecalho').style.display = 'flex'
-    // })
-}
 
 const atualizarCarrinho = () => {
-    // exibir número de itens no carrinho
-	document.querySelector('.menu-openner .quant_cart').innerHTML = cart.length
-	
-	// mostrar ou nao o carrinho
-	if(cart.length > 0) {
 
-		// mostrar o carrinho
-		// document.querySelector('#aside_carrinho').classList.add('show')
 
-		// zerar meu .cart para nao fazer insercoes duplicadas
+		if(cart.length > 0) {
+
+		// zerar o .cart para nao fazer inserções duplicadas
 		document.querySelector('.cart').innerHTML = ''
 
-        // crie as variaveis antes do for
+        // criando as variaveis antes do for
 		let subtotal = 0
 		let desconto = 0
 		let total    = 0
@@ -354,55 +263,77 @@ const atualizarCarrinho = () => {
 			// use o find para pegar o item por id
 			let produtoItem = cart[i];
             // let produtoItem = produtoItem.find( (item) => item.id == cart[i].id)		
-            console.log(produtoItem);
 
             // em cada item pegar o subtotal
         	subtotal += cart[i].price * cart[i].qt
             //console.log(cart[i].price)
 
-			// fazer o clone, exibir na telas e depois preencher as informacoes
+			// fazer o clone, exibir na telas e depois preencher as informacoes CART
 			let cartItem = document.querySelector('.models .cart--item').cloneNode(true)
+			// let cartItem = document.querySelector('.cart--item--qt').cloneNode(true)
 			document.querySelector('.cart').append(cartItem)
+            // document.querySelector('.menu-openner').append(cartItem)
 
 			let produtoSizeName = cart[i].size
-
 			let produtoName = `${produtoItem.name} (${produtoSizeName})`
+            console.log(cart)
 
 			// preencher as informacoes
 			cartItem.querySelector('img').src = produtoItem.img
 			cartItem.querySelector('.cart--item-nome').innerHTML = produtoName
 			cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qt
 
+            // let quantit =+ cart[i].qt
+            // cartItem.querySelector('.quant_cart').innerHTML = quantit
+
 			// selecionar botoes + e -
 			cartItem.querySelector('.cart--item-qtmais').addEventListener('click', () => {
 				console.log('Clicou no botão mais')
 				// adicionar apenas a quantidade que esta neste contexto
-				cart[i].qt++
+				cart[i].qt += 1
 				// atualizar a quantidade
 				atualizarCarrinho()
 			})
 
+            console.log(cart[i].qt)
+
+            // function esvaziarCarrinho() {
+            //     cart
+            // }
+            
 			cartItem.querySelector('.cart--item-qtmenos').addEventListener('click', () => {
 				console.log('Clicou no botão menos')
-				if(cart[i].qt > 1) {
-                    // subtrair apenas a quantidade que esta neste contexto
-					cart[i].qt--
-				} else {
-					// remover se for zero
-					cart.splice(i, 1)
-				}
+                // cart.length > 0 && 
+                if(cart[i].qt > 1 ) {
+                    cart[i].qt -= 1
+                } else {
+                    cart[i].qt -= 1
+                    cart.splice(i,1)
+                    document.querySelector('.quant_cart').innerHTML = '0'
+                    document.querySelector('.subtotal_cart').innerHTML = ''
+                }
 
                 (cart.length < 1) ? document.querySelector('.cabecalho').style.display = 'flex' : ''
-
 				// atualizar a quantidade
 				atualizarCarrinho()
+
 			})
 
+            console.log({carrinho: cart})
 			document.querySelector('.cart').append(cartItem)
 
 		} // fim do for
 
 		// fora do for
+        console.log(cart)
+
+        console.log(subtotal)
+
+        document.querySelector('.quant_cart').innerHTML = cart.reduce((total, item) => total + item.qt,0)
+        document.querySelector('.subtotal_cart').innerHTML = formatoReal(subtotal)
+
+        console.log({carrinho: cart})
+
 		// calcule desconto 10% e total
 		//desconto = subtotal * 0.1
 		desconto = subtotal * 0
@@ -414,11 +345,24 @@ const atualizarCarrinho = () => {
 		document.querySelector('.desconto span:last-child').innerHTML = formatoReal(desconto)
 		document.querySelector('.total span:last-child').innerHTML    = formatoReal(total)
 
+        //Adiciona o valor no botão flutuante
+        // document.querySelector('.subtotal_cart').innerHTML = formatoReal(total)
+
+
 	} else {
 		// ocultar o carrinho
 		document.querySelector('aside').classList.remove('show')
 		// document.querySelector('aside').style.left = '100vw'
+        
 	}
+}
+
+const abrirCarrinho = () => {
+    console.log('Qtd de itens no carrinho ' + cart.length)
+
+    document.querySelector('aside').classList.add('show')
+    document.querySelector('aside').style.right = '0vw'
+
 }
 
 // BOTAO PROXIMO --> AVANÇA DO CARRINHO PARA O FORM
@@ -730,16 +674,29 @@ function sendToInstagram() {
 }
 
 // LOJA FECHADA
+// weekday
 const openingTime = new Date();
-openingTime.setHours(9, 0, 0);// Define o horário de abertura (18:00 PM)
+openingTime.setHours(9, 0, 0);// Define o horário de abertura (09:00 AM)
 const closingTime = new Date();
-closingTime.setHours(23, 59, 0); // Define o horário de fechamento (22:30 PM)
+closingTime.setHours(23, 50, 0); // Define o horário de fechamento (17:00 PM)
 console.log(openingTime)
+console.log(closingTime)
+
+// weekend and holidays
+const openingTimeWeekend = new Date();
+openingTimeWeekend.setHours(9, 0, 0); // Define o horário de abertura (09:00 AM)
+const closingTimeWeekend = new Date();
+closingTimeWeekend.setHours(19, 0, 0); // Define o horário de fechamento (19:00 PM)
+console.log(openingTimeWeekend)
+console.log(closingTimeWeekend)
 
 function closeStore() {
     const now = new Date();
-    console.log(now)
-    if (now < openingTime || now >= closingTime) {
+    const dayOfWeek = now.getDay();
+    
+    //weekend
+    const isWeekend = ((dayOfWeek === 6) || (dayOfWeek === 0))
+    if ((isWeekend == true) && (now < openingTimeWeekend || now >= closingTimeWeekend)) {
         const mensage = document.createElement('p');
         mensage.setAttribute("class", "closed")
         mensage.textContent = 'A loja está fechada no momento.'
@@ -751,7 +708,17 @@ function closeStore() {
 
         document.querySelector('.menu-openner').style.display = 'none'
 
+    } else if ((isWeekend == false && (now < openingTime || now >= closingTime))) {
+        const mensage = document.createElement('p');
+        mensage.setAttribute("class", "closed")
+        mensage.textContent = 'A loja está fechada no momento.'
+        
+        // substitui a mensagem
+        const conteudo = document.querySelector('#content')
+        conteudo.innerHTML = "";
+        conteudo.appendChild(mensage)
 
+        document.querySelector('.menu-openner').style.display = 'none'
     }
 }
 
@@ -776,7 +743,7 @@ function redenrizaItem (item, index, clas) {
         e.preventDefault()
         console.log('Clicou no produto')
 
-        // aula 05
+        
         let chave = pegarKey(e, 'data-key')
         let type = pegarKey(e, 'data-type')
         // /aula 05
@@ -787,7 +754,7 @@ function redenrizaItem (item, index, clas) {
         // preenchimento dos dados
         preencheDadosModal(item)
 
-        // aula 05
+        
         // pegar tamanho selecionado
         preencherTamanhos(chave)
 
@@ -849,12 +816,3 @@ listItens.data.consumiveis.map((item, index) => {
 })
 
 // fim do MAPEAR listItens para gerar lista de produtos
-
-
-// mudar quantidade com os botoes + e -
-// mudarQuantidade()
-
-
-// atualizarCarrinho()
-fecharCarrinho()
-// finalizarCompra()
