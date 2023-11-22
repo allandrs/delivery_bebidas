@@ -247,7 +247,7 @@ const adicionarNoCarrinho = () => {
 const atualizarCarrinho = () => {
 
 
-		if(cart.length > 0) {
+		if(cart.length >= 0) {
 
 		// zerar o .cart para nao fazer inserções duplicadas
 		document.querySelector('.cart').innerHTML = ''
@@ -309,18 +309,17 @@ const atualizarCarrinho = () => {
                 } else {
                     cart[i].qt -= 1
                     cart.splice(i,1)
-                    document.querySelector('.quant_cart').innerHTML = '0'
-                    document.querySelector('.subtotal_cart').innerHTML = ''
                 }
 
-                (cart.length < 1) ? document.querySelector('.cabecalho').style.display = 'flex' : ''
-				// atualizar a quantidade
+                (cart.length < 1) ? document.querySelector('.cabecalho').style.display = 'flex' & document.querySelector('aside').classList.remove('show') : ''
+				
+                // atualizar a quantidade
 				atualizarCarrinho()
 
 			})
 
             console.log({carrinho: cart})
-			document.querySelector('.cart').append(cartItem)
+			// document.querySelector('.cart').append(cartItem)
 
 		} // fim do for
 
@@ -328,6 +327,7 @@ const atualizarCarrinho = () => {
         console.log(cart)
 
         console.log(subtotal)
+
 
         document.querySelector('.quant_cart').innerHTML = cart.reduce((total, item) => total + item.qt,0)
         document.querySelector('.subtotal_cart').innerHTML = formatoReal(subtotal)
@@ -345,13 +345,15 @@ const atualizarCarrinho = () => {
 		document.querySelector('.desconto span:last-child').innerHTML = formatoReal(desconto)
 		document.querySelector('.total span:last-child').innerHTML    = formatoReal(total)
 
-        //Adiciona o valor no botão flutuante
-        // document.querySelector('.subtotal_cart').innerHTML = formatoReal(total)
+        // if(cart.length = 0) {
+        //     document.querySelector('aside').classList.remove('show')
+        // }
+
 
 
 	} else {
 		// ocultar o carrinho
-		document.querySelector('aside').classList.remove('show')
+		// document.querySelector('aside').classList.remove('show')
 		// document.querySelector('aside').style.left = '100vw'
         
 	}
@@ -676,7 +678,7 @@ function sendToInstagram() {
 // LOJA FECHADA
 // weekday
 const openingTime = new Date();
-openingTime.setHours(9, 0, 0);// Define o horário de abertura (09:00 AM)
+openingTime.setHours(0, 1, 0);// Define o horário de abertura (09:00 AM)
 const closingTime = new Date();
 closingTime.setHours(23, 50, 0); // Define o horário de fechamento (17:00 PM)
 console.log(openingTime)
