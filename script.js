@@ -675,12 +675,19 @@ function sendToInstagram() {
     window.open(url, '_blank').focus();
 }
 
+// FILTRO DE PESQUISA DE PRODUTO
+function filterSearch() {
+    let input = document.querySelector('#input');
+    let filter = input.value.toUpperCase();
+    listItens.data.price[sizeIndex]
+}
+
 // LOJA FECHADA
 // weekday
 const openingTime = new Date();
-openingTime.setHours(0, 1, 0);// Define o horário de abertura (09:00 AM)
+openingTime.setHours(9, 0, 0);// Define o horário de abertura (09:00 AM)
 const closingTime = new Date();
-closingTime.setHours(23, 50, 0); // Define o horário de fechamento (17:00 PM)
+closingTime.setHours(17, 0, 0); // Define o horário de fechamento (17:00 PM)
 console.log(openingTime)
 console.log(closingTime)
 
