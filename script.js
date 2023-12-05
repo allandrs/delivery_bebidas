@@ -133,38 +133,6 @@ window.onscroll = function() {
     }
 }
 
-// FUNÇÃO PESQUISAR PRODUTO NO ARRAY
-function pesquisarProduto(array, inputName) {
-    
-    inputName = inputName.toLowerCase();
-
-    // método filter para criar um novo array com objetos de nomes correspondentes à pesquisa
-    const resultados = array.filter((product) =>
-    product.nome.toLowerCase().includes(inputName.toLowerCase())
-    );      
-
-    return resultados;
-}
-// função para lidar com a entrada do teclado e pesquisar
-function handleKeyUp(event) {
-    const input = document.getElementById('input')
-    const resultsList = document.getElementById('results');
-
-    resultsList.innerHTML = "";
-
-    const searchName = input.value;
-    const searchResults = pesquisarProduto(listItens, searchName);
-
-//     searchResults.forEach((result) => {
-//         const listItem = document.createElement("li");
-//         listItem.textContent = `Name: ${result.name}, Age: ${result.age}`;
-//         resultsList.appendChild(listItem);
-//     });
-// }
-
-// const searchInput = document.getElementById("searchInput");
-// searchInput.addEventListener("keyup", handleKeyUp);
-}
 
 
 //MUDAR A QUANTIDADE BOTÕES + e - na janela modal do produto
@@ -675,19 +643,99 @@ function sendToInstagram() {
     window.open(url, '_blank').focus();
 }
 
+
+// FUNÇÃO PESQUISAR PRODUTO NO ARRAY
+// function pesquisarProduto(array, inputName) {
+    
+//     inputName = inputName.toLowerCase();
+    
+//     // método filter para criar um novo array com objetos de nomes correspondentes à pesquisa
+//     const resultados = array.filter((product) =>
+//     product.nome.toLowerCase().includes(inputName.toLowerCase())
+//     );      
+    
+//     return resultados;
+// }
+
+
 // FILTRO DE PESQUISA DE PRODUTO
-function filterSearch() {
-    let input = document.querySelector('#input');
-    let filter = input.value.toUpperCase();
-    listItens.data.price[sizeIndex]
-}
+const myInput = document.querySelector("#input")
+console.log(myInput)
+
+myInput.addEventListener('input', function() {
+    
+    const result = [];
+    let arrays = listItens.data 
+
+    for (const arrayKey in arrays) {
+        const filteredArray = arrays[arrayKey].filter(item => item.name.includes(nameToFind));
+
+        if (filteredArray.length > 0) {
+            result.push(...filteredArray);
+        }
+
+    }
+
+
+})
+
+// function filterObjectsByName(arrays, nameToFind) {
+
+//     const result = [];
+
+//     for (const arrayKey in arrays) {
+//         const filteredArray = arrays[arrayKey].filter(item => item.name.includes(nameToFind));
+
+//         if (filteredArray.length > 0) {
+//             result.push(...filteredArray);
+//         }
+
+//     }
+
+//     return result;
+
+// }
+
+// const nameTyping = myInput.value
+
+// myInput.addEventListener('input', filterObjectsByName(listItens.data, nameTyping )) 
+
+// const nameToFind = inputValue
+// const filteredObjects = filterObjectsByName(listItens.data, nameToFind);
+// console.log(filteredObjects)
+
+
+
+// // FILTRO DE PESQUISA DE PRODUTO
+// function filterObjectsByName(arrays, nameToFind) {
+
+//     const result = [];
+
+//     for (const arrayKey in arrays) {
+//         const filteredArray = arrays[arrayKey].filter(item => item.name.includes(nameToFind));
+        
+//         if(filteredArray.length > 0) {
+//             result.push(...filteredArray);
+//         }
+
+//     }
+
+//     return result;
+    
+// }
+
+// // const nameToFind =  redenrizaItem(item,index,#bebidas)
+// const nameToFind = document.querySelector('#input').value
+// const filteredObjects = filterObjectsByName(listItens.data, nameToFind);
+// console.log(filteredObjects)
+
 
 // LOJA FECHADA
 // weekday
 const openingTime = new Date();
 openingTime.setHours(9, 0, 0);// Define o horário de abertura (09:00 AM)
 const closingTime = new Date();
-closingTime.setHours(17, 0, 0); // Define o horário de fechamento (17:00 PM)
+closingTime.setHours(23, 50, 0); // Define o horário de fechamento (17:00 PM)
 console.log(openingTime)
 console.log(closingTime)
 
@@ -695,7 +743,7 @@ console.log(closingTime)
 const openingTimeWeekend = new Date();
 openingTimeWeekend.setHours(9, 0, 0); // Define o horário de abertura (09:00 AM)
 const closingTimeWeekend = new Date();
-closingTimeWeekend.setHours(19, 0, 0); // Define o horário de fechamento (19:00 PM)
+closingTimeWeekend.setHours(22, 0, 0); // Define o horário de fechamento (19:00 PM)
 console.log(openingTimeWeekend)
 console.log(closingTimeWeekend)
 
