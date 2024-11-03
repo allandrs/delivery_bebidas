@@ -629,8 +629,8 @@ function whatsapp() {
     *Bairro:* ${bairroWpp}
     `
 
-    // let url = "https://wa.me/75991281921?text="
-    let url = `https://wa.me/75991281921?text=${encodeURI(message)}`  
+    // let url = "https://wa.me/55997323505?text="
+    let url = `https://wa.me/55997323505?text=${encodeURI(message)}`  
     
 
     window.open(url, '_blank').focus();
@@ -638,7 +638,7 @@ function whatsapp() {
 
 // IR PARA O INSTAGRAM
 function sendToInstagram() {
-    let url = "https://www.instagram.com/diskvilabeer/"
+    let url = "https://www.instagram.com/"
 
     window.open(url, '_blank').focus();
 }
@@ -747,43 +747,43 @@ closingTimeWeekend.setHours(22, 0, 0); // Define o horário de fechamento (19:00
 console.log(openingTimeWeekend)
 console.log(closingTimeWeekend)
 
-function closeStore() {
-    const now = new Date();
-    const dayOfWeek = now.getDay();
+// function closeStore() {
+//     const now = new Date();
+//     const dayOfWeek = now.getDay();
     
-    //weekend
-    const isWeekend = ((dayOfWeek === 6) || (dayOfWeek === 0))
-    if ((isWeekend == true) && (now < openingTimeWeekend || now >= closingTimeWeekend)) {
-        const mensage = document.createElement('p');
-        mensage.setAttribute("class", "closed")
-        mensage.textContent = 'A loja está fechada no momento.'
+//     //weekend
+//     const isWeekend = ((dayOfWeek === 6) || (dayOfWeek === 0))
+//     if ((isWeekend == true) && (now < openingTimeWeekend || now >= closingTimeWeekend)) {
+//         const mensage = document.createElement('p');
+//         mensage.setAttribute("class", "closed")
+//         mensage.textContent = 'A loja está fechada no momento.'
         
-        // substitui a mensagem
-        const conteudo = document.querySelector('#content')
-        conteudo.innerHTML = "";
-        conteudo.appendChild(mensage)
+//         // substitui a mensagem
+//         const conteudo = document.querySelector('#content')
+//         conteudo.innerHTML = "";
+//         conteudo.appendChild(mensage)
 
-        document.querySelector('.menu-openner').style.display = 'none'
+//         document.querySelector('.menu-openner').style.display = 'none'
 
-    } else if ((isWeekend == false && (now < openingTime || now >= closingTime))) {
-        const mensage = document.createElement('p');
-        mensage.setAttribute("class", "closed")
-        mensage.textContent = 'A loja está fechada no momento.'
+//     } else if ((isWeekend == false && (now < openingTime || now >= closingTime))) {
+//         const mensage = document.createElement('p');
+//         mensage.setAttribute("class", "closed")
+//         mensage.textContent = 'A loja está fechada no momento.'
         
-        // substitui a mensagem
-        const conteudo = document.querySelector('#content')
-        conteudo.innerHTML = "";
-        conteudo.appendChild(mensage)
+//         // substitui a mensagem
+//         const conteudo = document.querySelector('#content')
+//         conteudo.innerHTML = "";
+//         conteudo.appendChild(mensage)
 
-        document.querySelector('.menu-openner').style.display = 'none'
-    }
-}
+//         document.querySelector('.menu-openner').style.display = 'none'
+//     }
+// }
 
 // Verifique o status da loja a cada minuto (ajuste o intervalo conforme necessário)
-setInterval(closeStore, 60000);
+// setInterval(closeStore, 60000);
 
 // Verifique o status da loja imediatamente ao carregar a página
-window.addEventListener("load", closeStore);
+// window.addEventListener("load", closeStore);
 
 // /aula 06
 function redenrizaItem (item, index, clas) {

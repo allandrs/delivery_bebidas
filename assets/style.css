@@ -484,7 +484,6 @@ main {
 .menu-openner {
     background-color: #eba324;
     padding: 0px 15px;
-    border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -494,17 +493,16 @@ main {
     height: 45px;
     border-radius: 10px;
     position: fixed;
+    z-index: 40;
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url('./images/de-volta-ao-topo.png');
+
     background-size: cover;
     border: none;
-    cursor: pointer;
-    /* background-color: #FFF; */
 }
 
-.menu-openner, .menu-openner > * {
+.menu-openner:nth-child {
     font-size: 15px;
 }
 
@@ -1187,11 +1185,8 @@ footer {
 }
 
 @media (max-width:450px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
     .menu-openner {
-        font-size: 1.5rem;
+        font-size: 15px;
     }
 
     #recolher {
@@ -1224,9 +1219,7 @@ footer {
     header h1 {
         font-size: 1rem;
     }
-    .menu-openner {
-        font-size: 1.5rem;
-    }
+
 
     aside {
         width: 100%;
